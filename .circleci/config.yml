@@ -7,9 +7,9 @@ jobs:
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_PWD
-#    working_directory: ~/hugo
-#    environment:
-#      HUGO_BUILD_DIR: ~/hugo/public
+    working_directory: /src
+    environment:
+      HUGO_BUILD_DIR: /src/public
     steps:
 
         # install git
@@ -21,7 +21,7 @@ jobs:
       # build with hugo
       - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -s src/
+          command: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
       - run:
           name: "Test website"
           command: htmlproofer src/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
