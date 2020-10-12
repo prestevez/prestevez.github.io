@@ -2,25 +2,32 @@
 version: 2.1
 jobs:
   build:
+    branches:
+      ignore:
+          - gh-pages
     docker:
-      - image: klakegg/hugo:0.76.3-ext-alpine-onbuild
+      - image: cibuilds/hugo:0.76
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_PWD
-    working_directory: /src
-    environment:
-      HUGO_BUILD_DIR: /src/public
+#    working_directory: ~/hugo
+#    environment:
+#      HUGO_BUILD_DIR: ~/hugo/public
     steps:
 
         # install git
-      - run: apk update && apk add git openssh
+      #- run: apk update && apk add git openssh
 
       # checkout repository
       - checkout
 
       # build with hugo
-      - run: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
-
+      - run:
+          name: "Run Hugo"
+          command: HUGO_ENV=production hugo -v -s src/
+      - run:
+          name: "Test website"
+          command: htmlproofer src/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
 
 #  deploy:
 #    environment:
