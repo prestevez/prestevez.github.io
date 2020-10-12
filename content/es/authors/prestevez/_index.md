@@ -60,6 +60,9 @@ social:
 - icon: conversation
   icon_pack: ai
   link: https://theconversation.com/profiles/patricio-r-estevez-soto-376595/articles
+- icon: osf
+  icon_pack: ai
+  link: https://osf.io/f9bcr/  
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
