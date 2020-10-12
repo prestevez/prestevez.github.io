@@ -7,24 +7,18 @@ jobs:
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_PWD
-    working_directory: ~/home
-    environment:
-      HUGO_BUILD_DIR: ~/home/public
+    working_directory: ~/project
+
     steps:
-
-        # install git
-      #- run: apk update && apk add git openssh
-
       # checkout repository
       - checkout
-
       # build with hugo
       - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
+          command: HUGO_ENV=production hugo -v -s ~/project/src
       - run:
           name: "Test website"
-          command: htmlproofer src/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+          command: htmlproofer ~/project/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
 
 #  deploy:
 #    environment:
