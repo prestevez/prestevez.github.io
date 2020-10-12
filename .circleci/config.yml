@@ -20,6 +20,8 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 git checkout -b gh-pages
+                git add .
+                git commit -m "Automated deployment job $(CIRCLE_BRANCH) #$(CIRCLE_BUILD_NUM) [skip ci]" allow-empty
             fi
 
 
