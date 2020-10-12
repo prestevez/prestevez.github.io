@@ -16,8 +16,12 @@ jobs:
       - run:
           name: "Run Hugo"
           command: HUGO_ENV=production hugo -v
-      - add_ssh_keys
-      
+      - deploy:
+          command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+          git checkout -b gh-pages
+          fi
+
 
 
 
