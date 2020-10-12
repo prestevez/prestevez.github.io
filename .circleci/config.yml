@@ -2,9 +2,6 @@
 version: 2.1
 jobs:
   build:
-    branches:
-      ignore:
-          - gh-pages
     docker:
       - image: cibuilds/hugo:0.76
         auth:
