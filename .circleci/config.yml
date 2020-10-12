@@ -11,7 +11,13 @@ jobs:
     environment:
       HUGO_BUILD_DIR: /src/public
     steps:
+
+        # install git
+      - run: apk update && apk add git
+
+      # checkout repository
       - checkout
+
       # build with hugo
       - run: HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
 
