@@ -20,6 +20,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 rm -rf .git
+                cp -r .circleci public/
                 cp CNAME public/
                 cd public/
                 git config --global user.email "${GIT_EMAIL}"
@@ -31,9 +32,6 @@ jobs:
                 git commit -m "Automated deployment job ${CIRCLE_BRANCH} #${CIRCLE_BUILD_NUM} [skip ci]" --allow-empty
                 git push origin gh-pages --force
             fi
-
-
-
 
 workflows:
   build-and-deploy:
