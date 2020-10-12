@@ -19,7 +19,7 @@ jobs:
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                git checkout -orphan gh-pages
+                git checkout --orphan gh-pages
                 git config --global user.email "${GIT_EMAIL}"
                 git config --global user.name "${GIT_NAME}"
                 git add -f public/
