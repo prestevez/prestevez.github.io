@@ -22,7 +22,7 @@ jobs:
                 git checkout -b gh-pages
                 git config --global user.email "${GIT_EMAIL}"
                 git config --global user.name "${GIT_NAME}"
-                git add .
+                git add -f public/
                 git commit -m "Automated deployment job ${CIRCLE_BRANCH} #${CIRCLE_BUILD_NUM} [skip ci]" --allow-empty
                 git push origin gh-pages
             fi
