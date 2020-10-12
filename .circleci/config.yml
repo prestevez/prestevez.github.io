@@ -18,9 +18,9 @@ jobs:
           command: HUGO_ENV=production hugo -v
       - deploy:
           command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-          git checkout -b gh-pages
-          fi
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                git checkout -b gh-pages
+            fi
 
 
 
