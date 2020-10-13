@@ -17,6 +17,7 @@ jobs:
           name: "Run Hugo"
           command: HUGO_ENV=production hugo -v
       - deploy:
+          name: "Deploy public/ to gh-pages branch"
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 rm -rf .git
