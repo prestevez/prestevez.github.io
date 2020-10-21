@@ -27,8 +27,8 @@ interests:
 - Criminología ambiental (Environmental criminology)
 
 memberships:
-    - Fellow of the [Royal Statistical Society](https://rss.org.uk/)
-    - Co-founder [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
+    - Miembro de la [Royal Statistical Society](https://rss.org.uk/)
+    - Co-fundador de la [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
 
 education:
   courses:
@@ -88,7 +88,3 @@ user_groups: []
 Soy profesor para América Latina y el Caribe en el departamento de Ciencias de la Seguridad y el Delito de UCL (university College London), donde contribuyo a diseñar e impartir cursos de desarrollo profesional para policías y profesionales de la seguridad pública en América latina y el Caribe. Asimismo, también realizo investigaciones académicas sobre seguridad y el fenómeno delictivo en la región.
 
 Mis intereses de investigación se enfocan en el fenómeno delictivo en México y en países de América latina y el Caribe---con particular atención a la extorsión contra el sector privado y otros delitos asociados a la delincuencia organizada. Mis investigaciones son principalmente cuantitativas, con una base sólida en estadística clásica y técnicas de ciencias de datos. Mis intereses también se enfocan en la criminología ambiental (*environmental criminology*), delincuencia organizada, criminología cuantitativa, y los patrones de victimización.
-
-## Asociaciones
-
-- Miembro de la Royal Statistical Society.

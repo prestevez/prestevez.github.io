@@ -84,14 +84,6 @@
           <li>{{ . | markdownify | emojify }}</li>
           {{ end }}
         </ul>
-        {{ with $person.memberships }}
-        <h3>{{ i18n "memberships" | markdownify }}</h3>
-        <ul class="ul-interests">
-          {{ range . }}
-          <li>{{ . | markdownify | emojify }}</li>
-          {{ end }}
-        </ul>
-        {{ end }}
       </div>
       {{ end }}
 
@@ -110,6 +102,15 @@
           {{ end }}
         </ul>
       </div>
+      {{ end }}
+
+      {{ with $person.memberships }}
+      <h3>{{ i18n "memberships" | markdownify }}</h3>
+      <ul class="ul-interests">
+          {{ range . }}
+          <li>{{ . | markdownify | emojify }}</li>
+          {{ end }}
+      </ul>
       {{ end }}
 
     </div>
