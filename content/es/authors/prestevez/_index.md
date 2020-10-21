@@ -86,4 +86,4 @@ Mis intereses de investigación se enfocan en el fenómeno delictivo en México 
 
 ## Asociaciones
 
-- Asociado de la Royal Statistical Society.
+- Miembro de la Royal Statistical Society.
