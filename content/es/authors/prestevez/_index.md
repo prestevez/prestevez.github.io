@@ -62,7 +62,7 @@ social:
   link: https://theconversation.com/profiles/patricio-r-estevez-soto-376595/articles
 - icon: osf
   icon_pack: ai
-  link: https://osf.io/f9bcr/  
+  link: https://osf.io/f9bcr/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -83,3 +83,7 @@ user_groups: []
 Soy profesor para América Latina y el Caribe en el departamento de Ciencias de la Seguridad y el Delito de UCL (university College London), donde contribuyo a diseñar e impartir cursos de desarrollo profesional para policías y profesionales de la seguridad pública en América latina y el Caribe. Asimismo, también realizo investigaciones académicas sobre seguridad y el fenómeno delictivo en la región.
 
 Mis intereses de investigación se enfocan en el fenómeno delictivo en México y en países de América latina y el Caribe---con particular atención a la extorsión contra el sector privado y otros delitos asociados a la delincuencia organizada. Mis investigaciones son principalmente cuantitativas, con una base sólida en estadística clásica y técnicas de ciencias de datos. Mis intereses también se enfocan en la criminología ambiental (*environmental criminology*), delincuencia organizada, criminología cuantitativa, y los patrones de victimización.
+
+## Asociaciones
+
+- Asociado de la Royal Statistical Society.

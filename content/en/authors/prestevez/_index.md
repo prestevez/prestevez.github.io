@@ -83,3 +83,7 @@ user_groups: []
 I am a Lecturer (Teaching) for Latin America and the Caribbean at the UCL Jill Dando Institute of Security and Crime Science, where I contribute to designing and delivering professional development courses to police and security professionals in Latin America and the Caribbean, as well as conduct research on crime and security in the LAC region.
 
 My research interests focus on crime in Mexico and other developing countries, especially in Latin America and the Caribbean---with particular attention to extortion against businesses and other organised crimes. My research is mainly quantitative, based on a solid analytical foundation that leverages modern advances in statistics and data science. Other interests are environmental criminology, organised crime, quantitative criminology, and repeat victimisation.
+
+## Memberships
+
+- Fellow of the Royal Statistical Society.
