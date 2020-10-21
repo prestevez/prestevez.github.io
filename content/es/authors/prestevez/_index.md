@@ -24,6 +24,11 @@ interests:
 - Delincuencia organizada
 - Victimización repetida
 - Criminología cuantitativa
+- Criminología ambiental (Environmental criminology)
+
+memberships:
+    - Fellow of the [Royal Statistical Society](https://rss.org.uk/)
+    - Co-founder [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
 
 education:
   courses:
