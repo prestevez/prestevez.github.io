@@ -50,6 +50,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: 'mailto:patricio.estevez@ucl.ac.uk'  # For a direct email link, use "mailto:test@example.org".
+- icon: calendar-alt
+  icon_pack: fas
+  link: https://outlook.office365.com/owa/calendar/PatricioEstvezSotosOfficeHours@ucl.ac.uk/bookings/
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/prestevez
