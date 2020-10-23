@@ -27,8 +27,9 @@ interests:
 - Criminología ambiental (Environmental criminology)
 
 memberships:
-    - Miembro de la [Royal Statistical Society](https://rss.org.uk/)
-    - Co-fundador de la [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
+    - Miembro, [Royal Statistical Society](https://rss.org.uk/)
+    - Co-fundador, [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
+    - [Miembro](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto), [Grupo de Investigación en Delincuencia Organizada, ECPR](https://ecpr.eu/StandingGroups/StandingGroupHome.aspx?ID=20)
 
 education:
   courses:
