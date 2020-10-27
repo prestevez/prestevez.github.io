@@ -33,7 +33,7 @@ abstract: >
     The findings contribute to the global evaluation of the effects of COVID-19 on crime and propose a robust method to explicitly test whether the changes observed are associated with changes in routine activities.
 
 # Summary. An optional shortened abstract.
-summary: "Este estudio encontró la incidencia de la mayoría de los delitos en la Ciudad de México disminuyó durante la pandemia del COVID-19. Además, encontró que parte de las reducciones en el delito se deben a la reducción de las oportunidades para cometerlos, derivado del cambio en los patrones rutinarios en la movilidad urbana."
+summary: "Este estudio encontró que la incidencia de la mayoría de los delitos en la Ciudad de México disminuyó durante la pandemia del COVID-19. Además, encontró que parte de las reducciones en el delito se deben a la reducción de las oportunidades para cometerlos, derivado del cambio en los patrones rutinarios en la movilidad urbana."
 
 tags: ["COVID-19", "ARIMA", "Mexico", "Mexico City", "crime patterns", "crimes"]
 categories: ["Research"]
