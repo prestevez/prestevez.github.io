@@ -22,18 +22,18 @@ publication_short: "SocArXiv"
 abstract: >
     **Background.**
     This study aimed to determine whether crime patterns in Mexico City changed due to the COVID-19 pandemic, and to test whether any changes observed were associated with the disruption of routine activities.
-
+    <br>
     **Method.**
     The first objective was assessed by comparing the observed incidence of crime after the COVID-19 pandemic was detected in the country with that expected based on ARIMA forecasts based on the pre-pandemic trends. The second objective was assessed by examining the association between crime incidence and the number of passengers on public transport using regressions with ARIMA errors.
-
+    <br>
     **Results.**
     Results indicated that most crime categories decreased significantly after the pandemic was detected in the country or after a national lockdown was instituted. Furthermore, the study found that most of the declines observed were associated with the reductions seen in public transport passenger numbers. However, the declines predicted by the changes in mobility were not always consistent nor as large as those observed.
-
+    <br>
     **Conclusion.**
     The findings contribute to the global evaluation of the effects of COVID-19 on crime and propose a robust method to explicitly test whether the changes observed are associated with changes in routine activities.
 
 # Summary. An optional shortened abstract.
-summary: ""
+summary: "This study showed that the incidence of most crime types in Mexico City decreased during the COVID-19 pandemic. Furthermore, it also showed that some of the decreases were associated with the reduction of crime opportunities related to the disruption of routine activities."
 
 tags: ["COVID-19", "ARIMA", "Mexico", "Mexico City", "crime patterns", "crimes"]
 categories: ["Research"]
@@ -47,11 +47,11 @@ featured: true
 #   icon_pack: fab
 #   icon: twitter
 
-url_pdf: https://osf.io/preprints/socarxiv/3jfwu/download
+url_pdf:
 url_code:
 url_dataset:
 url_poster:
-url_project: https://osf.io/4k9ds/
+url_project:
 url_slides:
 url_source:
 url_video:
