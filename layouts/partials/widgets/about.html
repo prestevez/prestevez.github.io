@@ -105,14 +105,15 @@
       {{ end }}
 
       {{ with $person.memberships }}
-      <h3>{{ i18n "memberships" | markdownify }}</h3>
-      <ul class="ul-interests">
-          {{ range . }}
-          <li>{{ . | markdownify | emojify }}</li>
+      <div class=col-md-12>
+          <h3>{{ i18n "memberships" | markdownify }}</h3>
+          <ul class="ul-interests">
+              {{ range . }}
+              <li>{{ . | markdownify | emojify }}</li>
+              {{ end }}
+          </ul>
           {{ end }}
-      </ul>
-      {{ end }}
-
+      </div>
     </div>
   </div>
 </div>
