@@ -36,18 +36,18 @@ projects: ["crime-and-covid-19"]
 
 Me da mucho gusto haber sido invitado por el [Profesor Graham Farrell](https://essl.leeds.ac.uk/law/staff/193/professor-graham-farrell) para participar en el seminario de investigación sobre el impacto de la pandemia de COVID-19 en el delito y el trabajo policial. El seminario es parte de un proyecto de investigación financiado por el UKRI ESRC: [*Reducing the Crime Harms of the COVID-19 Pandemic*](https://covid19-crime.com/).
 
-Yo voy a [presentar]({{< ref "/talk/covid-19-mx" >}}) my trabajo de investigación sobre [los efectos de la pandemia de COVID-19 en los patrones delictivos de la Ciudad de México]({{< ref "/publication/estevez-soto-2020-covid/index.md" >}}). Habrá otros grandes ivestigadores presentando su trabajo:
+Yo [presentaré]({{< ref "/talk/covid-19-mx" >}}) mi trabajo de investigación sobre [los efectos de la pandemia de COVID-19 en los patrones delictivos de la Ciudad de México]({{< ref "/publication/estevez-soto-2020-covid/index.md" >}}). Los trabajos presentados son:
 
-- Shane Johnson, Manja Nikolovska & Paul Ekblom. Policing, disruption and mobilisation through Twitter. An analysis of UK law enforcement tweeting practices during the COVID-19 pandemic.
-- Nick Tilley, Lara Adamson & Anthony Dixon. COVID-19 and Crime: Change and Continuity on the Railway.
-- Samuel Langton, Anthony Dixon & Graham Farrell. Six Months In: Pandemic Crime Trends in England and Wales to August 2020.
-- Anthony Dixon, Manne Gerell & Graham Farrell. Crime during the pandemic. A cross-national comparison between Sweden and England & Wales.
-- **Patricio R Estévez-Soto. Crime and COVID-19: Effect of changes in routine activities in Mexico City**
-- Matt Ashby. Changes in police calls for service during the early months of the 2020 coronavirus pandemic.
+- Shane Johnson, Manja Nikolovska & Paul Ekblom. _Policing, disruption and mobilisation through Twitter. An analysis of UK law enforcement tweeting practices during the COVID-19 pandemic._
+- Nick Tilley, Lara Adamson & Anthony Dixon. _COVID-19 and Crime: Change and Continuity on the Railway._
+- Samuel Langton, Anthony Dixon & Graham Farrell. _Six Months In: Pandemic Crime Trends in England and Wales to August 2020._
+- Anthony Dixon, Manne Gerell & Graham Farrell. _Crime during the pandemic. A cross-national comparison between Sweden and England & Wales._
+- **Patricio R Estévez-Soto. _Crime and COVID-19: Effect of changes in routine activities in Mexico City_**
+- Matt Ashby. _Changes in police calls for service during the early months of the 2020 coronavirus pandemic._
 
 
 {{% callout note %}}
-El seminario es gratuito y abierto al público en general.
+El seminario es gratuito y abierto al público en general. El evento será en inglés.
 
 - **Fecha:** Miércoles 9 de diciembre, 2020
 - **Hora:** 14:00-16:00 GMT (horario de Londres)
@@ -55,4 +55,4 @@ El seminario es gratuito y abierto al público en general.
 {{% /callout %}}
 
 
-{{< figure library="true" src="covid-seminar-flyer.png" title="Research seminar flyer." >}}
+{{< figure library="true" src="covid-seminar-flyer.png" title="Programa del seminario de investigación." >}}
