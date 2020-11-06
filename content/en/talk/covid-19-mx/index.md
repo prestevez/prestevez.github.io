@@ -38,7 +38,7 @@ authors: ["prestevez"]
 tags: ["COVID-19", "ARIMA", "Mexico", "Mexico City", "crime patterns", "crimes"]
 
 # Is this a featured talk? (true/false)
-featured: true
+featured: false
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -78,21 +78,8 @@ slides: ""
 projects: ["crime-and-covid-19"]
 ---
 
-I'm thrilled to have been invited by [Professor Graham Farrell](https://essl.leeds.ac.uk/law/staff/193/professor-graham-farrell) to speak at a research seminar showcasing recent work on the impact of the COVID-19 pandemic on crime and policing. The seminar is organised as part of an UKRI ESRC grant focused on [Reducing the Crime Harms of the COVID-19 Pandemic](https://covid19-crime.com/).
-
-I will be presenting my research on the effects of the [COVID-19 pandemic on crime patterns in Mexico City]({{< ref "/publication/estevez-soto-2020-covid/index.md" >}}), though there are other fantastic speakers presenting their research. The programme is:
-
-- Shane Johnson, Manja Nikolovska & Paul Ekblom. Policing, disruption and mobilisation through Twitter. An analysis of UK law enforcement tweeting practices during the COVID-19 pandemic.
-- Nick Tilley, Lara Adamson & Anthony Dixon. COVID-19 and Crime: Change and Continuity on the Railway.
-- Samuel Langton, Anthony Dixon & Graham Farrell. Six Months In: Pandemic Crime Trends in England and Wales to August 2020.
-- Anthony Dixon, Manne Gerell & Graham Farrell. Crime during the pandemic. A cross-national comparison between Sweden and England & Wales.
-- **Patricio R Estévez-Soto. Crime and COVID-19: Effect of changes in routine activities in Mexico City**
-- Matt Ashby. Changes in police calls for service during the early months of the 2020 coronavirus pandemic.
-
-
 {{% callout note %}}
 The seminar is free and open to all, so [register now](https://www.eventbrite.co.uk/e/covid-crime-research-seminar-tickets-126515799161).
 {{% /callout %}}
-
 
 {{< figure library="true" src="covid-seminar-flyer.png" title="Research seminar flyer." >}}
