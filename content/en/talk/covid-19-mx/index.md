@@ -50,11 +50,11 @@ image:
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
-# links:
-- name: Register now
-  url: https://www.eventbrite.co.uk/e/covid-crime-research-seminar-tickets-126515799161
-  icon_pack: fas
-  icon: user-plus
+links:
+    - name: Register now
+      url: https://www.eventbrite.co.uk/e/covid-crime-research-seminar-tickets-126515799161
+      icon_pack: fas
+      icon: user-plus
 
 # Optional filename of your slides within your talk's folder or a URL.
 url_slides:
