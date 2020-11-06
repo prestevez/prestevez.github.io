@@ -51,7 +51,7 @@ El seminario es gratuito y abierto al público en general. El evento será en in
 
 - **Fecha:** Miércoles 9 de diciembre, 2020
 - **Hora:** 14:00-16:00 GMT (horario de Londres)
-- **Lugar:** En línea, [regístrate ahora.](https://www.eventbrite.co.uk/e/covid-crime-research-seminar-tickets-126515799161).
+- **Lugar:** En línea, [regístrate ahora](https://www.eventbrite.co.uk/e/covid-crime-research-seminar-tickets-126515799161).
 {{% /callout %}}
 
 
