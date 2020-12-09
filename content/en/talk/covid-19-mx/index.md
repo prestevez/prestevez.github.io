@@ -57,7 +57,7 @@ links:
       icon: user-plus
 
 # Optional filename of your slides within your talk's folder or a URL.
-url_slides:
+url_slides: covid-19-crime-mx-presentation-new.pdf
 
 url_code:
 url_pdf: https://osf.io/preprints/socarxiv/3jfwu/download
