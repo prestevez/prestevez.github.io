@@ -9,7 +9,7 @@ tags: ["COVID-19", "ARIMA", "Mexico", "Mexico City", "crime patterns", "crimes"]
 categories: ["Research", "News"]
 date: 2020-11-06T18:32:30Z
 lastmod: 2020-11-06T18:32:30Z
-featured: true
+featured: false
 draft: false
 
 # Featured image
