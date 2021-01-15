@@ -30,6 +30,7 @@ memberships:
     - Fellow, [Royal Statistical Society](https://rss.org.uk/)
     - Co-founder, [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
     - Member, [ECPR Standing Group on Organised Crime](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto)
+    - Member, [Network of Experts](https://globalinitiative.net/profile/patricio-r-estevez-soto/) of the [Global Initiative Against Transnational Organized Crime](https://globalinitiative.net/)
 
 education:
   courses:
