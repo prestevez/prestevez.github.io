@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: Determinants of extortion compliance: Empirical evidence from a victimisation survey
+title: "Determinants of extortion compliance: Empirical evidence from a victimisation survey"
 subtitle: ''
 summary: 'This article examines why some extortion incidents lead to compliance while most others do not.'
 authors:
