@@ -35,7 +35,7 @@ projects: []
 
 This is a bare bones example of how to create an R package.
 
-The tutorial draws heavily from the [R Packages](https://r-pkgs.org/index.html) book by (Hadley Wickham)[https://twitter.com/hadleywickham].
+The tutorial draws heavily from the [R Packages](https://r-pkgs.org/index.html) book by [Hadley Wickham](https://twitter.com/hadleywickham).
 
 # Pre-requisites
 
@@ -47,9 +47,9 @@ Also, you need to have the following software installed:
 
 You will also need a compiler:
 
-	- On Windows, download and install Rtools
-	- On MacOS, download and install Xcode (The easiest way to get it is from the Mac App store)
-	- On Linux, install the R development tools, for example on Ubuntu, install the r-base-dev package.
+- On Windows, download and install Rtools
+- On MacOS, download and install Xcode (The easiest way to get it is from the Mac App store)
+- On Linux, install the R development tools, for example on Ubuntu, install the r-base-dev package.
 
 On R, you will need the following packages:
 
