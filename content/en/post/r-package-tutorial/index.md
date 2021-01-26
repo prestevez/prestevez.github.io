@@ -39,7 +39,7 @@ The tutorial draws heavily from the [R Packages](https://r-pkgs.org/index.html) 
 
 # Pre-requisites
 
-You don't need to be an R expert to be able to follow the tutorial, but you do to be at least a little familiar with R (or another scripting language, such as python).
+You don't need to be an R expert to be able to follow the tutorial, but you do need to be at least a little familiar with R (or another scripting language, such as python).
 
 Also, you need to have the following software installed:
 
