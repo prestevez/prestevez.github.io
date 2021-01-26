@@ -51,10 +51,14 @@ use_package("stringr")
 
 # write new function
 use_r("greetings")
+load_all()
+
+greetings(c("Matt", "Sandy"))
 
 document()
 
 # Use github
+# use_github()
 use_github(protocol = "ssh") # use ssh if you have ssh keys set up with github
 
 # Create a readme file
