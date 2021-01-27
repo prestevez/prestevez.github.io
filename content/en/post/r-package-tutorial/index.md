@@ -16,7 +16,7 @@ draft: false
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
-  caption: ""
+  caption: "ALT: Logos for R, devtools and Rstudio"
   focal_point: ""
   preview_only: false
 
@@ -60,9 +60,9 @@ Because we will be building R packages from scratch (*compiling* in computer par
 
 ## R packages
 
-On R, you will need the following packages to make packages.
+{{< figure library="true" src="r-packages-making-r-packages-how-perverse.jpg" title="ALT: A meme of C3PO saying 'R packages making R packages, how perverse!'" >}}
 
-{{< figure library="true" src="r-packages-making-r-packages-how-perverse.jpg" title="A meme of C3PO saying 'R packages making R packages, how perverse!'" >}}
+On R, you will need the following packages to make packages:
 
 - `devtools`
 - `roxygen2`
@@ -82,7 +82,7 @@ devtools::has_devel()
 #> Your system is ready to build packages!
 ```
 
-(Console output in code blocks begin with `#'`)
+(Console output in code blocks begin with `#>`)
 
 # Git and Github
 
@@ -92,17 +92,17 @@ This is not required to create R packages, but it is highly recommended.
 
 Git should already be installed in macOS and Linux, but you need to install it if you are using Windows.
 
-[Github](https://github.com/) is a major online platform where you can store git repositories. It has free plans as well as very generous education plans with extra features. Github is great for developing projects collaboratively, and in the context of R package development, it can be used to develop your package to anyone with an internet connection.
+[Github](https://github.com/) is a major online platform where you can store git repositories. It has free plans as well as free education plans with extra features. Github is great for developing projects collaboratively, and in the context of R package development, it can be used to share your package to anyone with an internet connection.
 
 # Tutorial
 
+## Set up
+
 Open a new Rstudio session and create a new project in a suitable directory (File>New Project). We will call our package `toypackage` but you can choose any name you want.
 
-Screenshot
+{{< figure library="true" src="r-package-tutorial-new-package.jpg" title="ALT: A screenshot of Rstudio's 'New package' dialog." >}}
 
-Now load the `devtools` package.
-
-## Set up
+Now load the [`devtools`](https://devtools.r-lib.org/) package.
 
 ```r
 # Load devtools and friends
@@ -119,7 +119,7 @@ create_package("~/projects/packages/toypackage") ## write the path to your WD
 
 In the R console, you will be asked to overwrite the `toypackage.Rproj` file, say yes. A new Rstudio instance will open. You can close your old session and work on the new one. You will need to re-load the `devtools` package.
 
-Screenshots FS and console
+{{< figure library="true" src="r-package-tutorial-new-files.jpg" title="ALT: A screenshot of the files created." >}}
 
 After running `create_package` you will note some new files and directories were created in your working directory. For now, don't touch them, we will be working with them soon.
 
@@ -131,7 +131,7 @@ use_git()
 
 # Write a function
 
-We are now ready to start writing functions. Functions are the main component of your R package. In a way, you can think of an R package as a delivery system for functions. You can achieve many great things using R functions, but sometimes you need more powerful code written in another language (such as C or C##). This is know as compiled code, and I'm not going to cover this as it's an area I have not explored yet.
+We are now ready to start writing functions. Functions are the main component of your R package. In a way, you can think of an R package as a delivery system for functions. You can achieve many great things using R functions, but sometimes you need more powerful code written in another language (such as C or C##). This is known as compiled code, and I'm not going to cover this as it's an area I have not explored yet.
 
 The functions you write will live in an `Rscript` file (a file that ends in `.R`). Your function files will be stored in the `R/` directory. Don't place any other files there. While you can have more than one function per file, a common convention is to use only one function per file.
 
@@ -171,7 +171,7 @@ R has an integrated mechanism to check whether everything in your package is wor
 check()
 ```
 
-You should get a long list of output in the console. At the end you will see the results of the check. You should get one warning regarding the license.
+You should get a lot of output in the console. At the end you will see the results of the check. You should get one warning regarding the license.
 
 ```r
 #> ─── R CMD check results ─────────────────────── toypackage 0.0.0.9000 ────
@@ -192,9 +192,9 @@ However, before fixing the license warning, we will update the `DESCRIPTION` fil
 
 The `DESCRIPTION` file is one of the most important files in the R package, it is there to summarise the main information about the package and it is what tells R that this directory is a package.
 
-When you open it, you will see a template with some information. Update the Title, Author and Description fields.
+When you open it, you will see a template with some information. Update the Title, Author and Description fields. (Don't worry about the other fields you see, they will be updated automatically later.)
 
-Screnshot DESCRIPTION
+{{< figure library="true" src="r-package-tutorial-description.jpg" title="ALT: A screenshot of the DESCRIPTION file." >}}
 
 Next we add the license information using the `use_mit_license` function. If you want to use another license run `?use_mit_license` to see the available licenses.
 
@@ -206,11 +206,11 @@ use_mit_license("Patricio R Estévez-Soto")
 
 Documentation is one of the most important aspects of a package. It is the information that is displayed when you run `help(x)` or `?x`. They tell others (and future you) what your function does and how to use it. You could write your documentation manually, but ...
 
-<iframe src="https://giphy.com/embed/10PcMWwtZSYk2k" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/aint-nobody-got-time-for-that-gif-10PcMWwtZSYk2k">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/10PcMWwtZSYk2k" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/aint-nobody-got-time-for-that-gif-10PcMWwtZSYk2k">via GIPHY</a> ALT: A meme of a woman saying 'Ain't nobody got time for that!'.</p>
 
 So instead, we use the `roxygen2` package to automatically create documentation for our functions.
 
-To do this, open the `hello.R`, place the cursor inside the function, and click on Code>Insert Roxygen Skeleton. You will see a new lines of code starting with `#'`. These lines are special comments that are 'read' by the `document` function to create the documentation files. Edit the information on the `hello.R` file to something like this:
+To do this, open the `hello.R`, place the cursor inside the function, and click on Code>Insert Roxygen Skeleton. You will see new lines of code starting with `#'`. These lines are special comments that are 'read' by the `document` function to create the documentation files. Edit the information on the `hello.R` file to something like this:
 
 ```r
 #' hello
@@ -228,9 +228,10 @@ Save the file and run the `document` function. If you then run `?hello`, you sho
 
 ```r
 document()
+?hello
 ```
 
-Screenshot help
+{{< figure library="true" src="r-package-tutorial-hello-help.jpg" title="ALT: A screenshot of the help pane with the documentation created." >}}
 
 You will also see that the `document` function created the NAMESPACE file. This file is important because it tells R which functions will be available to the user. Don't edit this by hand, as `document` takes care of that. To make sure your function is available in the NAMESPACE, include the `@export` parameter in the function. It makes sense to export most functions, though sometimes you want to 'hide' functions that are only used within other functions.
 
@@ -285,10 +286,10 @@ The `testthat` package makes it very easy to add built-in tests to your package.
 use_testthat()
 ```
 
-It is up to you to write meaningful tests for your functions. Here We will write a simple test to for the hello function. We create the test file for `hello` using the `use_test` function.
+It is up to you to write meaningful tests for your functions. Here we will write a simple test for the hello function. We create the test file for `hello` using the `use_test` function.
 
 ```r
-use_test("hello")
+use_test("hello") # creates tests/testthat/test-hello.R
 ```
 
 Then edit the new file and write the following:
@@ -319,7 +320,7 @@ test()
 
 # Importing functions from another package
 
-Just because you can write functions it doesn't mean you always should. If a function from another package suits your needs, it makes more sense to use that instead of developing your own function for that.
+Just because you can write functions it doesn't mean you always should. If a function from another package suits your needs, it makes more sense to use that instead of developing your own function.
 
 There are two steps to using functions from another package in your packaged functions.
 
@@ -331,7 +332,7 @@ In this example, we'll be using a function from the `stringr` package.
 use_package("stringr")
 ```
 
-Then, to use a function from stringer in your function, you call it in your code using this syntax `stringr::the_function()`.
+Then, to use a function from `stringer` in your function, you call it in your code using this syntax `stringr::the_function()`.
 
 We create a new function file with `use_r`.
 
@@ -362,13 +363,13 @@ Now `document` your function and run `load_all` to test it.
 ```r
 document()
 
-greetings(c("Matt", "Sandy"))
-#> [1] "Greetings Matt."  "Greetings Sandy."
+greetings(c("Alice", "Bob"))
+#> [1] "Greetings Alice."  "Greetings Bob."
 ```
 
 ## Use Github
 
-By now you could install your `toypackage` in your system and call it day. But we will now see how to publish our package on Github. This is not necessaty to make your package work, but it is a great tool if you ever want anyone else to use your package (or even to copy it to a different computer).
+By now you could install your `toypackage` in your system and call it day. But we will now see how to publish our package on Github. This is not necessary to make your package work, but it is a great tool if you ever want anyone else to use your package (or even to install it in a different computer).
 
 We can automatically create a Github repository from R using the `use_github` function. (Make sure you have committed all the changes in the repo.)
 
@@ -382,7 +383,7 @@ use_github()
 
 You will be asked if it's OK to commit the `DESCRIPTION` file, go ahead and say yes. Once the changes are pushed to Github, a browser window will open with your package.
 
-Screenshot GH
+{{< figure library="true" src="r-package-tutorial-github.jpg" title="ALT: A screenshot of the the Github repo." >}}
 
 We are almost done, I promise.
 
@@ -396,7 +397,7 @@ Since we are working with R, the `use_readme_rmd` function creates an [`Rmarkdow
 
 Edit the readme Rmarkdown file so that it looks like this:
 
-Screenshot RMD
+{{< figure library="true" src="r-package-tutorial-Rmd.jpg" title="ALT: A screenshot of the Rmarkdown file." >}}
 
 Now build the 'regular' markdown README.
 
@@ -411,5 +412,13 @@ This package can now be installed from anywhere in the world using this command:
 ```r
 library(devtools)
 
-install_github("prestevez/toypackage") 
+install_github("prestevez/toypackage")
 ```
+
+Congratulations!
+
+You have just made and published your first R package.
+
+What will you build next?
+
+<iframe src="https://giphy.com/embed/U2BASTIsaw8WQ" width="480" height="217" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/elevator-berlin-lift-U2BASTIsaw8WQ">via GIPHY</a>ALT: A scene from Toy Story, Buzz and Woody flying (i.e. falling with style), while Woody yells: "To infinity and beyond!".</p>
