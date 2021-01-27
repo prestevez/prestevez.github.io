@@ -38,7 +38,9 @@ url_video:
 
 ---
 
-This is a bare bones tutorial on how to create an R package. The tutorial was developed as part of the [JDI Open](https://jdiopen.github.io/).
+{{< toc >}}
+
+This is a bare bones tutorial on how to create an R package. The tutorial was developed for a [JDI Open](https://jdiopen.github.io/) seminar.
 
 *To do: Embed video of talk here*
 
@@ -60,7 +62,7 @@ Because we will be building R packages from scratch (*compiling* in computer par
 
 ## R packages
 
-{{< figure library="true" src="r-packages-making-r-packages-how-perverse.jpg" title="ALT: A meme of C3PO saying 'R packages making R packages, how perverse!'" >}}
+{{< figure library="true" src="r-packages-making-r-packages-how-perverse.png" title="ALT: A meme of C3PO saying 'R packages making R packages, how perverse!'" >}}
 
 On R, you will need the following packages to make packages:
 
@@ -82,13 +84,13 @@ devtools::has_devel()
 #> Your system is ready to build packages!
 ```
 
-(Console output in code blocks begin with `#>`)
+(Console output blocks begin with `#>` to distinguish from code.)
 
 # Git and Github
 
 This is not required to create R packages, but it is highly recommended.
 
-[Git](https://git-scm.com/) is a version control software widely used tu develop software. It is used by solo developers and major corporations alike.
+[Git](https://git-scm.com/) is a version control software widely used to develop software. It is used by solo developers and major corporations alike.
 
 Git should already be installed in macOS and Linux, but you need to install it if you are using Windows.
 
@@ -100,7 +102,7 @@ Git should already be installed in macOS and Linux, but you need to install it i
 
 Open a new Rstudio session and create a new project in a suitable directory (File>New Project). We will call our package `toypackage` but you can choose any name you want.
 
-{{< figure library="true" src="r-package-tutorial-new-package.jpg" title="ALT: A screenshot of Rstudio's 'New package' dialog." >}}
+{{< figure library="true" src="r-package-tutorial-new-package.png" title="ALT: A screenshot of Rstudio's 'New package' dialog." >}}
 
 Now load the [`devtools`](https://devtools.r-lib.org/) package.
 
@@ -119,7 +121,7 @@ create_package("~/projects/packages/toypackage") ## write the path to your WD
 
 In the R console, you will be asked to overwrite the `toypackage.Rproj` file, say yes. A new Rstudio instance will open. You can close your old session and work on the new one. You will need to re-load the `devtools` package.
 
-{{< figure library="true" src="r-package-tutorial-new-files.jpg" title="ALT: A screenshot of the files created." >}}
+{{< figure library="true" src="r-package-tutorial-new-files.png" title="ALT: A screenshot of the files created." >}}
 
 After running `create_package` you will note some new files and directories were created in your working directory. For now, don't touch them, we will be working with them soon.
 
@@ -194,7 +196,7 @@ The `DESCRIPTION` file is one of the most important files in the R package, it i
 
 When you open it, you will see a template with some information. Update the Title, Author and Description fields. (Don't worry about the other fields you see, they will be updated automatically later.)
 
-{{< figure library="true" src="r-package-tutorial-description.jpg" title="ALT: A screenshot of the DESCRIPTION file." >}}
+{{< figure library="true" src="r-package-tutorial-description.png" title="ALT: A screenshot of the DESCRIPTION file." >}}
 
 Next we add the license information using the `use_mit_license` function. If you want to use another license run `?use_mit_license` to see the available licenses.
 
@@ -206,7 +208,7 @@ use_mit_license("Patricio R Estévez-Soto")
 
 Documentation is one of the most important aspects of a package. It is the information that is displayed when you run `help(x)` or `?x`. They tell others (and future you) what your function does and how to use it. You could write your documentation manually, but ...
 
-<iframe src="https://giphy.com/embed/10PcMWwtZSYk2k" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/aint-nobody-got-time-for-that-gif-10PcMWwtZSYk2k">via GIPHY</a> ALT: A meme of a woman saying 'Ain't nobody got time for that!'.</p>
+<iframe src="https://giphy.com/embed/10PcMWwtZSYk2k" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>ALT: A meme of a woman saying 'Ain't nobody got time for that!'. <a href="https://giphy.com/gifs/aint-nobody-got-time-for-that-gif-10PcMWwtZSYk2k">via GIPHY</a></p>
 
 So instead, we use the `roxygen2` package to automatically create documentation for our functions.
 
@@ -231,7 +233,7 @@ document()
 ?hello
 ```
 
-{{< figure library="true" src="r-package-tutorial-hello-help.jpg" title="ALT: A screenshot of the help pane with the documentation created." >}}
+{{< figure library="true" src="r-package-tutorial-hello-help.png" title="ALT: A screenshot of the help pane with the documentation created." >}}
 
 You will also see that the `document` function created the NAMESPACE file. This file is important because it tells R which functions will be available to the user. Don't edit this by hand, as `document` takes care of that. To make sure your function is available in the NAMESPACE, include the `@export` parameter in the function. It makes sense to export most functions, though sometimes you want to 'hide' functions that are only used within other functions.
 
@@ -383,7 +385,7 @@ use_github()
 
 You will be asked if it's OK to commit the `DESCRIPTION` file, go ahead and say yes. Once the changes are pushed to Github, a browser window will open with your package.
 
-{{< figure library="true" src="r-package-tutorial-github.jpg" title="ALT: A screenshot of the the Github repo." >}}
+{{< figure library="true" src="r-package-tutorial-github.png" title="ALT: A screenshot of the the Github repo." >}}
 
 We are almost done, I promise.
 
@@ -397,7 +399,7 @@ Since we are working with R, the `use_readme_rmd` function creates an [`Rmarkdow
 
 Edit the readme Rmarkdown file so that it looks like this:
 
-{{< figure library="true" src="r-package-tutorial-Rmd.jpg" title="ALT: A screenshot of the Rmarkdown file." >}}
+{{< figure library="true" src="r-package-tutorial-Rmd.png" title="ALT: A screenshot of the Rmarkdown file." >}}
 
 Now build the 'regular' markdown README.
 
@@ -421,4 +423,4 @@ You have just made and published your first R package.
 
 What will you build next?
 
-<iframe src="https://giphy.com/embed/U2BASTIsaw8WQ" width="480" height="217" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/elevator-berlin-lift-U2BASTIsaw8WQ">via GIPHY</a>ALT: A scene from Toy Story, Buzz and Woody flying (i.e. falling with style), while Woody yells: "To infinity and beyond!".</p>
+<iframe src="https://giphy.com/embed/U2BASTIsaw8WQ" width="480" height="217" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>ALT: A scene from Toy Story, Buzz and Woody flying (i.e. falling with style), while Woody yells: "To infinity and beyond!". <a href="https://giphy.com/gifs/elevator-berlin-lift-U2BASTIsaw8WQ">Via GIPHY</a></p>
