@@ -86,7 +86,7 @@ devtools::has_devel()
 
 (Console output blocks begin with `#>` to distinguish from code.)
 
-## Git and Github
+### Git and Github
 
 This is not required to create R packages, but it is highly recommended.
 
@@ -131,7 +131,7 @@ We are now going to initialise a git repository. You could do this directly in t
 use_git()
 ```
 
-## Write a function
+### Write a function
 
 We are now ready to start writing functions. Functions are the main component of your R package. In a way, you can think of an R package as a delivery system for functions. You can achieve many great things using R functions, but sometimes you need more powerful code written in another language (such as C or C##). This is known as compiled code, and I'm not going to cover this as it's an area I have not explored yet.
 
@@ -190,7 +190,7 @@ You should get a lot of output in the console. At the end you will see the resul
 
 However, before fixing the license warning, we will update the `DESCRIPTION` file.
 
-## DESCRIPTION file
+### DESCRIPTION file
 
 The `DESCRIPTION` file is one of the most important files in the R package, it is there to summarise the main information about the package and it is what tells R that this directory is a package.
 
@@ -204,7 +204,7 @@ Next we add the license information using the `use_mit_license` function. If you
 use_mit_license("Patricio R Estévez-Soto")
 ```
 
-## Documentation
+### Documentation
 
 Documentation is one of the most important aspects of a package. It is the information that is displayed when you run `help(x)` or `?x`. They tell others (and future you) what your function does and how to use it. You could write your documentation manually, but ...
 
@@ -320,7 +320,7 @@ test()
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 1 ]
 ```
 
-## Importing functions from another package
+### Importing functions from another package
 
 Just because you can write functions it doesn't mean you always should. If a function from another package suits your needs, it makes more sense to use that instead of developing your own function.
 
