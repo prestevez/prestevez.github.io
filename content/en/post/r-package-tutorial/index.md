@@ -31,7 +31,7 @@ projects: []
 #original_site_url: "https://theconversation.com"
 #original_article_url: "https://theconversation.com/a-report-says-that-mexico-is-the-second-deadliest-conflict-zone-in-the-world-its-just-not-true-77898"
 
-url_slides: r-package-tutorial.pdf
+url_slides: r-package-tutorial-presentation.pdf
 url_code:
 url_video:
 
@@ -46,11 +46,11 @@ This is a bare bones tutorial on how to create an R package. The tutorial was de
 
 The tutorial draws heavily from the "The whole game" chapter in [R Packages](https://r-pkgs.org/index.html) book by [Hadley Wickham](http://hadley.nz/) and [Jenny Bryan](http://jennybryan.org/). Please consult that book for further details and to learn more about package development with R.
 
-# Before we start
+## Before we start
 
 You don't need to be an R expert to be able to follow the tutorial. But you do need to be at least little familiar with R (or a similar scripting language, such as Python). The bare minimum you need to know is [how to install R packages](https://www.datacamp.com/community/tutorials/r-packages-guide), and [how to write a function](https://r4ds.had.co.nz/functions.html).
 
-## Software
+### Software
 
 You also need some software installed. First you need an installation of [R](https://cran.r-project.org/) (obviously). While you do not *need* Rstudio, it makes writing packages (and working with R in general) much easier. So install a recent version of [Rstudio](https://rstudio.com/products/rstudio/download/).
 
@@ -60,7 +60,7 @@ Because we will be building R packages from scratch (*compiling* in computer par
 - On macOS you need to install [Xcode](https://developer.apple.com/xcode/) (though it is easier to install via the [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12))
 - On Linux, the compiler you need will depend on your system, for Ubuntu-based you can install the `r-base-dev` package.
 
-## R packages
+### R packages
 
 {{< figure library="true" src="r-packages-making-r-packages-how-perverse.png" title="ALT: A meme of C3PO saying 'R packages making R packages, how perverse!'" >}}
 
@@ -86,7 +86,7 @@ devtools::has_devel()
 
 (Console output blocks begin with `#>` to distinguish from code.)
 
-# Git and Github
+## Git and Github
 
 This is not required to create R packages, but it is highly recommended.
 
@@ -96,9 +96,9 @@ Git should already be installed in macOS and Linux, but you need to install it i
 
 [Github](https://github.com/) is a major online platform where you can store git repositories. It has free plans as well as free education plans with extra features. Github is great for developing projects collaboratively, and in the context of R package development, it can be used to share your package to anyone with an internet connection.
 
-# Tutorial
+## Tutorial
 
-## Set up
+### Set up
 
 Open a new Rstudio session and create a new project in a suitable directory (File>New Project). We will call our package `toypackage` but you can choose any name you want.
 
@@ -121,7 +121,7 @@ create_package("~/projects/packages/toypackage") ## write the path to your WD
 
 In the R console, you will be asked to overwrite the `toypackage.Rproj` file, say yes. A new Rstudio instance will open. You can close your old session and work on the new one. You will need to re-load the `devtools` package.
 
-{{< figure library="true" src="r-package-tutorial-new-files.png" title="ALT: A screenshot of the files created." >}}
+{{< figure library="true" src="r-package-new-files.png" title="ALT: A screenshot of the files created." >}}
 
 After running `create_package` you will note some new files and directories were created in your working directory. For now, don't touch them, we will be working with them soon.
 
@@ -131,7 +131,7 @@ We are now going to initialise a git repository. You could do this directly in t
 use_git()
 ```
 
-# Write a function
+## Write a function
 
 We are now ready to start writing functions. Functions are the main component of your R package. In a way, you can think of an R package as a delivery system for functions. You can achieve many great things using R functions, but sometimes you need more powerful code written in another language (such as C or C##). This is known as compiled code, and I'm not going to cover this as it's an area I have not explored yet.
 
@@ -165,7 +165,7 @@ hello("Patricio")
 
 Now commit your changes using the Git panel or the terminal (it is a good idea to commit your changes often).
 
-## Check everything works
+### Check everything works
 
 R has an integrated mechanism to check whether everything in your package is working correctly. We can run this using the `check` function.
 
@@ -190,13 +190,13 @@ You should get a lot of output in the console. At the end you will see the resul
 
 However, before fixing the license warning, we will update the `DESCRIPTION` file.
 
-# DESCRIPTION file
+## DESCRIPTION file
 
 The `DESCRIPTION` file is one of the most important files in the R package, it is there to summarise the main information about the package and it is what tells R that this directory is a package.
 
 When you open it, you will see a template with some information. Update the Title, Author and Description fields. (Don't worry about the other fields you see, they will be updated automatically later.)
 
-{{< figure library="true" src="r-package-tutorial-description.png" title="ALT: A screenshot of the DESCRIPTION file." >}}
+{{< figure library="true" src="r-package--description.png" title="ALT: A screenshot of the DESCRIPTION file." >}}
 
 Next we add the license information using the `use_mit_license` function. If you want to use another license run `?use_mit_license` to see the available licenses.
 
@@ -204,7 +204,7 @@ Next we add the license information using the `use_mit_license` function. If you
 use_mit_license("Patricio R Estévez-Soto")
 ```
 
-# Documentation
+## Documentation
 
 Documentation is one of the most important aspects of a package. It is the information that is displayed when you run `help(x)` or `?x`. They tell others (and future you) what your function does and how to use it. You could write your documentation manually, but ...
 
@@ -233,7 +233,7 @@ document()
 ?hello
 ```
 
-{{< figure library="true" src="r-package-tutorial-hello-help.png" title="ALT: A screenshot of the help pane with the documentation created." >}}
+{{< figure library="true" src="r-package--hello-help.png" title="ALT: A screenshot of the help pane with the documentation created." >}}
 
 You will also see that the `document` function created the NAMESPACE file. This file is important because it tells R which functions will be available to the user. Don't edit this by hand, as `document` takes care of that. To make sure your function is available in the NAMESPACE, include the `@export` parameter in the function. It makes sense to export most functions, though sometimes you want to 'hide' functions that are only used within other functions.
 
@@ -248,7 +248,7 @@ check()
 #>
 ```
 
-## A minimally working package
+### A minimally working package
 
 Your package can now be installed. You install your package with the `install` function (duh). This will make your functions available to your system. You can test if it worked by opening a new R session in another window and loading the package and running the `hello` function.
 
@@ -278,7 +278,7 @@ install()
 
 ```
 
-## Tests
+### Tests
 
 This section is about writing tests to verify that your functions work correctly. Tests are not strictly necessary, but it is very good practice to test your functions.
 
@@ -320,7 +320,7 @@ test()
 #> [ FAIL 0 | WARN 0 | SKIP 0 | PASS 1 ]
 ```
 
-# Importing functions from another package
+## Importing functions from another package
 
 Just because you can write functions it doesn't mean you always should. If a function from another package suits your needs, it makes more sense to use that instead of developing your own function.
 
@@ -369,7 +369,7 @@ greetings(c("Alice", "Bob"))
 #> [1] "Greetings Alice."  "Greetings Bob."
 ```
 
-## Use Github
+### Use Github
 
 By now you could install your `toypackage` in your system and call it day. But we will now see how to publish our package on Github. This is not necessary to make your package work, but it is a great tool if you ever want anyone else to use your package (or even to install it in a different computer).
 
@@ -385,7 +385,7 @@ use_github()
 
 You will be asked if it's OK to commit the `DESCRIPTION` file, go ahead and say yes. Once the changes are pushed to Github, a browser window will open with your package.
 
-{{< figure library="true" src="r-package-tutorial-github.png" title="ALT: A screenshot of the the Github repo." >}}
+{{< figure library="true" src="r-package--github.png" title="ALT: A screenshot of the the Github repo." >}}
 
 We are almost done, I promise.
 
@@ -399,7 +399,7 @@ Since we are working with R, the `use_readme_rmd` function creates an [`Rmarkdow
 
 Edit the readme Rmarkdown file so that it looks like this:
 
-{{< figure library="true" src="r-package-tutorial-Rmd.png" title="ALT: A screenshot of the Rmarkdown file." >}}
+{{< figure library="true" src="r-package--Rmd.png" title="ALT: A screenshot of the Rmarkdown file." >}}
 
 Now build the 'regular' markdown README.
 
