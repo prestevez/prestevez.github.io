@@ -5,7 +5,7 @@ title: "Your first R package: A tutorial"
 subtitle: ""
 summary: "Learn how to create a bare-bones R package."
 authors: ["prestevez"]
-tags: ["R", "statistics"]
+tags: ["R", "statistics", "open science"]
 categories: ["Tutorials"]
 date: 2021-01-19
 lastmod: 2021-01-19
@@ -33,18 +33,51 @@ projects: []
 
 url_slides: r-package-tutorial-presentation.pdf
 url_code:
-url_video:
+url_video: https://mediacentral.ucl.ac.uk/Player/9egBgj67
 
 
 ---
 
 {{< toc >}}
 
-This is a bare bones tutorial on how to create an R package. The tutorial was developed for a [JDI Open](https://jdiopen.github.io/) seminar.
+This is a tutorial on how to create a bare-bones R package. The tutorial was developed for a [JDI Open](https://jdiopen.github.io/) seminar.
 
-*To do: Embed video of talk here*
+<div style="position:relative;padding-bottom:56%;padding-top:20px;height:0;"><iframe src="https://mediacentral.ucl.ac.uk/player?autostart=n&videoId=9egBgj67&captions=y&chapterId=0" frameborder="0" scrolling="no" style="position:absolute;top:0;left:0;width:100%;height:100%;" allowfullscreen></iframe></div>
 
 The tutorial draws heavily from the "The whole game" chapter in [R Packages](https://r-pkgs.org/index.html) book by [Hadley Wickham](http://hadley.nz/) and [Jenny Bryan](http://jennybryan.org/). Please consult that book for further details and to learn more about package development with R.
+
+## What are packages?
+
+Packages allow distributing custom code that extend the basic capabilities and functionalities of programming languages. The use of packages (or modules) is part of a software design philosophy called "modular programming":
+
+>Modular programming is a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality.
+>--[Wikipedia](https://en.wikipedia.org/wiki/Modular_programming)
+
+Packages are a core element of a researchers toolbox as they implement many specific functions and analysis techniques not available in default installations of R or python, for example.
+
+## Why should you develop packages?
+
+While package development may sound like something only software developers do, there are at least three good reasons why researchers and scientists may want to develop packages.
+
+### 1. Develop new research methods and tools
+
+Computers are a fundamental part of modern science and research, so it makes sense for many research projects to involve developing research software. If you develop a new algorithm, modelling technique, or a tool that facilitates research, it makes sense to distribute your code as a package so that other scientists and researchers can use your tools in their research.
+
+### 2. To share reproducible research
+
+Though packages are often used to distribute code that other researchers can use in their projects, they are an ideal solution to share what [Marwick et al. (2018)](https://doi.org/10.1080/00031305.2017.1375986) call *research compendia* that wraps your articles' data, materials and reproducibility scripts.
+
+In addition to adhering to open science principles, research projects with open data and materials get more citations and tend to be more productive.
+
+### 3. To make your life easier
+
+Bundling your functions into a package can make your life easier, even if you don't plan to share your code with anyone else but yourself. The more you use R (or another similar language), it's likely you'll start using custom functions to make repetitive tasks easier.
+
+{{< tweet 611885584584441856 >}}
+
+Rather than copying these into every new project folder, or having scattered files across multiple computers, writing a package offers a convenient way to ensure your custom functions are available system-wide.
+
+If you work on several computers or rely on servers to run some of your analysis, using packages makes sharing your functions across your even more seamless, and reduces the chances of making a mistake (e.g. by using an outdated function).
 
 ## Before we start
 
@@ -133,7 +166,7 @@ use_git()
 
 ### Write a function
 
-We are now ready to start writing functions. Functions are the main component of your R package. In a way, you can think of an R package as a delivery system for functions. You can achieve many great things using R functions, but sometimes you need more powerful code written in another language (such as C or C##). This is known as compiled code, and I'm not going to cover this as it's an area I have not explored yet.
+We are now ready to start writing functions. Functions are the main component of your R package. In a way, you can think of an R package as a delivery system for functions. You can achieve many great things using R functions, but sometimes you need more powerful code written in another language (such as C or C#). This is known as compiled code, and I'm not going to cover this as it's an area I have not explored yet.
 
 The functions you write will live in an `Rscript` file (a file that ends in `.R`). Your function files will be stored in the `R/` directory. Don't place any other files there. While you can have more than one function per file, a common convention is to use only one function per file.
 
@@ -212,7 +245,7 @@ Documentation is one of the most important aspects of a package. It is the infor
 
 So instead, we use the `roxygen2` package to automatically create documentation for our functions.
 
-To do this, open the `hello.R`, place the cursor inside the function, and click on Code>Insert Roxygen Skeleton. You will see new lines of code starting with `#'`. These lines are special comments that are 'read' by the `document` function to create the documentation files. Edit the information on the `hello.R` file to something like this:
+To do this, open `hello.R`, place the cursor inside the function, and click on Code>Insert Roxygen Skeleton. You will see new lines of code starting with `#'`. These lines are special comments that are 'read' by the `document` function to create the documentation files. Edit the information on the `hello.R` file to something like this:
 
 ```r
 #' hello
