@@ -46,10 +46,10 @@ image:
 #   icon: twitter
 
 # Optional filename of your slides within your talk's folder or a URL.
-url_slides:
+url_slides: extorsion-seminario-gi.pdf
 
 url_code:
-url_pdf:
+url_pdf: https://www.prestevez.com/publication/estevez-soto-2021/
 url_video:
 
 # Markdown Slides (optional).
