@@ -27,10 +27,12 @@ interests:
 - Criminología ambiental (Environmental criminology)
 
 memberships:
-    - Miembro, [Royal Statistical Society](https://rss.org.uk/)
-    - Co-fundador, [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
-    - Miembro, [Grupo de Investigación en Delincuencia Organizada, ECPR](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto)
-    - Miembro, [Red de Expertos](https://globalinitiative.net/profile/patricio-r-estevez-soto/) of the [Iniciativa Global Contra la Delincuencia Orgaizada Transnacional](https://globalinitiative.net/)
+    - [Royal Statistical Society](https://rss.org.uk/), Miembro
+    - [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/), Co-fundador
+    - [Grupo de Investigación en Delincuencia Organizada, ECPR](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto), Miembro
+    - [Red de Expertos](https://globalinitiative.net/profile/patricio-r-estevez-soto/) de la [Iniciativa Global Contra la Delincuencia Organizada Transnacional](https://globalinitiative.net/), Miembro
+    - [JDI Open](https://jdiopen.github.io/), Meimbro del comité
+
 
 
 education:
@@ -59,9 +61,9 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/prestevez
-#- icon: google-scholar
-#  icon_pack: ai
-#  link: https://scholar.google.com/citations?user=SZtlfFUAAAAJ
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.com/citations?user=SZtlfFUAAAAJ
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0001-7513-6904

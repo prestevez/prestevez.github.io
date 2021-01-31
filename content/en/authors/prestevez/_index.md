@@ -27,10 +27,11 @@ interests:
 - Environmental criminology
 
 memberships:
-    - Fellow, [Royal Statistical Society](https://rss.org.uk/)
-    - Co-founder, [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
-    - Member, [ECPR Standing Group on Organised Crime](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto)
-    - Member, [Network of Experts](https://globalinitiative.net/profile/patricio-r-estevez-soto/) of the [Global Initiative Against Transnational Organized Crime](https://globalinitiative.net/)
+    - [Royal Statistical Society](https://rss.org.uk/), Fellow
+    - [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/), Co-founder
+    - [ECPR Standing Group on Organised Crime](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto), Member
+    - [Global Initiative Against Transnational Organized Crime](https://globalinitiative.net/) [Network of Experts](https://globalinitiative.net/profile/patricio-r-estevez-soto/), Member
+    - [JDI Open](https://jdiopen.github.io/), Organising committee member
 
 education:
   courses:
@@ -58,9 +59,9 @@ social:
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/prestevez
-#- icon: google-scholar
-#  icon_pack: ai
-#  link: https://scholar.google.com/citations?user=SZtlfFUAAAAJ
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.com/citations?user=SZtlfFUAAAAJ
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0001-7513-6904
