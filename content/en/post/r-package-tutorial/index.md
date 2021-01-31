@@ -33,7 +33,7 @@ projects: []
 
 url_slides: r-package-tutorial-presentation.pdf
 url_code:
-url_video: https://mediacentral.ucl.ac.uk/Player/9egBgj67
+url_video: https://mediacentral.ucl.ac.uk/Play/54427
 
 
 ---
@@ -44,7 +44,7 @@ This is a tutorial on how to create a bare-bones R package. The tutorial was dev
 
 <div style="position:relative;padding-bottom:56%;padding-top:20px;height:0;"><iframe src="https://mediacentral.ucl.ac.uk/player?autostart=n&videoId=9egBgj67&captions=y&chapterId=0" frameborder="0" scrolling="no" style="position:absolute;top:0;left:0;width:100%;height:100%;" allowfullscreen></iframe></div>
 
-The tutorial draws heavily from the "The whole game" chapter in [R Packages](https://r-pkgs.org/index.html) book by [Hadley Wickham](http://hadley.nz/) and [Jenny Bryan](http://jennybryan.org/). Please consult that book for further details and to learn more about package development with R.
+The tutorial draws heavily from the "The whole game" chapter in the [R Packages](https://r-pkgs.org/index.html) book by [Hadley Wickham](http://hadley.nz/) and [Jenny Bryan](http://jennybryan.org/). Please consult that book for further details and to learn more about package development with R.
 
 ## What are packages?
 
@@ -65,9 +65,9 @@ Computers are a fundamental part of modern science and research, so it makes sen
 
 ### 2. To share reproducible research
 
-Though packages are often used to distribute code that other researchers can use in their projects, they are an ideal solution to share what [Marwick et al. (2018)](https://doi.org/10.1080/00031305.2017.1375986) call *research compendia* that wraps your articles' data, materials and reproducibility scripts.
+Though packages are often used to distribute code that other researchers can use in their projects, they are an ideal solution to share what [Marwick et al. (2018)](https://doi.org/10.1080/00031305.2017.1375986) call *research compendia* that wrap your articles' data, materials and reproducibility scripts.
 
-In addition to adhering to open science principles, research projects with open data and materials get more citations and tend to be more productive.
+In addition to adhering to open science principles, research projects with open data and materials get more citations and tend to lead to more publications.
 
 ### 3. To make your life easier
 
