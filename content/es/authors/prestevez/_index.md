@@ -26,13 +26,13 @@ interests:
     - Criminología cuantitativa
     - Criminología ambiental (Environmental criminology)
 
-memberships:
-    - [Royal Statistical Society](https://rss.org.uk/), Miembro
-    - [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/), Co-fundador
-    - [Grupo de Investigación en Delincuencia Organizada, ECPR](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto), Miembro
-    - [Red de Expertos](https://globalinitiative.net/profile/patricio-r-estevez-soto/) de la [Iniciativa Global Contra la Delincuencia Organizada
-    Transnacional](https://globalinitiative.net/), Miembro
-    - [JDI Open](https://jdiopen.github.io/), Miembro del comité
+#memberships:
+#    - [Royal Statistical Society](https://rss.org.uk/), Miembro
+#    - [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/), Co-fundador
+#    - [Grupo de Investigación en Delincuencia Organizada, ECPR](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto), Miembro
+#    - [Red de Expertos](https://globalinitiative.net/profile/patricio-r-estevez-soto/) de la [Iniciativa Global Contra la Delincuencia Organizada
+#    Transnacional](https://globalinitiative.net/), Miembro
+#    - [JDI Open](https://jdiopen.github.io/), Miembro del comité
 
 
 education:
