@@ -367,7 +367,7 @@ In this example, we'll be using a function from the `stringr` package.
 use_package("stringr")
 ```
 
-Then, to use a function from `stringer` in your function, you call it in your code using this syntax `stringr::the_function()`.
+Then, to use a function from `stringr` in your function, you call it in your code using this syntax `stringr::the_function()`.
 
 We create a new function file with `use_r`.
 
