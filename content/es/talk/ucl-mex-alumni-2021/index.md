@@ -12,7 +12,7 @@ address:
   postcode:
   country:
 summary:
-abstract: "This talk presented the findings of a study on the effect of the COVID-19 pandemic on crime in Mexico City, and was followed by a Q&A on trends and issue sin public security in Mexico in 2021."
+abstract: "Esta plática presentó los hallazgos de un estudio que investigó los efectos de la pandemia de COVID-19 en los patrones delictivos de la Ciudad de México. Posteriormente se llevó a cabo una discusión sobre las tendencias delictivas que se esperan para el 2021."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -24,7 +24,7 @@ all_day: false
 publishDate: 2021-01-31T12:34:22Z
 
 authors: ["prestevez"]
-tags: ["Mexico", "Organised Crime", "extortion"]
+tags: ["Mexico", "Organised Crime", "covid-19", "crime", "politics"]
 
 # Is this a featured talk? (true/false)
 featured: false
