@@ -1,9 +1,9 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Improving the measurement of extortion victimisation: The case of Mexico"
-event: "UNODC 5th International Conference on Governance, Crime and Justice Statistics"
-event_url: http://www.gsj.inegi.org.mx/5taconferencia/english/index_english.html
+title: "Mejorando la medición de la extorsión en México"
+event: "5ta Conferencia Internacional sobre Estadísticas de Gobernanza, Seguridad y Justicia"
+event_url: http://www.gsj.inegi.org.mx/5taconferencia/index.html
 location: Zoom webinar
 address:
   street:
@@ -12,7 +12,7 @@ address:
   postcode:
   country:
 summary:
-abstract: "This talk will discuss the current limitations of the existing instruments to measure extortion in Mexico, and propose ways in which they could be improved."
+abstract: "Esta presentación discutirá las limitaciones de los instrumentos que existen para medir la extorsión en México, y propondrá maneras en las que pueden ser mejorados."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -40,8 +40,8 @@ image:
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
 links:
-    - name: Register now
-      url:  http://www.gsj.inegi.org.mx/5taconferencia/english/index_english.html
+    - name: Registro
+      url:  http://www.gsj.inegi.org.mx/5taconferencia/index.html
       icon_pack: fas
       icon: user-plus
 
@@ -68,5 +68,5 @@ projects: []
 ---
 
 {{% callout note %}}
-The conference is free and open to all, so [register now](http://www.gsj.inegi.org.mx/5taconferencia/english/index_english.html).
+La conferencia es gratuita y abierta al público en general. [Regístrate](http://www.gsj.inegi.org.mx/5taconferencia/index.html).
 {{% /callout %}}
