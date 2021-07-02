@@ -94,4 +94,4 @@ user_groups: []
 
 I am a Lecturer in Security and Crime Science at the UCL Department of Security and Crime Science, where I have taught on range of courses including organised crime, quantitative methods, research design, and crime prevention.
 
-My research is mostly focused on Mexico and other developing countries, especially in Latin America and the Caribbean. My research interests are organised crime (in particular extortion), repeat victimisation, quantitative criminology, crime prevention, and the nexus between crime and public policy.
+My research is mostly focused on crime in Mexico and Latin America and the Caribbean, on issues such as organised crime (in particular extortion), repeat victimisation, quantitative criminology, crime prevention, and the nexus between crime and public policy.
