@@ -18,53 +18,55 @@ date_format = "2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Lecturer (Teaching)"
+  title = "Profesor-investigador en Ciencias de la Seguridad y el Delito"
   company = "UCL Department of Security and Crime Science"
   company_url = "https://www.ucl.ac.uk/scs"
-  location = "London"
+  location = "Londres, GB"
   date_start = "2019-10-02"
-  date_end = ""
-  description = """
-  Responsibilities include:
-
-  * Co-convener for Preventing Crimes module (MSc), 2020/2021 academic year.
-  * Lead analyst for research projects on Latin America and the Caribbean.
-  * Responsible for developing teaching materials for CPD courses for Latin American police.
-  * Personal tutor for distance learning students.
-  """
+  date_end = "2021-06-30"
+  description = """  """
 
 [[experience]]
-  title = "Teaching Fellow in Quantitative Research Methods"
+  title = "Profesor para América Latina y el Caribe"
+  company = "UCL JDI Latin America and Caribbean Unit"
+  company_url = "https://www.ucl.ac.uk/jill-dando-institute/research/jdi-latam"
+  location = "Londres, GB"
+  date_start = "2019-10-02"
+  date_end = "2021-06-30"
+  description = """  """
+
+[[experience]]
+  title = "Profesor de Métodos Cuantitativos"
   company = "UCL School of Public Policy"
   company_url = "https://www.ucl.ac.uk/political-science/"
-  location = "London"
+  location = "Londres, GB"
   date_start = "2018-09-15"
   date_end = "2019-05-31"
-  description = """Taught introduction to quantitative methods to MSc students at the UCL School of Public Policy."""
+  description = """  """
 
 [[experience]]
-  title = "Research Assistant"
+  title = "Asistente de investigación"
   company = "UCL JDI Latin America and Caribbean Unit"
   company_url = "https://www.ucl.ac.uk/jill-dando-institute/research/jdi-latin-america-and-caribbean-unit"
-  location = "London"
+  location = "Londres, GB"
   date_start = "2017-01-01"
   date_end = "2019-01-01"
   description = """ """
 
 [[experience]]
-  title = "Policy Advisor"
-  company = "Office of the National Commissioner for Security"
+  title = "Asesor del titular de planeación estratégica"
+  company = "Oficina del Comisionado Nacional de Seguridad"
   company_url = ""
-  location = "Mexico City"
+  location = "Ciudad de México, Mex"
   date_start = "2013-01-01"
   date_end = "2014-01-01"
   description = """  """
 
 [[experience]]
-  title = "Research Deputy Director"
-  company = "Centre for Security Research and Studies"
+  title = "Subdirector de Área"
+  company = "Centro de Investigación y Estudios en Seguridad"
   company_url = ""
-  location = "Mexico City"
+  location = "Ciudad de México, Mex"
   date_start = "2012-01-01"
   date_end = "2013-01-01"
   description = """  """
