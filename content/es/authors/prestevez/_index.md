@@ -10,15 +10,15 @@ authors:
 superuser: true
 
 # Role/position
-role: Profesor para América Latina y el Caribe
+role: Profesor-investigador en Ciencias de la Seguridad y el Delito
 
 # Organizations/Affiliations
 organizations:
 - name: University College London (UCL)
-  url: "https://www.ucl.ac.uk/jill-dando-institute/research/jdi-latam"
+  url: "https://www.ucl.ac.uk/scs"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Mis principales intereses son la delincuencia organizada, la victimización repetida, la prevención del delito, y el fenómeno delictivo en América Latina y el Caribe.
+bio: Mi investigación se enfoca en el fenómeno delictivo en América Latina y el Caribe, específicamente en temas como la delincuencia organizada, la victimización repetida, la prevención del delito, la criminología cuantitativa, y el nexo entre política pública y el delito.
 
 interests:
     - Delincuencia organizada
@@ -27,6 +27,7 @@ interests:
     - Criminología ambiental (Environmental criminology)
 
 memberships:
+    - Miembro, [JDI Latin America and Caribbean Unit](https://www.ucl.ac.uk/jill-dando-institute/research/jdi-latam)
     - Miembro, [Royal Statistical Society](https://rss.org.uk/)
     - Co-fundador, [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
     - Miembro, [Grupo de Investigación en Delincuencia Organizada, ECPR](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto)
@@ -92,6 +93,6 @@ highlight_name: false
 user_groups: []
 ---
 
-Soy profesor para América Latina y el Caribe en el departamento de Ciencias de la Seguridad y el Delito de UCL (University College London), donde contribuyo a diseñar e impartir cursos de desarrollo profesional para policías y profesionales de la seguridad pública en América latina y el Caribe. Asimismo, también realizo investigaciones académicas sobre seguridad y el fenómeno delictivo en la región.
+Soy profesor-investigador en ciencias de la seguridad y el delito en el departamento de Ciencias de la Seguridad y el Delito de UCL (University College London), donde he impartido clases sobre delincuencia organizada, métodos cuantitativos, diseño de investigaciones, y prevención del delito.
 
-Mis intereses de investigación se enfocan en el fenómeno delictivo en México y en países de América latina y el Caribe---con particular atención a la extorsión contra el sector privado y otros delitos asociados a la delincuencia organizada. Mis investigaciones son principalmente cuantitativas, con una base sólida en estadística clásica y técnicas de ciencias de datos. Mis intereses también se enfocan en la criminología ambiental (*environmental criminology*), delincuencia organizada, criminología cuantitativa, y los patrones de victimización.
+Mi investigación se enfoca en el fenómeno delictivo en América Latina y el Caribe, específicamente en temas como la delincuencia organizada (en especial la extorsión), la victimización repetida, la prevención del delito, la criminología cuantitativa, y el nexo entre política pública y el delito.

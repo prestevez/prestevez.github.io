@@ -10,15 +10,15 @@ authors:
 superuser: true
 
 # Role/position
-role: Lecturer (Teaching) for Latin America and the Caribbean
+role: Lecturer in Security and Crime Science
 
 # Organizations/Affiliations
 organizations:
 - name: University College London (UCL)
-  url: "https://www.ucl.ac.uk/jill-dando-institute/research/jdi-latam"
+  url: "https://www.ucl.ac.uk/scs"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My main research interests are organised crime, repeat victimisation, crime prevention, and crime in Latin America and the Caribbean.
+bio: My research is focused on crime in Latin America and the Caribbean, spanning topics such as organised crime, repeat victimisation, quantitative criminology, crime prevention, and the nexus between crime and public policy.
 
 interests:
 - Organised crime
@@ -27,6 +27,7 @@ interests:
 - Environmental criminology
 
 memberships:
+    - Member, [JDI Latin America and Caribbean Unit](https://www.ucl.ac.uk/jill-dando-institute/research/jdi-latam)
     - Fellow, [Royal Statistical Society](https://rss.org.uk/)
     - Co-founder, [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
     - Member, [ECPR Standing Group on Organised Crime](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto)
@@ -91,6 +92,6 @@ highlight_name: false
 user_groups: []
 ---
 
-I am a Lecturer (Teaching) for Latin America and the Caribbean at the UCL Jill Dando Institute of Security and Crime Science, where I contribute to designing and delivering professional development courses to police and security professionals in Latin America and the Caribbean, as well as conduct research on crime and security in the LAC region.
+I am a Lecturer in Security and Crime Science at the UCL Department of Security and Crime Science, where I have taught on range of courses including organised crime, quantitative methods, research design, and crime prevention.
 
-My research interests focus on crime in Mexico and other developing countries, especially in Latin America and the Caribbean---with particular attention to extortion against businesses and other organised crimes. My research is mainly quantitative, based on a solid analytical foundation that leverages modern advances in statistics and data science. Other interests are environmental criminology, organised crime, quantitative criminology, and repeat victimisation.
+My research is mostly focused on Mexico and other developing countries, especially in Latin America and the Caribbean. My research interests are organised crime (in particular extortion), repeat victimisation, quantitative criminology, crime prevention, and the nexus between crime and public policy.
