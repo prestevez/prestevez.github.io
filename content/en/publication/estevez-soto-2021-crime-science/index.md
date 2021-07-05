@@ -17,7 +17,7 @@ publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
 publication: "Crime Science"
-publication_short: "Crime Sci"
+publication_short: "Crime Science"
 
 abstract: >
     **Background**
