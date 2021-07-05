@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>7 | Patricio R Estévez-Soto</title>
+    <link>/publication-type/7/</link>
+      <atom:link href="/publication-type/7/index.xml" rel="self" type="application/rss+xml" />
+    <description>7</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>7</title>
+      <link>/publication-type/7/</link>
+    </image>
+    
+    <item>
+      <title>Organised Crimes and Repeat Victimisation: Modelling victimisation patterns of extortion against Mexican businesses</title>
+      <link>/publication/estevez-soto-pr-tesis-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/estevez-soto-pr-tesis-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Repeat extortion victimisation of Mexican businesses</title>
+      <link>/publication/estevez-soto-2015/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/estevez-soto-2015/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
