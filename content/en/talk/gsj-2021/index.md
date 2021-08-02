@@ -50,7 +50,7 @@ url_slides:
 
 url_code:
 url_pdf:
-url_video:
+url_video: https://youtu.be/P9wXN-DqXDY
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
@@ -66,6 +66,8 @@ slides: ""
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+
+{{< youtube P9wXN-DqXDY >}}
 
 {{% callout note %}}
 The conference is free and open to all, so [register now](http://www.gsj.inegi.org.mx/5taconferencia/english/index_english.html).
