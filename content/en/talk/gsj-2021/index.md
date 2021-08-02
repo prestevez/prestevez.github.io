@@ -46,7 +46,7 @@ links:
       icon: user-plus
 
 # Optional filename of your slides within your talk's folder or a URL.
-url_slides:
+url_slides: gsj-2021.pdf
 
 url_code:
 url_pdf:
@@ -68,7 +68,3 @@ projects: []
 ---
 
 {{< youtube P9wXN-DqXDY >}}
-
-{{% callout note %}}
-The conference is free and open to all, so [register now](http://www.gsj.inegi.org.mx/5taconferencia/english/index_english.html).
-{{% /callout %}}
