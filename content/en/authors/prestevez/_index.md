@@ -28,7 +28,6 @@ interests:
 
 memberships:
     - Member, [JDI Latin America and Caribbean Unit](https://www.ucl.ac.uk/jill-dando-institute/research/jdi-latam)
-    - Fellow, [Royal Statistical Society](https://rss.org.uk/)
     - Co-founder, [UCL Organised Crime Research Network](https://blogs.ucl.ac.uk/organised-crime/about-ocrn/)
     - Member, [ECPR Standing Group on Organised Crime](https://ecpr.eu/profile/PatricioRodrigoEst%C3%A9vezSoto)
     - Member, [Global Initiative Against Transnational Organized Crime](https://globalinitiative.net/) [Network of Experts](https://globalinitiative.net/profile/patricio-r-estevez-soto/)
