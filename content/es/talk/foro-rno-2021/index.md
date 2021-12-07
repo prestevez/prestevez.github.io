@@ -12,7 +12,7 @@ address:
   postcode:
   country:
 summary:
-abstract: "Esta plática presenté el caso del análisis de la victimización repetida como ejemplo para ilustrar cómo el análisis cuantitativo puede contribuir a diseñar mejores estrategias de prevención del delito."
+abstract: "En esta plática presenté cómo el análisis de la victimización repetida puede contribuir a diseñar mejores estrategias de prevención del delito."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.

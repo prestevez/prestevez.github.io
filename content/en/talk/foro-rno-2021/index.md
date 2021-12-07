@@ -12,7 +12,7 @@ address:
   postcode:
   country:
 summary:
-abstract: "In this presentation, I presented the case study of how the analysis of repeat victimisation patterns can contribute to the design of better crime prevention strategies (in Spanish)."
+abstract: "In this panel, I talked about how the analysis of repeat victimisation patterns can contribute to the design of better crime prevention strategies (in Spanish)."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
