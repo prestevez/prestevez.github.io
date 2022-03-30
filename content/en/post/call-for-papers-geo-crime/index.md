@@ -9,7 +9,7 @@ tags: ["news", "crime mappning", "research"]
 categories: ["News"]
 date: 2020-10-12T11:00:30+01:00
 lastmod: 2020-10-12T11:00:30+01:00
-featured: true
+featured: false
 draft: false
 
 # Featured image
