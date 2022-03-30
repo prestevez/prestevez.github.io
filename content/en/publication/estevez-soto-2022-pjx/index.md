@@ -25,7 +25,7 @@ abstract: >
 # Summary. An optional shortened abstract.
 summary: "This peer-reviewed study evaluated the impact of a hot spot policing programme carried out in four Argentinian cities. Overall, hot spot policing was found to work in preventing robbery and theft, with important variations per city."
 
-tags: ["policing", "Argentina", "evaluation" "crime patterns", "crimes"]
+tags: ["policing", "Argentina", "evaluation", "crime patterns", "crimes"]
 categories: ["Research"]
 featured: true
 
