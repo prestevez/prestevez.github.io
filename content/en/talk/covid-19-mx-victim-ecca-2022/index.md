@@ -40,17 +40,17 @@ image:
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
-# links:
-#     - name: Register now
-#       url: https://www.eventbrite.co.uk/e/covid-crime-research-seminar-tickets-126515799161
-#       icon_pack: fas
-#       icon: user-plus
+links:
+    - name: Pre-registration
+      url: https://doi.org/10.17605/OSF.IO/9PCW4
+      icon_pack: ai
+      icon: osf
 
 # Optional filename of your slides within your talk's folder or a URL.
 url_slides: covid-19-victimisation.pdf
 
 url_code:
-url_pdf: https://doi.org/10.17605/OSF.IO/9PCW4
+url_pdf: 
 url_video:
 
 # Markdown Slides (optional).
