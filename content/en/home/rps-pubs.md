@@ -1,7 +1,7 @@
 ---
 widget: blank
 headless: true
-active: true
+active: false
 
 # ... Put Your Section Options Here (title etc.) ...
 title: Publications - RPS
