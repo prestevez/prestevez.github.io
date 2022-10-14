@@ -12,7 +12,7 @@ address:
   postcode:
   country:
 summary:
-abstract: "This talk will present a study on the impact of the kingpin strategy on kidnapping and extortion in Mexico."
+abstract: "While Mexico's main counter-organised crime policy has been the 'kingpin’ strategy, evidence suggests that ‘neutralising’ criminal leaders is associated with increases in homicides. However, there is little research on the impact of such strategy on other crimes, such as extortion and kidnapping. Thus, using Mexican data, we used a novel statistical method to assess whether the number of extortions and kidnappings in a Mexican municipality between 2011 and 2015 are affected by criminal neutralisations in the same and neighbouring municipalities. Our findings suggest that the kingpin strategy has contributed to significant increases in extortions, while the effects on kidnapping have been more muted."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.

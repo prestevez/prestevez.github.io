@@ -10,7 +10,7 @@ authors:
 superuser: false
 
 # Role/position
-#role: Lecturer in Security and Crime Science
+role: MSc in Crime Science
 
 # Organizations/Affiliations
 organizations:
