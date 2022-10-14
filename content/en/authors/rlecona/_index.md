@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Reynaldo Lecona
+title: Reynaldo Lecona Esteban
 
 # Username (this should match the folder name)
 authors:
