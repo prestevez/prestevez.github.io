@@ -23,11 +23,11 @@ all_day: false
 # Schedule page publish date (NOT talk date).
 publishDate: 2022-10-14
 
-authors: ["prestevez"]
+authors: ["rlecona","prestevez"]
 tags: ["extortion", "organised crime", "Mexico", "statistics", "kidnapping"]
 
 # Is this a featured talk? (true/false)
-featured: true
+featured: false
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -46,7 +46,7 @@ links:
       icon: user-plus
 
 # Optional filename of your slides within your talk's folder or a URL.
-#url_slides: 24h-2022.pdf
+url_slides: 24h-2022.pdf
 
 url_code:
 url_pdf:
