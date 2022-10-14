@@ -46,7 +46,7 @@ links:
       icon: user-plus
 
 # Optional filename of your slides within your talk's folder or a URL.
-url_slides: 24h-2022.pdf
+# url_slides: 24h-2022.pdf
 
 url_code:
 url_pdf:
