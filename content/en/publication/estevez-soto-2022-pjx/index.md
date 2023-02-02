@@ -2,7 +2,7 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "An evaluation of a hot spot policing programme in four Argentinian cities"
-authors: ["prestevez"]
+authors: ["schainey", "prestevez"]
 date: 2022-03-26
 doi: "10.1177/0032258X221079019"
 
