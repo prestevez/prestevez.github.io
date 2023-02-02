@@ -27,7 +27,7 @@ summary: "This study tested three competing hypothesis to explain a sudden incre
 
 tags: ["adversarial system", "ARIMA", "hot spot policing", "inquisitorial system", "interrupted time series", "Latin America"]
 categories: ["Research"]
-featured: false
+featured: true
 
 # Custom links (optional).
 #   Uncomment and edit lines below to show custom links.
