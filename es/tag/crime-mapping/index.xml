@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crime mapping | Patricio R Estévez-Soto</title>
+    <link>/es/tag/crime-mapping/</link>
+      <atom:link href="/es/tag/crime-mapping/index.xml" rel="self" type="application/rss+xml" />
+    <description>crime mapping</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>crime mapping</title>
+      <link>/es/tag/crime-mapping/</link>
+    </image>
+    
+    <item>
+      <title>Cómo hacer mapas con R y tidyverse</title>
+      <link>/es/post/tutorial-mapas-tidyverse/</link>
+      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/es/post/tutorial-mapas-tidyverse/</guid>
+      <description>&lt;p&gt;Hace unos días publiqué un par de mapas en twitter sobre la distribución geográfica de los casos confirmados de la enfermedad covid-19 en México. Me preguntaron en qué software hice los mapas y me pareció una buena oportunidad para escribir un breve tutorial sobre como hacer mapas en &lt;a href=&#34;https://www.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;es&#34;&gt;&lt;p lang=&#34;es&#34; dir=&#34;ltr&#34;&gt;Nuevos mapas sobre covid-19 en México. Pueden descargar png y pdf en alta resolución en:&lt;a href=&#34;https://t.co/tHEBkwOxPZ&#34;&gt;https://t.co/tHEBkwOxPZ&lt;/a&gt; &lt;a href=&#34;https://t.co/LV28r9iGm8&#34;&gt;pic.twitter.com/LV28r9iGm8&lt;/a&gt;&lt;/p&gt;&amp;mdash; Patricio R. Estevez-Soto, PhD (@prestevez) &lt;a href=&#34;https://twitter.com/prestevez/status/1251180205626077184?ref_src=twsrc%5Etfw&#34;&gt;17 de abril de 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;Este tutorial asume que sabes usar R. No necesitas ser experto, pero un conocimiento básico de R es necesario.&lt;/strong&gt; También recomiendo saber usar los paquetes de &lt;code&gt;tidyverse&lt;/code&gt;, especialmente &lt;code&gt;ggplot2&lt;/code&gt; y &lt;code&gt;dplyr&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Si aún no usas R, puedes aprovechar la cuarentena forzada por covid-19 para &lt;a href=&#34;https://github.com/jmtoral/Introduccion_a_R&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aprender&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;por-qué-usar-r-cuando-existe-qgis-o-arcgis&#34;&gt;Por qué usar R cuando existe QGIS o ArcGIS&lt;/h2&gt;
+&lt;p&gt;Normalmente, la visualización y análisis de mapas (y otra información geográfica) se hace usando programas llamados &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_informaci%C3%B3n_geogr%C3%A1fica&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sistemas de información geográfica&lt;/a&gt; (conocidos como GIS en inglés). Entre los más conocidos está &lt;a href=&#34;https://www.arcgis.com/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ArcGIS&lt;/a&gt; (probablemente el &lt;em&gt;gold standard&lt;/em&gt; de GIS, aunque es software de paga). En el mundo de software libre una alternativa muy completa es &lt;a href=&#34;https://qgis.org/en/site/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;QGIS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;R es principalmente un programa de análisis estadístico; no es un GIS. Los GIS son programas muy complejos. Quienes trabajan con datos geográficos cotidianamente probablemente sean más productivos usando un GIS.&lt;/p&gt;
+&lt;p&gt;Sin embargo, también son programas un tanto pesados y que demandan recursos importantes de tu computadora. Por tanto, si quieres hacer un mapa relativamente sencillo, a veces puede ser más fácil hacerlo en R.&lt;/p&gt;
+&lt;p&gt;Una segunda ventaja de usar R es que, al ser un lenguaje de programación, es más fácil trabajar de forma sistemática y generar mapas y análisis que sean reproducibles&amp;mdash;una consideración importante especialmente en estudios científicos. En otros GIS también es posible usar &lt;em&gt;scripts&lt;/em&gt; de programación, pero la principal forma de interactuar con estos programas es a través de la interfaz gráfica, mientras que en R la interacción es a través de código.&lt;/p&gt;
+&lt;h2 id=&#34;r--sf--tidyverse&#34;&gt;R + sf + tidyverse&lt;/h2&gt;
+&lt;p&gt;Existen varios &lt;a href=&#34;https://cran.r-project.org/web/views/Spatial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;paquetes para trabajar con datos espaciales en R&lt;/a&gt;. Yo trabajo principalmente con un paquete nuevo llamado &lt;a href=&#34;https://r-spatial.github.io/sf/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;sf&lt;/code&gt;&lt;/a&gt; (por &lt;a href=&#34;https://www.ogc.org/standards/sfa&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;simple features&lt;/em&gt;&lt;/a&gt; un estándar para representar información geográfica).&lt;/p&gt;
+&lt;p&gt;Una gran ventaja de &lt;code&gt;sf&lt;/code&gt; es que los objetos de esta clase son compatibles con los paquetes del universo &lt;code&gt;tidyverse&lt;/code&gt;. La colección de paquetes del &lt;a href=&#34;https://www.tidyverse.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;tidyverse&lt;/code&gt;&lt;/a&gt; ofrece muchas ventajas para manipular, analizar y visualizar datos, en especial los verbos de &lt;code&gt;dplyr&lt;/code&gt; y el paquete para graficar &lt;code&gt;ggplot2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Si ya trabajas con &lt;code&gt;tidyverse&lt;/code&gt;, hacer mapas con &lt;code&gt;sf&lt;/code&gt; te va a parecer extremadamente sencillo e intuitivo.&lt;/p&gt;
+&lt;h3 id=&#34;instalación-y-carga-de-paquetes&#34;&gt;Instalación y carga de paquetes&lt;/h3&gt;
+&lt;p&gt;Si no tienes instalado &lt;code&gt;tidyverse&lt;/code&gt; o &lt;code&gt;sf&lt;/code&gt;, puedes hacerlo con el siguiente comando:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&amp;quot;tidyverse&amp;quot;)
+install.packages(&amp;quot;sf&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ojo, instalar &lt;code&gt;tidyverse&lt;/code&gt; es sencillo, pero &lt;code&gt;sf&lt;/code&gt; puede ser más complicado. Esto es porque &lt;code&gt;sf&lt;/code&gt; necesita interactuar con librerías especiales para el manejo de datos espaciales. La instalación de estas librerías dependerá del tipo de sistema que utilices (Windows, macOS, Linux). Visita la página de &lt;a href=&#34;https://r-spatial.github.io/sf/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;sf&lt;/code&gt;&lt;/a&gt; para más información.&lt;/p&gt;
+&lt;p&gt;Una vez que los paquetes están instalados, procedemos a cargarlos en nuestra sesión en R:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(tidyverse)
+library(sf)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;un-mapa-básico&#34;&gt;Un mapa básico&lt;/h3&gt;
+&lt;p&gt;Para generar cualquier mapa lo primero es cargar un objeto espacial. En este caso utilizo un &lt;a href=&#34;https://es.wikipedia.org/wiki/Shapefile&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;shapefile&lt;/em&gt;&lt;/a&gt; de los municipios de México que me paso un amigo en &lt;a href=&#34;https://twitter.com/moaimx/status/1250817221372383233?s=20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;twitter&lt;/a&gt;. En este caso utilicé este archivo pues el marco geoestadístico oficial del INEGI pesa más de 3 GB y se tardaría demasiado en descargar.&lt;/p&gt;
+&lt;p&gt;Para cargarlo en la memoria corremos los siguientes comandos. El primero crea una carpeta llamada &lt;code&gt;datos_covid&lt;/code&gt; en nuestra carpeta de trabajo (&lt;code&gt;?getwd&lt;/code&gt;), el segundo descarga de un &lt;a href=&#34;https://github.com/prestevez/covid-19-mx-map&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repositorio en GitHub&lt;/a&gt; un archivo comprimido que contiene el shapefile que vamos a utilizar. El tercer comando extrae el archivo en la carpeta &lt;code&gt;datos_covd&lt;/code&gt;, y finalmente el cuarto carga el shapefile en R.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Crear carpeta donde descargar el archivo
+dir.create(&amp;quot;datos_covid/&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Warning in dir.create(&amp;quot;datos_covid/&amp;quot;): &#39;datos_covid&#39; already exists
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Descarga el archivo zip de github
+download.file(url = &amp;quot;https://github.com/prestevez/covid-19-mx-map/raw/master/datos_covid/01_32_mun.zip&amp;quot;,
+              destfile = &amp;quot;datos_covid/01_32_mun.zip&amp;quot;)
+
+# Extrae el archivo zip en la carpeta datos_covid
+unzip(&amp;quot;datos_covid/01_32_mun.zip&amp;quot;,
+      exdir = &amp;quot;datos_covid/&amp;quot;)
+
+# Carga el archivo shapefile a R
+mex_map &amp;lt;- st_read(&amp;quot;datos_covid/01_32_mun.shp&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Reading layer `01_32_mun&#39; from data source `/home/rstudio/local/datos_covid/01_32_mun.shp&#39; using driver `ESRI Shapefile&#39;
+Simple feature collection with 2463 features and 4 fields
+geometry type:  MULTIPOLYGON
+dimension:      XY
+bbox:           xmin: 911292 ymin: 319149.1 xmax: 4082997 ymax: 2349615
+proj4string:    +proj=lcc +lat_1=17.5 +lat_2=29.5 +lat_0=12 +lon_0=-102 +x_0=2500000 +y_0=0 +ellps=GRS80 +units=m +no_defs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Una vez cargado el archivo, crear un mapa es tan sencillo como generar una gráfica con &lt;code&gt;ggplot2&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mex_map %&amp;gt;%
+  ggplot() + # Crea un objeto ggplot a partir del objeto mex_map
+  geom_sf() # agrega una capa con el mapa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;fig-basic-plot-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A diferencia de objetos espaciales generados por otros paquetes en R, generar el mapa no requiere especificar valores x o y, ajustar coordenadas ni nada por el estilo. A partir de la versión 3.0.0 de &lt;code&gt;ggplot2&lt;/code&gt;, se puede graficar mapas de objetos &lt;code&gt;sf&lt;/code&gt; nativamente utilizando la función &lt;code&gt;geom_sf()&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;mapa-de-coropletas&#34;&gt;Mapa de coropletas&lt;/h2&gt;
+&lt;p&gt;Ahora que sabemos generar un mapa básico en R, vamos a crear un &lt;a href=&#34;https://es.wikipedia.org/wiki/Mapa_coropl%C3%A9tico&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mapa temático o coroplético&lt;/a&gt; con la distribución de casos confirmados de covid-19 en los municipios de México.&lt;/p&gt;
+&lt;p&gt;Para comenzar, revisemos la estructura básica del objeto &lt;code&gt;mex_map&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mex_map
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Simple feature collection with 2463 features and 4 fields
+geometry type:  MULTIPOLYGON
+dimension:      XY
+bbox:           xmin: 911292 ymin: 319149.1 xmax: 4082997 ymax: 2349615
+proj4string:    +proj=lcc +lat_1=17.5 +lat_2=29.5 +lat_0=12 +lon_0=-102 +x_0=2500000 +y_0=0 +ellps=GRS80 +units=m +no_defs
+First 10 features:
+   CVEGEO CVE_ENT CVE_MUN              NOMGEO                       geometry
+1   01001      01     001      Aguascalientes MULTIPOLYGON (((2489073 111...
+2   01002      01     002            Asientos MULTIPOLYGON (((2494680 114...
+3   01003      01     003            Calvillo MULTIPOLYGON (((2429607 112...
+4   01004      01     004               Cosío MULTIPOLYGON (((2470518 115...
+5   01005      01     005         Jesús María MULTIPOLYGON (((2465527 111...
+6   01006      01     006 Pabellón de Arteaga MULTIPOLYGON (((2473997 112...
+7   01007      01     007     Rincón de Romos MULTIPOLYGON (((2476760 115...
+8   01008      01     008  San José de Gracia MULTIPOLYGON (((2463680 112...
+9   01009      01     009            Tepezalá MULTIPOLYGON (((2481572 114...
+10  01010      01     010            El Llano MULTIPOLYGON (((2496975 111...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Una de las gran ventajas de los objetos &lt;code&gt;sf&lt;/code&gt; es que guardan la información geográfica como un tabla (específicamente como un &lt;code&gt;data.frame&lt;/code&gt;). La primera parte del output en la consola es la información geográfica del objeto: el tipo de geometría (punto, línea, polígono o multipolígono), tamaño, y proyección cartográfica. La segunda son las primeras 10 líneas del &lt;code&gt;data.frame&lt;/code&gt; en el que cada línea es un municipio, la columna &lt;code&gt;geometry&lt;/code&gt; contiene la información geográfica de cada polígono municipal, y el resto de columnas contiene información de cada municipio&amp;mdash;en este caso la claves geoestadísticas y el nombre.&lt;/p&gt;
+&lt;p&gt;Esto significa que para poder crear el mapa coroplético sería tan sencillo como tener una columna con el número de casos por municipios.&lt;/p&gt;
+&lt;p&gt;Para esto cargamos un archivo &lt;code&gt;csv&lt;/code&gt; con el número de casos confirmados por municipios que publica la secretaría de salud de México. (Para asegurar que este código siga vigente voy a utilizar la tabla de casos confirmados del 16 de abril de 2020 que tengo en GitHub).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;datos_mun &amp;lt;- read_csv(&amp;quot;https://raw.githubusercontent.com/prestevez/covid-19-mx-map/master/datos_covid/Casos_Diarios_Estado_Nacional_Confirmados.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Parsed with column specification:
+cols(
+  .default = col_double(),
+  cve_ent = col_character(),
+  nombre = col_character()
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;See spec(...) for full column specifications.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;datos_mun
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2,457 x 54
+   cve_ent poblacion nombre `26-02-2020` `27-02-2020` `28-02-2020` `29-02-2020` `01-03-2020` `02-03-2020`
+   &amp;lt;chr&amp;gt;       &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;         &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;        &amp;lt;dbl&amp;gt;
+ 1 01001      961977 Aguas…            0            0            0            0            0            0
+ 2 01002       50864 Asien…            0            0            0            0            0            0
+ 3 01003       60760 Calvi…            0            0            0            0            0            0
+ 4 01004       16918 Cosio             0            0            0            0            0            0
+ 5 01005      130184 Jesus…            0            0            0            0            0            0
+ 6 01006       50032 Pabel…            0            0            0            0            0            0
+ 7 01007       57981 Rinco…            0            0            0            0            0            0
+ 8 01008        9661 San J…            0            0            0            0            0            0
+ 9 01009       22743 Tepez…            0            0            0            0            0            0
+10 01010       21947 El Ll…            0            0            0            0            0            0
+# … with 2,447 more rows, and 45 more variables: `03-03-2020` &amp;lt;dbl&amp;gt;, `04-03-2020` &amp;lt;dbl&amp;gt;, `05-03-2020` &amp;lt;dbl&amp;gt;,
+#   `06-03-2020` &amp;lt;dbl&amp;gt;, `07-03-2020` &amp;lt;dbl&amp;gt;, `08-03-2020` &amp;lt;dbl&amp;gt;, `09-03-2020` &amp;lt;dbl&amp;gt;, `10-03-2020` &amp;lt;dbl&amp;gt;,
+#   `11-03-2020` &amp;lt;dbl&amp;gt;, `12-03-2020` &amp;lt;dbl&amp;gt;, `13-03-2020` &amp;lt;dbl&amp;gt;, `14-03-2020` &amp;lt;dbl&amp;gt;, `15-03-2020` &amp;lt;dbl&amp;gt;,
+#   `16-03-2020` &amp;lt;dbl&amp;gt;, `17-03-2020` &amp;lt;dbl&amp;gt;, `18-03-2020` &amp;lt;dbl&amp;gt;, `19-03-2020` &amp;lt;dbl&amp;gt;, `20-03-2020` &amp;lt;dbl&amp;gt;,
+#   `21-03-2020` &amp;lt;dbl&amp;gt;, `22-03-2020` &amp;lt;dbl&amp;gt;, `23-03-2020` &amp;lt;dbl&amp;gt;, `24-03-2020` &amp;lt;dbl&amp;gt;, `25-03-2020` &amp;lt;dbl&amp;gt;,
+#   `26-03-2020` &amp;lt;dbl&amp;gt;, `27-03-2020` &amp;lt;dbl&amp;gt;, `28-03-2020` &amp;lt;dbl&amp;gt;, `29-03-2020` &amp;lt;dbl&amp;gt;, `30-03-2020` &amp;lt;dbl&amp;gt;,
+#   `31-03-2020` &amp;lt;dbl&amp;gt;, `01-04-2020` &amp;lt;dbl&amp;gt;, `02-04-2020` &amp;lt;dbl&amp;gt;, `03-04-2020` &amp;lt;dbl&amp;gt;, `04-04-2020` &amp;lt;dbl&amp;gt;,
+#   `05-04-2020` &amp;lt;dbl&amp;gt;, `06-04-2020` &amp;lt;dbl&amp;gt;, `07-04-2020` &amp;lt;dbl&amp;gt;, `08-04-2020` &amp;lt;dbl&amp;gt;, `09-04-2020` &amp;lt;dbl&amp;gt;,
+#   `10-04-2020` &amp;lt;dbl&amp;gt;, `11-04-2020` &amp;lt;dbl&amp;gt;, `12-04-2020` &amp;lt;dbl&amp;gt;, `13-04-2020` &amp;lt;dbl&amp;gt;, `14-04-2020` &amp;lt;dbl&amp;gt;,
+#   `15-04-2020` &amp;lt;dbl&amp;gt;, `16-04-2020` &amp;lt;dbl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;La tabla con casos confirmados de covid-19 por municipio contiene una línea por municipio, columnas con la clave geoestadística, población, el nombre y una columna por día de observación. Como queremos una columna con el número de casos por municipio, necesitamos agregar las columnas de cada día:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;casos_municipio &amp;lt;- datos_mun %&amp;gt;%
+  # pasamos del formato ancho al largo
+  pivot_longer(-c(cve_ent, poblacion, nombre),
+               names_to = &amp;quot;día&amp;quot;,
+               values_to = &amp;quot;casos&amp;quot;) %&amp;gt;%
+  # agrupamos por municpio
+  group_by(cve_ent, poblacion, nombre) %&amp;gt;%
+  # sumamos los casos
+  summarise(total_casos = sum(casos))
+
+casos_municipio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2,457 x 4
+# Groups:   cve_ent, poblacion [2,457]
+   cve_ent poblacion nombre              total_casos
+   &amp;lt;chr&amp;gt;       &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;                     &amp;lt;dbl&amp;gt;
+ 1 01001      961977 Aguascalientes               60
+ 2 01002       50864 Asientos                      1
+ 3 01003       60760 Calvillo                      0
+ 4 01004       16918 Cosio                         0
+ 5 01005      130184 Jesus Maria                   1
+ 6 01006       50032 Pabellon de Arteaga           5
+ 7 01007       57981 Rincon de Romos               2
+ 8 01008        9661 San Jose de Gracia            0
+ 9 01009       22743 Tepezala                      1
+10 01010       21947 El Llano                      1
+# … with 2,447 more rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ahora hay que unir la tabla con el total de casos por municipio a la tabla con la información geográfica. Para unir dos tablas (ej: A y B) necesitamos tener una columna que nos indique qué observación en la tabla A corresponde a la observación de la tabla B. En este caso ambas tablas tienen una columna con la clave geostadística única para cada municipio. Unimos las tablas con este código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mex_map_covid &amp;lt;- mex_map %&amp;gt;%
+  # unir tablas
+  left_join(casos_municipio,
+            # indicar explícitamente las columnas índice,
+            # necesario cuando no tienen el mismo nombre
+            by = c(&amp;quot;CVEGEO&amp;quot; = &amp;quot;cve_ent&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Warning: Column `CVEGEO`/`cve_ent` joining factor and character vector, coercing into character vector
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mex_map_covid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Simple feature collection with 2463 features and 7 fields
+geometry type:  MULTIPOLYGON
+dimension:      XY
+bbox:           xmin: 911292 ymin: 319149.1 xmax: 4082997 ymax: 2349615
+proj4string:    +proj=lcc +lat_1=17.5 +lat_2=29.5 +lat_0=12 +lon_0=-102 +x_0=2500000 +y_0=0 +ellps=GRS80 +units=m +no_defs
+First 10 features:
+   CVEGEO CVE_ENT CVE_MUN              NOMGEO poblacion              nombre total_casos
+1   01001      01     001      Aguascalientes    961977      Aguascalientes          60
+2   01002      01     002            Asientos     50864            Asientos           1
+3   01003      01     003            Calvillo     60760            Calvillo           0
+4   01004      01     004               Cosío     16918               Cosio           0
+5   01005      01     005         Jesús María    130184         Jesus Maria           1
+6   01006      01     006 Pabellón de Arteaga     50032 Pabellon de Arteaga           5
+7   01007      01     007     Rincón de Romos     57981     Rincon de Romos           2
+8   01008      01     008  San José de Gracia      9661  San Jose de Gracia           0
+9   01009      01     009            Tepezalá     22743            Tepezala           1
+10  01010      01     010            El Llano     21947            El Llano           1
+                         geometry
+1  MULTIPOLYGON (((2489073 111...
+2  MULTIPOLYGON (((2494680 114...
+3  MULTIPOLYGON (((2429607 112...
+4  MULTIPOLYGON (((2470518 115...
+5  MULTIPOLYGON (((2465527 111...
+6  MULTIPOLYGON (((2473997 112...
+7  MULTIPOLYGON (((2476760 115...
+8  MULTIPOLYGON (((2463680 112...
+9  MULTIPOLYGON (((2481572 114...
+10 MULTIPOLYGON (((2496975 111...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Una vez unidas las tablas, podemos hacer el mapa de coropletas con este código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mex_map_covid %&amp;gt;%
+  # usamos el aesthetic fill para indicar la columna de casos
+  ggplot(aes(fill = total_casos)) +
+  geom_sf()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;fig-mapa-coropletas-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;El mapa funciona, pero no es particularmente atractivo. En particular las líneas de los polígonos municipiales están muy gruesas y el color del mapa no es útil para conocer la distribución de casos. Como este es un objeto de &lt;code&gt;ggplot2&lt;/code&gt; podemos cambiar toda la estética del mapa con mucha facilidad.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mex_map_covid %&amp;gt;%
+  # usamos el aesthetic fill para indicar la columna de casos
+  ggplot(aes(fill = total_casos)) +
+  # cambia el color y el grosor de las líneas
+  geom_sf(colour = &amp;quot;grey75&amp;quot;, size = 0.07) +
+  # agrega títulos
+  labs(title = &amp;quot;México: Distribución de casos confirmados de Covid-19&amp;quot;,
+       subtitle = &amp;quot;Actualizado al 17 de abril, 2020&amp;quot;,
+       caption = &amp;quot;Datos: https://www.gob.mx/salud&amp;quot;) +
+  # cambia el color de relleno y el título de la leyenda
+  scale_fill_gradient(&amp;quot;Total de casos&amp;quot;, high = &amp;quot;red&amp;quot;, low = &amp;quot;white&amp;quot;) +
+  # retirar el fondo gris
+  theme_bw()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;fig-mapa-coropletas-2-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Algo evidente es que la gran mayoría de los municipios en México no tiene casos de covid-19. Por tanto, al utilizar una escala continua el mapa no es muy informativo. Para mejorar la visualización podemos cambiar la variable de casos a categorías discretas. Podemos usar la función &lt;code&gt;cut&lt;/code&gt; para generar automáticamente los cortes.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# vector con los puntos de corte
+brks &amp;lt;- c(0,1,6,11,21,51,101,
+            max(mex_map_covid$total_casos, na.rm = TRUE))
+
+mex_map_covid %&amp;gt;%
+  # usamos dplyr para generar una nueva columna
+  mutate(casos_cut = cut(total_casos, breaks = brks, right = FALSE)) %&amp;gt;%
+  # usamos el aesthetic fill para indicar la columna de casos_cut
+  ggplot(aes(fill = casos_cut)) +
+  # cambia el color y el grosor de las líneas
+  geom_sf(colour = &amp;quot;white&amp;quot;, size = 0.07) +
+  # agrega títulos
+  labs(title = &amp;quot;México: Distribución de casos confirmados de Covid-19&amp;quot;,
+       subtitle = &amp;quot;Actualizado al 17 de abril, 2020&amp;quot;,
+       caption = &amp;quot;Datos: https://www.gob.mx/salud&amp;quot;) +
+  # cambia el color de relleno, nota que es una función distinta
+  scale_fill_brewer(&amp;quot;Total de casos&amp;quot;, palette = &amp;quot;Reds&amp;quot;) +
+  # retirar el fondo gris
+  theme_bw()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;fig-mapa-coropletas-3-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Noten que el mapa arrojó que algunos municipios no tenían un valor válido (&lt;code&gt;NA&lt;/code&gt;). Esto se debe a que la base de datos de la secretaría de salud no contiene a todos los municipios del país.&lt;/p&gt;
+&lt;p&gt;El shapefile tiene 2463 municipios, mientras que la tabla de casos tiene 2457 municipios. Por lo que a la hora de unir las tablas a los municipios sin conteo correspondiente se les asignó un valor &lt;code&gt;NA&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;procesamiento-geográfico-encontrando-vecinos&#34;&gt;Procesamiento geográfico, encontrando vecinos&lt;/h2&gt;
+&lt;p&gt;El 16 de abril la secretaría de salud presentó un mapa de &amp;ldquo;riesgo&amp;rdquo; de la transmisión de covid-19 en el país. Este mapa pintaba de rojo a los municipios con contagios, de amarillo a los municipios vecinos de municipios con contagios, y de verde a los municipios sin contagios y sin vecinos con contagios.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;es&#34;&gt;&lt;p lang=&#34;es&#34; dir=&#34;ltr&#34;&gt;Según lo que presentó &lt;a href=&#34;https://twitter.com/HLGatell?ref_src=twsrc%5Etfw&#34;&gt;@HLGatell&lt;/a&gt;, en los 979 municipios en verde se podría &amp;quot;regresar a la normalidad&amp;quot; el 17 de mayo.&lt;br&gt;&lt;br&gt;Para poner esto en perspectiva, en estos municipios viven más o menos 11.2 millones de personas, menos del 8.74% de la población. &lt;a href=&#34;https://t.co/s7jbYfPVWT&#34;&gt;pic.twitter.com/s7jbYfPVWT&lt;/a&gt;&lt;/p&gt;&amp;mdash; Patricio R. Estevez-Soto, PhD (@prestevez) &lt;a href=&#34;https://twitter.com/prestevez/status/1250840591606431745?ref_src=twsrc%5Etfw&#34;&gt;16 de abril de 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Para elaborar este mapa necesitamos más información de la que tenemos. En específico, necesitamos determinar qué municipios son vecinos de los municipios con contagios. Este tipo de operaciones se les conoce como operaciones de procesamiento geográfico. El paquete &lt;code&gt;sf&lt;/code&gt; contiene funciones que nos permite realizar este tipo de operaciones sin mucho problema.&lt;/p&gt;
+&lt;p&gt;En este caso, el procedimiento que podríamos hacer es:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Identificar a los municipios con contagios.&lt;/li&gt;
+&lt;li&gt;Identificar a los vecinos de municipios con contagios.&lt;/li&gt;
+&lt;li&gt;Por eliminación, identificar a los municipios sin vecinos y sin contagios.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Realizamos los primeros dos pasos con este código.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mex_map_covid %&amp;gt;%
+  # seleccionamos a los municipios con por lo menos un caso
+  filter(total_casos &amp;gt; 0) -&amp;gt; mex_map_covid_contagio
+
+mex_map_covid %&amp;gt;%
+  # Econtramos los vecinos
+  st_intersects(mex_map_covid_contagio) -&amp;gt; vecinos_covid
+
+vecinos_covid
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Sparse geometry binary predicate list of length 2463, where the predicate was `intersects&#39;
+first 10 elements:
+ 1: 1, 2, 3, 7, 151
+ 2: 1, 2, 4, 6, 7
+ 3: 1, 3
+ 4: 5
+ 5: 1, 3, 4
+ 6: 2, 3, 4, 5, 6
+ 7: 4, 5, 6
+ 8: 3, 4, 5
+ 9: 2, 4, 5, 6
+ 10: 1, 2, 7, 151
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;El objeto &lt;code&gt;vecinos_covid&lt;/code&gt; es una matriz de colindancia. Para cada municipio del país, nos dice qué municipios con contagio son vecinos. Los municipios sin contagios y sin vecinos con contagio tienen una observación de longitud zero, lo que nos ayuda a seleccionarlos.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sin_vecinos_o_covid &amp;lt;- lengths(vecinos_covid) &amp;lt; 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finalmente, utilizamos esta información para crear una nueva columna para crear el mapa.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; mex_map_covid &amp;lt;-
+  mex_map_covid %&amp;gt;%
+  # creamos una columna nueva llamada covid, en la que el 1 indica contagios
+  mutate(covid = ifelse(total_casos &amp;gt; 0, 1, 0))
+
+# Cambiamos a 2 en la columna covid los municipios sin vecinos o contagios
+mex_map_covid[sin_vecinos_o_covid, ]$covid &amp;lt;- 2
+
+# Cambiamos la columna covid de número a factor con categorías.
+mex_map_covid %&amp;gt;%
+  mutate(covid = factor(covid,
+                           labels = c(&amp;quot;Vecinos de contagios&amp;quot;,
+                                      &amp;quot;Con contagios&amp;quot;,
+                                      &amp;quot;Sin contagios y sin vecindad&amp;quot;))) -&amp;gt; mex_map_covid
+
+mex_map_covid %&amp;gt;%
+  ggplot(aes(fill = covid)) +
+  geom_sf(colour = &amp;quot;grey75&amp;quot;, size = 0.05) +
+  scale_fill_manual(&amp;quot;Distribución municipal&amp;quot;,
+                    values = c(&amp;quot;yellow&amp;quot;, &amp;quot;red&amp;quot;, &amp;quot;green&amp;quot;)) +
+  labs(title = &amp;quot;México: distribución de casos confirmados de covid-19&amp;quot;,
+       subtitle = &amp;quot;Actualizado al 17 de abril, 2020, 10:25 am&amp;quot;,
+       caption = &amp;quot;CC-BY @prestevez \nDatos: https://www.gob.mx/salud&amp;quot;) +
+  theme_bw() +
+  theme(legend.position = &amp;quot;bottom&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;fig-mapa-vecinos-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;guardar-mapas&#34;&gt;Guardar mapas&lt;/h2&gt;
+&lt;p&gt;Finalmente, si queremos podemos guardar los mapas generados usando la interfaz gráfica, o usando la función &lt;code&gt;ggsave&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mex_map_covid %&amp;gt;%
+  ggplot(aes(fill = covid)) +
+  geom_sf(colour = &amp;quot;grey75&amp;quot;, size = 0.05) +
+  scale_fill_manual(&amp;quot;Distribución municipal&amp;quot;,
+                    values = c(&amp;quot;yellow&amp;quot;, &amp;quot;red&amp;quot;, &amp;quot;green&amp;quot;)) +
+  labs(title = &amp;quot;México: distribución de casos confirmados de covid-19&amp;quot;,
+       subtitle = &amp;quot;Actualizado al 17 de abril, 2020&amp;quot;,
+       caption = &amp;quot;Datos: https://www.gob.mx/salud&amp;quot;) +
+  theme_bw() +
+  theme(legend.position = &amp;quot;bottom&amp;quot;) -&amp;gt; mapa_vecinos
+
+# Guargdar en formato PNG
+ggsave(&amp;quot;casos_vecindad.png&amp;quot;,
+       mapa_vecinos,
+       width = 7.5,
+       height = 5)
+
+# En formato PDF en tamaño carta
+ggsave(&amp;quot;casos_vecindad.pdf&amp;quot;,
+       mapa_vecinos,
+       width = 11,
+       height = 8.5,
+       device = cairo_pdf)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;En estas ligas puedes descargar las versiones en &lt;a href=&#34;https://github.com/prestevez/covid-19-mx-map/raw/master/casos_vecindad.png&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PNG&lt;/a&gt; y en &lt;a href=&#34;https://github.com/prestevez/covid-19-mx-map/raw/master/casos_vecindad.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Espero el tutorial haya sido útil para ti. Si tienes alguna duda o sugerencia, escríbeme en &lt;a href=&#34;https://twitter.com/prestevez&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

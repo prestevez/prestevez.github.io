@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fraud | Patricio R Estévez-Soto</title>
+    <link>/tag/fraud/</link>
+      <atom:link href="/tag/fraud/index.xml" rel="self" type="application/rss+xml" />
+    <description>Fraud</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 21 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>Fraud</title>
+      <link>/tag/fraud/</link>
+    </image>
+    
+    <item>
+      <title>The impact of the COVID-19 pandemic on personal victimisation</title>
+      <link>/talk/covid-19-mx-victim-ecca-2022/</link>
+      <pubDate>Tue, 21 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>/talk/covid-19-mx-victim-ecca-2022/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

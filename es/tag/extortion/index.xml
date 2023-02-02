@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#34;extortion&#34; | Patricio R Estévez-Soto</title>
+    <link>/es/tag/extortion/</link>
+      <atom:link href="/es/tag/extortion/index.xml" rel="self" type="application/rss+xml" />
+    <description>&#34;extortion&#34;</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Tue, 15 Jun 2021 17:30:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>&#34;extortion&#34;</title>
+      <link>/es/tag/extortion/</link>
+    </image>
+    
+    <item>
+      <title>Mejorando la medición de la extorsión en México</title>
+      <link>/es/talk/gsj-2021/</link>
+      <pubDate>Tue, 15 Jun 2021 17:30:00 +0000</pubDate>
+      <guid>/es/talk/gsj-2021/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/P9wXN-DqXDY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>¿Por qué algunas empresas pagan extorsión y otras no?</title>
+      <link>/es/talk/extorsion-gi/</link>
+      <pubDate>Fri, 29 Jan 2021 17:00:00 +0000</pubDate>
+      <guid>/es/talk/extorsion-gi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Determinants of extortion compliance: Empirical evidence from a victimisation survey</title>
+      <link>/es/publication/estevez-soto-2021/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/es/publication/estevez-soto-2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Are repeatedly extorted businesses different? A multilevel hurdle model of extortion victimization</title>
+      <link>/es/publication/estevez-soto-2018-b/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/es/publication/estevez-soto-2018-b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Repeat extortion victimisation of Mexican businesses</title>
+      <link>/es/publication/estevez-soto-2015/</link>
+      <pubDate>Sun, 01 Nov 2015 00:00:00 +0000</pubDate>
+      <guid>/es/publication/estevez-soto-2015/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

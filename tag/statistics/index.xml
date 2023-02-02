@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>statistics | Patricio R Estévez-Soto</title>
+    <link>/tag/statistics/</link>
+      <atom:link href="/tag/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <description>statistics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 14 Oct 2022 13:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>statistics</title>
+      <link>/tag/statistics/</link>
+    </image>
+    
+    <item>
+      <title>The impact of the kingpin strategy on extortion and kidnapping in Mexico</title>
+      <link>/talk/24h-2022/</link>
+      <pubDate>Fri, 14 Oct 2022 13:00:00 +0000</pubDate>
+      <guid>/talk/24h-2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>¿Cómo pueden los análisis cuantitativos ayudar a prevenir el delito?</title>
+      <link>/talk/foro-rno-2021/</link>
+      <pubDate>Tue, 07 Dec 2021 11:00:00 +0000</pubDate>
+      <guid>/talk/foro-rno-2021/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improving the measurement of extortion victimisation: The case of Mexico</title>
+      <link>/talk/gsj-2021/</link>
+      <pubDate>Tue, 15 Jun 2021 17:30:00 +0000</pubDate>
+      <guid>/talk/gsj-2021/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/P9wXN-DqXDY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Your first R package: A tutorial</title>
+      <link>/post/r-package-tutorial/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/post/r-package-tutorial/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#what-are-packages&#34;&gt;What are packages?&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#why-should-you-develop-packages&#34;&gt;Why should you develop packages?&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#1-develop-new-research-methods-and-tools&#34;&gt;1. Develop new research methods and tools&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#2-to-share-reproducible-research&#34;&gt;2. To share reproducible research&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#3-to-make-your-life-easier&#34;&gt;3. To make your life easier&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#before-we-start&#34;&gt;Before we start&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#software&#34;&gt;Software&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#r-packages&#34;&gt;R packages&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#git-and-github&#34;&gt;Git and Github&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#tutorial&#34;&gt;Tutorial&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#set-up&#34;&gt;Set up&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#write-a-function&#34;&gt;Write a function&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#check-everything-works&#34;&gt;Check everything works&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#description-file&#34;&gt;DESCRIPTION file&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#documentation&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#a-minimally-working-package&#34;&gt;A minimally working package&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#tests&#34;&gt;Tests&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#importing-functions-from-another-package&#34;&gt;Importing functions from another package&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#use-github&#34;&gt;Use Github&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;p&gt;This is a tutorial on how to create a bare-bones R package. The tutorial was developed for a &lt;a href=&#34;https://jdiopen.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JDI Open&lt;/a&gt; seminar.&lt;/p&gt;
+&lt;div style=&#34;position:relative;padding-bottom:56%;padding-top:20px;height:0;&#34;&gt;&lt;iframe src=&#34;https://mediacentral.ucl.ac.uk/player?autostart=n&amp;videoId=9egBgj67&amp;captions=y&amp;chapterId=0&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;position:absolute;top:0;left:0;width:100%;height:100%;&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;p&gt;The tutorial draws heavily from the &amp;ldquo;The whole game&amp;rdquo; chapter in the &lt;a href=&#34;https://r-pkgs.org/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R Packages&lt;/a&gt; book by &lt;a href=&#34;http://hadley.nz/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hadley Wickham&lt;/a&gt; and &lt;a href=&#34;http://jennybryan.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jenny Bryan&lt;/a&gt;. Please consult that book for further details and to learn more about package development with R.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-packages&#34;&gt;What are packages?&lt;/h2&gt;
+&lt;p&gt;Packages allow distributing custom code that extend the basic capabilities and functionalities of programming languages. The use of packages (or modules) is part of a software design philosophy called &amp;ldquo;modular programming&amp;rdquo;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Modular programming is a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality.
+&amp;ndash;&lt;a href=&#34;https://en.wikipedia.org/wiki/Modular_programming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Packages are a core element of a researchers toolbox as they implement many specific functions and analysis techniques not available in default installations of R or python, for example.&lt;/p&gt;
+&lt;h2 id=&#34;why-should-you-develop-packages&#34;&gt;Why should you develop packages?&lt;/h2&gt;
+&lt;p&gt;While package development may sound like something only software developers do, there are at least three good reasons why researchers and scientists may want to develop packages.&lt;/p&gt;
+&lt;h3 id=&#34;1-develop-new-research-methods-and-tools&#34;&gt;1. Develop new research methods and tools&lt;/h3&gt;
+&lt;p&gt;Computers are a fundamental part of modern science and research, so it makes sense for many research projects to involve developing research software. If you develop a new algorithm, modelling technique, or a tool that facilitates research, it makes sense to distribute your code as a package so that other scientists and researchers can use your tools in their research.&lt;/p&gt;
+&lt;h3 id=&#34;2-to-share-reproducible-research&#34;&gt;2. To share reproducible research&lt;/h3&gt;
+&lt;p&gt;Though packages are often used to distribute code that other researchers can use in their projects, they are an ideal solution to share what &lt;a href=&#34;https://doi.org/10.1080/00031305.2017.1375986&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Marwick et al. (2018)&lt;/a&gt; call &lt;em&gt;research compendia&lt;/em&gt; that wrap your articles&#39; data, materials and reproducibility scripts.&lt;/p&gt;
+&lt;p&gt;In addition to adhering to open science principles, research projects with open data and materials get more citations and tend to lead to more publications.&lt;/p&gt;
+&lt;h3 id=&#34;3-to-make-your-life-easier&#34;&gt;3. To make your life easier&lt;/h3&gt;
+&lt;p&gt;Bundling your functions into a package can make your life easier, even if you don&amp;rsquo;t plan to share your code with anyone else but yourself. The more you use R (or another similar language), it&amp;rsquo;s likely you&amp;rsquo;ll start using custom functions to make repetitive tasks easier.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&amp;quot;I wish I&amp;#39;d left this code across scattered .R files instead of combining it into a package&amp;quot; said no one ever &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;http://t.co/udeNH4T67H&#34;&gt;http://t.co/udeNH4T67H&lt;/a&gt;&lt;/p&gt;&amp;mdash; David Robinson (@drob) &lt;a href=&#34;https://twitter.com/drob/status/611885584584441856?ref_src=twsrc%5Etfw&#34;&gt;June 19, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Rather than copying these into every new project folder, or having scattered files across multiple computers, writing a package offers a convenient way to ensure your custom functions are available system-wide.&lt;/p&gt;
+&lt;p&gt;If you work on several computers or rely on servers to run some of your analysis, using packages makes sharing your functions across your even more seamless, and reduces the chances of making a mistake (e.g. by using an outdated function).&lt;/p&gt;
+&lt;h2 id=&#34;before-we-start&#34;&gt;Before we start&lt;/h2&gt;
+&lt;p&gt;You don&amp;rsquo;t need to be an R expert to be able to follow the tutorial. But you do need to be at least little familiar with R (or a similar scripting language, such as Python). The bare minimum you need to know is &lt;a href=&#34;https://www.datacamp.com/community/tutorials/r-packages-guide&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;how to install R packages&lt;/a&gt;, and &lt;a href=&#34;https://r4ds.had.co.nz/functions.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;how to write a function&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;software&#34;&gt;Software&lt;/h3&gt;
+&lt;p&gt;You also need some software installed. First you need an installation of &lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R&lt;/a&gt; (obviously). While you do not &lt;em&gt;need&lt;/em&gt; Rstudio, it makes writing packages (and working with R in general) much easier. So install a recent version of &lt;a href=&#34;https://rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rstudio&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Because we will be building R packages from scratch (&lt;em&gt;compiling&lt;/em&gt; in computer parlance), you will need a &lt;em&gt;compiler&lt;/em&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On Windows you need to install &lt;a href=&#34;https://cran.r-project.org/bin/windows/Rtools/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rtools&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On macOS you need to install &lt;a href=&#34;https://developer.apple.com/xcode/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Xcode&lt;/a&gt; (though it is easier to install via the &lt;a href=&#34;https://apps.apple.com/us/app/xcode/id497799835?mt=12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mac App Store&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;On Linux, the compiler you need will depend on your system, for Ubuntu-based you can install the &lt;code&gt;r-base-dev&lt;/code&gt; package.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;r-packages&#34;&gt;R packages&lt;/h3&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-meme-of-c3po-saying-r-packages-making-r-packages-how-perverse&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-packages-making-r-packages-how-perverse.jpg&#34; data-caption=&#34;ALT: A meme of C3PO saying &amp;amp;lsquo;R packages making R packages, how perverse!&amp;amp;rsquo;&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-packages-making-r-packages-how-perverse.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A meme of C3PO saying &amp;lsquo;R packages making R packages, how perverse!&amp;rsquo;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;On R, you will need the following packages to make packages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;devtools&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;roxygen2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;testthat&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;knitr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can install them with this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(c(&amp;quot;devtools&amp;quot;, &amp;quot;roxygen2&amp;quot;, &amp;quot;testthat&amp;quot;, &amp;quot;knitr&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To check if everything is installed correctly, open an R/Rstudio session and run the following command. You should get the message shown if everything was set up correctly.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;devtools::has_devel()
+#&amp;gt; Your system is ready to build packages!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(Console output blocks begin with &lt;code&gt;#&amp;gt;&lt;/code&gt; to distinguish from code.)&lt;/p&gt;
+&lt;h3 id=&#34;git-and-github&#34;&gt;Git and Github&lt;/h3&gt;
+&lt;p&gt;This is not required to create R packages, but it is highly recommended.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Git&lt;/a&gt; is a version control software widely used to develop software. It is used by solo developers and major corporations alike.&lt;/p&gt;
+&lt;p&gt;Git should already be installed in macOS and Linux, but you need to install it if you are using Windows.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt; is a major online platform where you can store git repositories. It has free plans as well as free education plans with extra features. Github is great for developing projects collaboratively, and in the context of R package development, it can be used to share your package to anyone with an internet connection.&lt;/p&gt;
+&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
+&lt;h3 id=&#34;set-up&#34;&gt;Set up&lt;/h3&gt;
+&lt;p&gt;Open a new Rstudio session and create a new project in a suitable directory (File&amp;gt;New Project). We will call our package &lt;code&gt;toypackage&lt;/code&gt; but you can choose any name you want.&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-rstudios-new-package-dialog&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-tutorial-new-package.png&#34; data-caption=&#34;ALT: A screenshot of Rstudio&amp;amp;rsquo;s &amp;amp;lsquo;New package&amp;amp;rsquo; dialog.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-tutorial-new-package.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of Rstudio&amp;rsquo;s &amp;lsquo;New package&amp;rsquo; dialog.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Now load the &lt;a href=&#34;https://devtools.r-lib.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;devtools&lt;/code&gt;&lt;/a&gt; package.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Load devtools and friends
+
+library(devtools)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next we use the &lt;code&gt;create_package&lt;/code&gt; function to create the basic file structure of the package. At their essence, R packages are nothing more than directories (folders) and text files structured according to some rules and conventions.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Create the file structure
+create_package(&amp;quot;~/projects/packages/toypackage&amp;quot;) ## write the path to your WD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the R console, you will be asked to overwrite the &lt;code&gt;toypackage.Rproj&lt;/code&gt; file, say yes. A new Rstudio instance will open. You can close your old session and work on the new one. You will need to re-load the &lt;code&gt;devtools&lt;/code&gt; package.&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-files-created&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-new-files.png&#34; data-caption=&#34;ALT: A screenshot of the files created.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-new-files.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the files created.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;After running &lt;code&gt;create_package&lt;/code&gt; you will note some new files and directories were created in your working directory. For now, don&amp;rsquo;t touch them, we will be working with them soon.&lt;/p&gt;
+&lt;p&gt;We are now going to initialise a git repository. You could do this directly in the terminal if you are more comfortable doing that, but we will use the &lt;code&gt;use_git&lt;/code&gt; command. You will be asked if you want to commit existing files, answer yes. You will be asked to restart Rstudio, say yes (and re-load the &lt;code&gt;devtools&lt;/code&gt; package).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_git()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;write-a-function&#34;&gt;Write a function&lt;/h3&gt;
+&lt;p&gt;We are now ready to start writing functions. Functions are the main component of your R package. In a way, you can think of an R package as a delivery system for functions. You can achieve many great things using R functions, but sometimes you need more powerful code written in another language (such as C or C#). This is known as compiled code, and I&amp;rsquo;m not going to cover this as it&amp;rsquo;s an area I have not explored yet.&lt;/p&gt;
+&lt;p&gt;The functions you write will live in an &lt;code&gt;Rscript&lt;/code&gt; file (a file that ends in &lt;code&gt;.R&lt;/code&gt;). Your function files will be stored in the &lt;code&gt;R/&lt;/code&gt; directory. Don&amp;rsquo;t place any other files there. While you can have more than one function per file, a common convention is to use only one function per file.&lt;/p&gt;
+&lt;p&gt;We let &lt;code&gt;devtools&lt;/code&gt; create the file for us with the &lt;code&gt;use_r&lt;/code&gt; fuction:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_r(&amp;quot;hello&amp;quot;) # Will create a file called R/hello.R
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;use_r&lt;/code&gt; code will create a new file inside &lt;code&gt;R/&lt;/code&gt; called &lt;code&gt;hello.R&lt;/code&gt;. Copy this code into the file and save.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; hello &amp;lt;- function(name){
+   message &amp;lt;- paste0(&amp;quot;Hello &amp;quot;, name, &amp;quot;!&amp;quot;)
+
+   return(message)
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a very simple function that prints Hello + &lt;code&gt;name&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To test your new function, you could source that file, but this would add it to your environment as an object. To better mimic how the function would work if you actually loaded a package, use the &lt;code&gt;load_all&lt;/code&gt; function. You can then run your function and you should get the following result.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;load_all()
+hello(&amp;quot;Patricio&amp;quot;)
+#&amp;gt; [1] &amp;quot;Hello Patricio!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now commit your changes using the Git panel or the terminal (it is a good idea to commit your changes often).&lt;/p&gt;
+&lt;h3 id=&#34;check-everything-works&#34;&gt;Check everything works&lt;/h3&gt;
+&lt;p&gt;R has an integrated mechanism to check whether everything in your package is working correctly. We can run this using the &lt;code&gt;check&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;check()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You should get a lot of output in the console. At the end you will see the results of the check. You should get one warning regarding the license.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&amp;gt; ─── R CMD check results ─────────────────────── toypackage 0.0.0.9000 ────
+#&amp;gt; Duration: 7.1s
+#&amp;gt;
+#&amp;gt; &amp;gt; checking DESCRIPTION meta-information ... WARNING
+#&amp;gt;   Non-standard license specification:
+#&amp;gt;     `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+#&amp;gt;     license
+#&amp;gt;   Standardizable: FALSE
+#&amp;gt;
+#&amp;gt; 0 errors ✓ | 1 warning x | 0 notes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, before fixing the license warning, we will update the &lt;code&gt;DESCRIPTION&lt;/code&gt; file.&lt;/p&gt;
+&lt;h3 id=&#34;description-file&#34;&gt;DESCRIPTION file&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;DESCRIPTION&lt;/code&gt; file is one of the most important files in the R package, it is there to summarise the main information about the package and it is what tells R that this directory is a package.&lt;/p&gt;
+&lt;p&gt;When you open it, you will see a template with some information. Update the Title, Author and Description fields. (Don&amp;rsquo;t worry about the other fields you see, they will be updated automatically later.)&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-description-file&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-description.png&#34; data-caption=&#34;ALT: A screenshot of the DESCRIPTION file.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-description.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the DESCRIPTION file.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Next we add the license information using the &lt;code&gt;use_mit_license&lt;/code&gt; function. If you want to use another license run &lt;code&gt;?use_mit_license&lt;/code&gt; to see the available licenses.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_mit_license(&amp;quot;Patricio R Estévez-Soto&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;documentation&#34;&gt;Documentation&lt;/h3&gt;
+&lt;p&gt;Documentation is one of the most important aspects of a package. It is the information that is displayed when you run &lt;code&gt;help(x)&lt;/code&gt; or &lt;code&gt;?x&lt;/code&gt;. They tell others (and future you) what your function does and how to use it. You could write your documentation manually, but &amp;hellip;&lt;/p&gt;
+&lt;iframe src=&#34;https://giphy.com/embed/10PcMWwtZSYk2k&#34; width=&#34;480&#34; height=&#34;270&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;ALT: A meme of a woman saying &#39;Ain&#39;t nobody got time for that!&#39; &lt;a href=&#34;https://giphy.com/gifs/aint-nobody-got-time-for-that-gif-10PcMWwtZSYk2k&#34;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So instead, we use the &lt;code&gt;roxygen2&lt;/code&gt; package to automatically create documentation for our functions.&lt;/p&gt;
+&lt;p&gt;To do this, open &lt;code&gt;hello.R&lt;/code&gt;, place the cursor inside the function, and click on Code&amp;gt;Insert Roxygen Skeleton. You will see new lines of code starting with &lt;code&gt;#&#39;&lt;/code&gt;. These lines are special comments that are &amp;lsquo;read&amp;rsquo; by the &lt;code&gt;document&lt;/code&gt; function to create the documentation files. Edit the information on the &lt;code&gt;hello.R&lt;/code&gt; file to something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; hello
+#&#39;
+#&#39; @param name A name
+#&#39;
+#&#39; @return A message
+#&#39; @export
+#&#39;
+#&#39; @examples hello(&amp;quot;Alice&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Save the file and run the &lt;code&gt;document&lt;/code&gt; function. If you then run &lt;code&gt;?hello&lt;/code&gt;, you should get the function&amp;rsquo;s documentation in Rstudio&amp;rsquo;s Help viewer&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;document()
+?hello
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-help-pane-with-the-documentation-created&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-hello-help.png&#34; data-caption=&#34;ALT: A screenshot of the help pane with the documentation created.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-hello-help.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the help pane with the documentation created.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;You will also see that the &lt;code&gt;document&lt;/code&gt; function created the NAMESPACE file. This file is important because it tells R which functions will be available to the user. Don&amp;rsquo;t edit this by hand, as &lt;code&gt;document&lt;/code&gt; takes care of that. To make sure your function is available in the NAMESPACE, include the &lt;code&gt;@export&lt;/code&gt; parameter in the function. It makes sense to export most functions, though sometimes you want to &amp;lsquo;hide&amp;rsquo; functions that are only used within other functions.&lt;/p&gt;
+&lt;p&gt;We now re-run the &lt;code&gt;check&lt;/code&gt; command to make sure everything is working correctly. You should get not errors, warnings or notes.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;check()
+#&amp;gt; ── R CMD check results ─── toypackage 0.0.0.9000 ────
+#&amp;gt; Duration: 9s
+#&amp;gt;
+#&amp;gt; 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+#&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;a-minimally-working-package&#34;&gt;A minimally working package&lt;/h3&gt;
+&lt;p&gt;Your package can now be installed. You install your package with the &lt;code&gt;install&lt;/code&gt; function (duh). This will make your functions available to your system. You can test if it worked by opening a new R session in another window and loading the package and running the &lt;code&gt;hello&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install()
+
+#&amp;gt; ✓  checking for file ‘/home/prestevez/projects/packages/toypackage/DESCRIPTION’ ...
+#&amp;gt; ─  preparing ‘toypackage’:
+#&amp;gt; ✓  checking DESCRIPTION meta-information ...
+#&amp;gt; ─  checking for LF line-endings in source and make files and shell scripts
+#&amp;gt; ─  checking for empty or unneeded directories
+#&amp;gt; ─  building ‘toypackage_0.0.0.9000.tar.gz’
+#&amp;gt;
+#&amp;gt; Running /usr/lib/R/bin/R CMD INSTALL /tmp/RtmpONCeyy/toypackage_0.0.0.9000.tar.gz --install-tests
+#&amp;gt; * installing to library ‘/home/prestevez/R/x86_64-pc-linux-gnu-library/4.0’
+#&amp;gt; * installing *source* package ‘toypackage’ ...
+#&amp;gt; ** using staged installation
+#&amp;gt; ** R
+#&amp;gt; ** byte-compile and prepare package for lazy loading
+#&amp;gt; ** help
+#&amp;gt; *** installing help indices
+#&amp;gt; ** building package indices
+#&amp;gt; ** testing if installed package can be loaded from temporary location
+#&amp;gt; ** testing if installed package can be loaded from final location
+#&amp;gt; ** testing if installed package keeps a record of temporary installation path
+#&amp;gt; * DONE (toypackage)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;tests&#34;&gt;Tests&lt;/h3&gt;
+&lt;p&gt;This section is about writing tests to verify that your functions work correctly. Tests are not strictly necessary, but it is very good practice to test your functions.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;testthat&lt;/code&gt; package makes it very easy to add built-in tests to your package. By calling the &lt;code&gt;use_testthat&lt;/code&gt; function we add &lt;code&gt;testthat&lt;/code&gt; to the package dependencies (more on that later), as well as create the directories and files for our tests.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_testthat()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It is up to you to write meaningful tests for your functions. Here we will write a simple test for the hello function. We create the test file for &lt;code&gt;hello&lt;/code&gt; using the &lt;code&gt;use_test&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_test(&amp;quot;hello&amp;quot;) # creates tests/testthat/test-hello.R
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then edit the new file and write the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;test_that(&amp;quot;hello works&amp;quot;, {
+  test_name &amp;lt;- &amp;quot;Alice&amp;quot;
+  test_message &amp;lt;- paste0(&amp;quot;Hello &amp;quot;, test_name, &amp;quot;!&amp;quot;)
+
+  expect_identical(test_message, hello(test_name))
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now run the &lt;code&gt;test&lt;/code&gt; function and see if your functions pass your tests.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;test()
+
+#&amp;gt; Testing toypackage
+#&amp;gt; ✓ |  OK F W S | Context
+#&amp;gt; ✓ |   1       | hello [0.1s]
+#&amp;gt;
+#&amp;gt; ══ Results ════════════════════════════
+#&amp;gt; Duration: 0.1 s
+#&amp;gt;
+#&amp;gt; [ FAIL 0 | WARN 0 | SKIP 0 | PASS 1 ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;importing-functions-from-another-package&#34;&gt;Importing functions from another package&lt;/h3&gt;
+&lt;p&gt;Just because you can write functions it doesn&amp;rsquo;t mean you always should. If a function from another package suits your needs, it makes more sense to use that instead of developing your own function.&lt;/p&gt;
+&lt;p&gt;There are two steps to using functions from another package in your packaged functions.&lt;/p&gt;
+&lt;p&gt;First, you must add the package to your dependencies so that when a user installs your package it also installs the package your package depends on (if it&amp;rsquo;s not installed already). You do this using the &lt;code&gt;use_package&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;In this example, we&amp;rsquo;ll be using a function from the &lt;code&gt;stringr&lt;/code&gt; package.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_package(&amp;quot;stringr&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, to use a function from &lt;code&gt;stringr&lt;/code&gt; in your function, you call it in your code using this syntax &lt;code&gt;stringr::the_function()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We create a new function file with &lt;code&gt;use_r&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_r(&amp;quot;greetings&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And write the following code in the file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; greeting
+#&#39;
+#&#39; @param many_names Several names
+#&#39;
+#&#39; @return A greeting
+#&#39; @export
+#&#39;
+#&#39; @examples greetings(c(&amp;quot;Alice&amp;quot;, &amp;quot;Bob&amp;quot;))
+greetings &amp;lt;- function(many_names){
+  the_greetings &amp;lt;- stringr::str_c(&amp;quot;Greetings &amp;quot;, many_names, &amp;quot;.&amp;quot;)
+
+  return(the_greetings)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now &lt;code&gt;document&lt;/code&gt; your function and run &lt;code&gt;load_all&lt;/code&gt; to test it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;document()
+
+greetings(c(&amp;quot;Alice&amp;quot;, &amp;quot;Bob&amp;quot;))
+#&amp;gt; [1] &amp;quot;Greetings Alice.&amp;quot;  &amp;quot;Greetings Bob.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;use-github&#34;&gt;Use Github&lt;/h3&gt;
+&lt;p&gt;By now you could install your &lt;code&gt;toypackage&lt;/code&gt; in your system and call it day. But we will now see how to publish our package on Github. This is not necessary to make your package work, but it is a great tool if you ever want anyone else to use your package (or even to install it in a different computer).&lt;/p&gt;
+&lt;p&gt;We can automatically create a Github repository from R using the &lt;code&gt;use_github&lt;/code&gt; function. (Make sure you have committed all the changes in the repo.)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Use this command if you have SSH keys associated with Github
+use_github(protocol = &amp;quot;ssh&amp;quot;)
+
+# Use this command if you don&#39;t
+use_github()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You will be asked if it&amp;rsquo;s OK to commit the &lt;code&gt;DESCRIPTION&lt;/code&gt; file, go ahead and say yes. Once the changes are pushed to Github, a browser window will open with your package.&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-the-github-repo&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-github.png&#34; data-caption=&#34;ALT: A screenshot of the the Github repo.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-github.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the the Github repo.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;We are almost done, I promise.&lt;/p&gt;
+&lt;p&gt;Next we will create a &lt;code&gt;README&lt;/code&gt; file so that visitors to your Github repo know what your package is about. Github &lt;code&gt;README&lt;/code&gt; files are written using &lt;a href=&#34;https://guides.github.com/features/mastering-markdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown&lt;/a&gt;, and while you could write it yourself, you can use the &lt;code&gt;use_readme_rmd&lt;/code&gt; to make it easier.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_readme_rmd()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since we are working with R, the &lt;code&gt;use_readme_rmd&lt;/code&gt; function creates an &lt;a href=&#34;https://rmarkdown.rstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;Rmarkdown&lt;/code&gt;&lt;/a&gt; file which combines regular text with R code that can be compiled automatically into a document.&lt;/p&gt;
+&lt;p&gt;Edit the readme Rmarkdown file so that it looks like this:&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-rmarkdown-file&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-Rmd.png&#34; data-caption=&#34;ALT: A screenshot of the Rmarkdown file.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-Rmd.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the Rmarkdown file.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Now build the &amp;lsquo;regular&amp;rsquo; markdown README.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;build_readme()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Commit and push the changes you made and visit your Github repository, it should look like this: &lt;a href=&#34;https://github.com/prestevez/toypackage&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;prestevez/toypackage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This package can now be installed from anywhere in the world using this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(devtools)
+
+install_github(&amp;quot;prestevez/toypackage&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Congratulations!&lt;/p&gt;
+&lt;p&gt;You have just made and published your first R package.&lt;/p&gt;
+&lt;p&gt;What will you build next?&lt;/p&gt;
+&lt;iframe src=&#34;https://giphy.com/embed/U2BASTIsaw8WQ&#34; width=&#34;480&#34; height=&#34;217&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;ALT: A scene from Toy Story, Buzz and Woody flying (i.e. falling with style), while Woody yells: &#34;To infinity and beyond!&#34; &lt;a href=&#34;https://giphy.com/gifs/elevator-berlin-lift-U2BASTIsaw8WQ&#34;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Crime and Covid-19</title>
+      <link>/project/crime-and-covid-19/</link>
+      <pubDate>Sun, 11 Oct 2020 22:53:22 +0100</pubDate>
+      <guid>/project/crime-and-covid-19/</guid>
+      <description>&lt;p&gt;This study seeks to examine the effect of the covid-19-related changes in routine activities on crime patterns in an urban area. Using data from Mexico City, I will first identify a suitable proxy measure to estimate the amount of activity outside homes (such as public transit passenger numbers, mobility apps trip queries, or amount of air pollution) before and after the social distancing restrictions imposed due to the Covid-19 epidemic. Then, I will examine if spatio-temporal crime patterns are associated with those of the proxy measures of routine activities.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Flawed Measurements of Organised Crime Activities</title>
+      <link>/post/flawed-measurements-extortion/</link>
+      <pubDate>Thu, 05 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/post/flawed-measurements-extortion/</guid>
+      <description>&lt;p&gt;Extortion against businesses is one of the main security challenges
+facing the Mexican government today. Statistics from crimes reported to
+the police show that extortion has increased dramatically since the
+country was plunged into a decade-long ‘war’ against organised crime,
+rising by about &lt;a href=&#34;http://secretariadoejecutivo.gob.mx/docs/pdfs/cifras%20de%20homicidio%20doloso%20secuestro%20etc/HDSECEXTRV_122017.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;81% in the past 10
+years&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, given the risk of reprisals entailed by reporting extortion
+incidents to the authorities, estimates from reported crimes rarely
+provide reliable measurements of extortion incidence.&lt;/p&gt;
+&lt;p&gt;To mitigate this shortcoming, Mexico’s &lt;a href=&#34;http://www.inegi.org.mx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;national statistics agency
+(INEGI)&lt;/a&gt; conducts regular victimisation surveys
+that measure extortion, among other crimes. Estimates from surveys
+conducted with &lt;a href=&#34;http://www.inegi.org.mx/saladeprensa/boletines/2017/envipe/envipe2017_09.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;households
+(ENVIPE)&lt;/a&gt;
+and &lt;a href=&#34;http://www.beta.inegi.org.mx/contenidos/proyectos/encestablecimientos/especiales/enve/2016/doc/enve_2016_presentacion_ejecutiva.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;businesses
+(ENVE)&lt;/a&gt;,
+suggest that extortion is, indeed, a widespread problem: it is the
+second most common crime against households, and the third most common
+crime against businesses. In the year of the latest available figures
+(2016 for the household survey, and 2015 for the commercial survey),
+there were an estimated 7.5 million incidents of extortion against
+households (89 extortions per 1,000 people), and 650,000 incidents of
+extortion against businesses (146 extortions per 1,000 businesses).&lt;/p&gt;
+&lt;p&gt;Extortion has important economic, political and social implications.
+First, widespread extortion in the countryside has been linked to
+dramatic &lt;a href=&#34;http://www.jornada.unam.mx/2013/07/20/opinion/017a2pol&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;increases in the prices of food
+staples&lt;/a&gt;, while
+extortion in general is often portrayed as a &lt;a href=&#34;http://www.bbc.co.uk/news/business-13120598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;generalised burden on the
+economy&lt;/a&gt; by imposing an
+informal tax on many businesses.&lt;/p&gt;
+&lt;p&gt;Second, the &lt;a href=&#34;http://www.jstor.org/stable/23526915&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rise of the &lt;em&gt;fuerzas de autodefensa&lt;/em&gt; (self-defence
+forces)&lt;/a&gt; during the first year of
+President Peña Nieto’s term shows how grave the political implications
+of extortion can be. Faced with rampant extortion and violence inflicted
+by organised crime, civilian groups in many rural areas of the country
+set up armed paramilitary brigades to fight organised crime and expel
+what they saw as ineffectual and corrupt local governments—though some
+&lt;em&gt;autodefensas&lt;/em&gt; eventually &lt;a href=&#34;https://www.insightcrime.org/news/brief/mexico-vigilantes-protection-fees-echo-colombias-paramilitaries/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;turned
+into&lt;/a&gt;
+extortive criminal groups themselves.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In August 2011, a casino in Monterrey was set ablaze for refusing to
+acquiesce to extortion demands&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Lastly, extortion has been linked to some of the deadliest incidents of
+violence against Mexican society. In August 2011, a casino in
+Monterrey—a city in northern Mexico—was &lt;a href=&#34;http://articles.latimes.com/2011/aug/29/world/la-fg-mexico-casino-arrests-20110830&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;set
+ablaze&lt;/a&gt;
+for refusing to acquiesce to extortion demands. The incident, which
+killed 52 patrons of the establishment, &lt;a href=&#34;http://www.bbc.co.uk/news/world-latin-america-14693074&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;left the country
+reeling&lt;/a&gt;,
+prompting then-President Calderón to &lt;a href=&#34;https://www.theguardian.com/world/2011/aug/26/52-die-arson-mexico-casino&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;declare three days of national
+mourning&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Such dramatic episodes, in conjunction with the dispiriting estimates of
+extortion incidence produced by INEGI, have fuelled the belief that
+extortion is inescapable. Based on academic work on extortion rackets,
+such as Diego Gambetta’s &lt;a href=&#34;https://www.amazon.co.uk/Sicilian-Mafia-Business-Private-Protection/dp/0674807421&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;1993
+study&lt;/a&gt;
+and &lt;a href=&#34;https://www.researchgate.net/publication/225889684_The_Paradoxes_of_Organized_Crime&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Letizia Paoli’s 2002
+study&lt;/a&gt;
+on the Italian mafia, scholars have suggested that Mexico’s &lt;a href=&#34;https://securitypraxis.eu/mexico-narcoviolence-mafia-2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;transition
+to democracy and endemic
+corruption&lt;/a&gt;
+generated power vacuums that have been exploited by the country’s
+criminal groups—commonly known as ‘cartels’—prompting them to shift
+their business models from trafficking drugs from Mexico to the US, into
+&lt;a href=&#34;http://www.nbcnews.com/id/32437386/ns/world_news-americas/t/mexico-cartels-turning-full-scale-mafias/#.WnXv6iOcaRs&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mafia-style extortion
+rackets&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This interpretation feeds into a narrative that paints Mexico as a
+&lt;a href=&#34;https://www.nytimes.com/2018/01/07/world/americas/mexico-state-corruption.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;failed
+state&lt;/a&gt;,
+where organised crime violence has &lt;a href=&#34;https://theconversation.com/a-report-says-that-mexico-is-the-second-deadliest-conflict-zone-in-the-world-its-just-not-true-77898&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;purportedly
+escalated&lt;/a&gt;
+beyond what is seen in war-torn countries. Such an approach leaves few
+policy options to deal with extortion specifically, suggesting instead
+policies to root out organised crime by slowly reclaiming the state’s
+control of social and physical spheres ceded to the cartels by direct
+confrontation, prosecution and by building effective institutions.&lt;/p&gt;
+&lt;h2 id=&#34;the-two-flavours-of-extortion&#34;&gt;The Two Flavours of Extortion&lt;/h2&gt;
+&lt;p&gt;A distinction often missed when discussing the nature and implications
+of the extortion phenomenon in Mexico is that it encompasses two
+distinct crime types.&lt;/p&gt;
+&lt;p&gt;On the one hand, there is ‘telephone extortion’, which refers to
+attempts to extract money (or other benefits) from victims through
+threats made remotely via telephone calls. In general, victims are
+cold-called by assailants who either offer a non-existent reward (a form
+of advanced-fee scam), claim to have kidnapped a family member (‘virtual
+kidnapping’), or claim to be a member of an organised crime group and
+threaten to carry out severe punishments if victims do not comply with
+stated demands. It is believed that most victims are selected randomly,
+though some are targeted using information gleaned from data breaches,
+social media, or from other unrelated telemarketing calls.&lt;/p&gt;
+&lt;p&gt;On the other hand, ‘in-person extortion’ refers to attempts to extract
+money (or other benefits) by directly threatening the victim in person.
+In these incidents, &lt;a href=&#34;http://www.inegi.org.mx/rde/2013/05/09/crime-against-the-private-sector-in-latin-america-existing-data-and-future-orientations-to-analyse-the-victimization-of-businesses/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;assailants
+threaten&lt;/a&gt;
+a business or household with damage, assault, death or other harms if
+they refuse to pay a fee, and may also involve offers to protect the
+victim from other criminal groups. When such in-person extortion
+attempts happen regularly, the crime is called &lt;em&gt;cobro de piso&lt;/em&gt;, which is
+roughly translated as a ‘fee for the floor’ where businesses operate,
+although this distinction is not consistently used.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is widely acknowledged that many telephone extortions originate
+from prisons, and that most victims face little danger if they ignore
+the threats&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Whereas in-person extortion fits with the modus operandi of extortion
+racketeering traditionally associated with the mafia and other organised
+crime groups, telephone extortion is better described as a type of scam,
+more akin to email spam than to extortion racketeering. Furthermore, it
+is &lt;a href=&#34;http://www.chron.com/news/nation-world/article/Mexico-extortion-racket-growing-from-behind-bars-1835082.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;widely
+acknowledged&lt;/a&gt;
+that many telephone extortions originate from prisons, and that most
+victims face little danger if they ignore the threats. Preliminary
+findings from my ongoing research support this notion, as the crimes
+vary dramatically in terms of the harms and risks posed to victims. When
+compared to telephone extortion incidents, in-person extortions are 8.5
+times more likely to lead to victim acquiescence with extortionists’
+demands, and 5.4 times more likely to involve reprisals for refusing to
+acquiesce.&lt;/p&gt;
+&lt;p&gt;These distinctions strongly suggest that the crimes ought to be
+considered as separate offence classes. Despite this, figures from
+reported crime statistics and victimisation survey estimates routinely
+report measurements that aggregate both telephone and in-person
+extortions, misrepresenting the true nature and extent of the phenomena.
+Specifically, lumping both crime types severely overestimates the
+gravity of the extortion phenomenon, as telephone extortion is far more
+common than in-person extortion (telephone extortions comprise around
+94% of all extortion incidents against households, and 88% of extortions
+against businesses). Thus, the widespread prevalence and incidence of
+extortion does not accurately reflect the specific harms and risks of
+extortion, by making the situation appear far worse than it actually is.&lt;/p&gt;
+&lt;h2 id=&#34;the-upshot&#34;&gt;The Upshot&lt;/h2&gt;
+&lt;p&gt;This does not imply that telephone extortion is not a problem that needs
+to be dealt with. The fact that many victims believe the mostly empty
+threats behind telephone extortion is a symptom of an environment where
+fear of crime is endemic. Yet, there is little evidence that telephone
+extortions are linked to extortion rackets controlled by organised crime
+groups. Telephone extortionists are not spatially bound to specific
+territories, nor do they impose alternative governance structures. Thus
+they cannot be directly interpreted as evidence of state failure.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A flawed measurement of organised criminal activity can feed
+misleading narratives&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Furthermore, the comparatively smaller prevalence and incidence of
+in-person extortions suggest that the far graver problem of extortion
+racketeering is not as widespread in Mexico and may instead be limited
+to a small number of places, even after accounting for measurement
+errors. Nonetheless, further research that looks at the phenomenon at
+the local scale is needed to determine its nature and extent.&lt;/p&gt;
+&lt;p&gt;Of course, this does not mean that Mexico does not have an organised
+crime problem, nor that democratic governance need not improve. However,
+it does highlight how a flawed measurement of organised criminal
+activity can feed misleading narratives. One of the most crucial aspects
+of public policy formulation is defining the problem under scrutiny,
+something especially relevant when dealing with organised crime—a
+phenomenon that resists easy definitions. Thus, before any plausible
+policy interventions to counter extortion in Mexico can be devised, it
+is necessary to revise how the phenomenon itself is defined and
+measured.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+    &lt;div&gt;
+This article was originally published in
+&lt;a href=&#34;https://shoc.rusi.org/the-informer&#34; target=&#34;new&#34;&gt;
+The Informer&lt;/a&gt;. Read the
+&lt;a href=&#34;https://shoc.rusi.org/informer/flawed-measurements-organised-crime-activities-case-extortion-mexico&#34; target=&#34;new&#34;&gt;
+ original article&lt;/a&gt;.
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A report says that Mexico is the second-deadliest conflict zone in the world – it’s just not true</title>
+      <link>/post/a-report-says-mexico/</link>
+      <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
+      <guid>/post/a-report-says-mexico/</guid>
+      <description>&lt;p&gt;According to a report published in early May, &lt;a href=&#34;https://www.bloomberg.com/politics/articles/2017-05-09/mexico-now-world-s-deadliest-conflict-zone-after-syria-survey&#34;&gt;Mexico has become&lt;/a&gt; the second-deadliest conflict zone in the world in 2016. The claim came from a press release for the 2017 edition of the &lt;a href=&#34;https://www.iiss.org/en/publications/acs/by%20year/armed-conflict-survey-2017-8efc&#34;&gt;Armed Conflict Survey (ACS)&lt;/a&gt; by the &lt;a href=&#34;https://www.iiss.org/en&#34;&gt;International Institute for Strategic Studies (IISS)&lt;/a&gt;, a London-based think tank. And a media frenzy followed.&lt;/p&gt;
+&lt;p&gt;The IISS press release &lt;a href=&#34;https://www.iiss.org/-/media//documents/publications/acs/acs%202017/acs-2017-press-notice.pdf?la=en&#34;&gt;stated&lt;/a&gt; that the 23,000 deaths in 2016 that it attributes to Mexico’s struggle against organised crime, came second to the 50,000 fatalities caused by Syria’s civil war. They said this was higher than those caused by conflicts in the rest of the countries covered by the survey, including Iraq, Afghanistan, Yemen, and the so-called “Northern Triangle” of El Salvador, Honduras and Guatemala.&lt;/p&gt;
+&lt;p&gt;The claim was shared extensively, including via a &lt;a href=&#34;https://twitter.com/DRUDGE_REPORT/status/862028109394006016&#34;&gt;retweet&lt;/a&gt; by US president Donald Trump. But it drew &lt;a href=&#34;http://www.gob.mx/sre/prensa/comunicado-conjunto-106478&#34;&gt;swift criticism from Mexico’s government&lt;/a&gt;, which argued, among other things, that Mexico’s organised crime-related violence is not comparable to armed conflicts in Syria or Iraq.&lt;/p&gt;
+&lt;p&gt;In response, IISS published a blog post outlining &lt;a href=&#34;http://www.iiss.org/en/iiss%20voices/blogsections/iiss-voices-2017-adeb/may-8636/is-mexico-really-in-a-state-of-conflict-42f3&#34;&gt;why it thinks Mexico is in a state of conflict&lt;/a&gt;, including  Mexico’s own characterisation of criminal groups as an existential threat under the previous government.&lt;/p&gt;
+&lt;p&gt;But I &lt;a href=&#34;http://blogs.ucl.ac.uk/organised-crime/2017/05/11/is-mexico-really-the-second-deadliest-conflict-zone-in-the-world/&#34;&gt;argue&lt;/a&gt; that the comparison placing Mexico as the second-deadliest conflict zone is fallacious for two main reasons.&lt;/p&gt;
+&lt;h2&gt;Bushel of apples, truckload of oranges&lt;/h2&gt;
+&lt;p&gt;First, the comparison did not take into account the vastly different sizes of the countries in the study. Mexico’s population (127m) is larger than the most recent population figures for Syria, Iraq, Afghanistan and Yemen combined (114.2m). All else being equal, it is expected that countries with larger populations will have more fatalities or homicides in absolute terms. For example, there where almost twice as many homicides in the US (12,000) as there were fatalities in Yemen (7,000), but this is because the US has a population that is 12 times bigger than Yemen’s, not because it is deadlier than Yemen.&lt;/p&gt;
+&lt;p&gt;To account for different population sizes in &lt;a href=&#34;http://www.insightcrime.org/news-analysis/insight-crime-2016-homicide-round-up&#34;&gt;cross-national comparisons&lt;/a&gt;, mortality and homicide figures are usually expressed as incidents per 100,000 people. This captures the probability that individuals in a given country face of being killed, and so are a better measure than absolute figures. &lt;/p&gt;
+&lt;p&gt;As seen in the graph below, once population sizes are taken into account, the probability of being killed in Mexico was much lower than in the rest of the countries in the ACS top five or in the Northern Triangle.&lt;/p&gt;
+&lt;iframe id=&#34;datawrapper-chart-o7NOh&#34; src=&#34;https://datawrapper.dwcdn.net/o7NOh/2/&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allowfullscreen=&#34;allowfullscreen&#34; webkitallowfullscreen=&#34;webkitallowfullscreen&#34; mozallowfullscreen=&#34;mozallowfullscreen&#34; oallowfullscreen=&#34;oallowfullscreen&#34; msallowfullscreen=&#34;msallowfullscreen&#34; width=&#34;100%&#34; height=&#34;400&#34;&gt;&lt;/iframe&gt;
+&lt;p&gt;Second, the figures being compared are not measuring the same phenomenon. In the report, fatalities in Mexico and Central America refer to the total amount of intentional homicides, while in the rest of the countries in the study, they refer to deaths directly caused by armed conflicts.&lt;/p&gt;
+&lt;p&gt;It is true that intentional homicides are sometimes used as a &lt;a href=&#34;https://justiceinmexico.org/wp-content/uploads/2017/03/2017_DrugViolenceinMexico.pdf&#34;&gt;proxy measurement of organised crime activity in Mexico&lt;/a&gt; – something I am exploring in my ongoing research. However, that does not mean that it is appropriate to uncritically compare the absolute number of homicides in Mexico to conflict-related fatalities in other countries. That would suggest that all intentional homicides in Mexico – &lt;a href=&#34;http://www.economist.com/news/americas/21721973-gangs-get-smaller-and-diversify-why-murder-mexico-rising-again&#34;&gt;high as they may be&lt;/a&gt; – can be attributed to organised crime violence, which is far from the case.&lt;/p&gt;
+&lt;h2&gt;Beware distortions&lt;/h2&gt;
+&lt;p&gt;Previous editions of the ACS in &lt;a href=&#34;https://www.iiss.org/en/about%20us/press%20room/press%20releases/press%20releases/archive/2015-4fe9/may-6219/armed-conflict-survey-2015-press-statement-a0be&#34;&gt;2015&lt;/a&gt; and &lt;a href=&#34;http://www.iiss.org/en/about%20us/press%20room/press%20releases/press%20releases/archive/2016-3b31/may-2fc6/acs-2016-press-release-b853&#34;&gt;2016&lt;/a&gt; also included Mexico and reported similarly high levels of fatalities. But the level of coverage of the 2017 report reflects a vastly different global public agenda. &lt;/p&gt;
+&lt;p&gt;Today, with &lt;a href=&#34;http://www.newyorker.com/news/ryan-lizza/donald-trump-blows-up-the-u-s-mexico-relationship&#34;&gt;Mexico-US relations at a new low&lt;/a&gt;, a &lt;a href=&#34;https://www.washingtonpost.com/graphics/politics/nafta-renegotiation-process/?utm_term=.3a3d3b64353c&#34;&gt;looming renegotiation of the North American Free Trade Agreement&lt;/a&gt;, and &lt;a href=&#34;http://www.cbsnews.com/news/will-trump-ever-get-his-border-wall/&#34;&gt;the promise of a new physical wall between the two countries&lt;/a&gt;, it is not surprising that IISS’s press statement landed front and centre in the international news media – even if such comparisons are not the main focus of the ACS.&lt;/p&gt;
+&lt;p&gt;Journalists undeniably “&lt;a href=&#34;https://theconversation.com/journalists-must-get-better-at-science-43320&#34;&gt;have to get better at reporting science&lt;/a&gt;”. But academics and those involved in research – especially in controversial issues such as crime and security – also need to exercise care when publicising their findings.&lt;/p&gt;
+&lt;p&gt;There is a tension between the efforts to publicise research by highlighting headline-grabbing findings, and the risk of having such findings overhyped and misrepresented, or even spun into a deliberate political agenda, as the right-wing &lt;a href=&#34;http://www.breitbart.com/big-government/2017/05/11/report-gun-controlled-mexico-second-syria-armed-conflict-violence/&#34;&gt;Breitbart News&lt;/a&gt; did with the IISS announcement. &lt;/p&gt;
+&lt;p&gt;Academics and think tanks may not have much control over how their findings are reported by the media once they are released to the public. So it is imperative to take extra care when communicating them to the press, and setting out clearly what are the limitations of the findings, as well as the generalisations that can accurately be drawn from them.&lt;!-- Below is The Conversation&#39;s page counter tag. Please DO NOT REMOVE. --&gt;&lt;img src=&#34;https://counter.theconversation.com/content/77898/count.gif?distributor=republish-lightbox-basic&#34; alt=&#34;The Conversation&#34; width=&#34;1&#34; height=&#34;1&#34; style=&#34;border: none !important; box-shadow: none !important; margin: 0 !important; max-height: 1px !important; max-width: 1px !important; min-height: 1px !important; min-width: 1px !important; opacity: 0 !important; outline: none !important; padding: 0 !important; text-shadow: none !important&#34; /&gt;&lt;!-- End of code. If you don&#39;t see any code above, please get new code from the Advanced tab after you click the republish button. The page counter does not collect any personal data. More info: https://theconversation.com/republishing-guidelines --&gt;&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+    &lt;div&gt;
+This article was originally published in
+&lt;a href=&#34;https://theconversation.com&#34; target=&#34;new&#34;&gt;
+The Conversation&lt;/a&gt;. Read the
+&lt;a href=&#34;https://theconversation.com/a-report-says-that-mexico-is-the-second-deadliest-conflict-zone-in-the-world-its-just-not-true-77898&#34; target=&#34;new&#34;&gt;
+ original article&lt;/a&gt;.
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

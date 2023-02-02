@@ -1,0 +1,1302 @@
+<!DOCTYPE html><html lang="es" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 4.8.0 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Patricio R Estévez-Soto">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="**Objectives.** Research consistently shows that crime concentrates on a few repeatedly victimized places and targets. In this paper we examine whether the same is true for extortion against businesses. We then test whether the factors that explain the likelihood of becoming a victim of extortion also explain the number of incidents suffered by victimized businesses. The alternative is that extortion concentration is a function of event dependence. &lt;br&gt; **Methods.** Drawing on Mexico’s commercial victimization survey, we determine whether repeat victimization occurs by chance by comparing the observed distribution to that expected under a Poisson process. Next, we utilize a multilevel negative binomial-logit hurdle model to examine whether area- and business-level predictors of victimization are also associated with the number of repeat extortions suffered by businesses. &lt;br&gt; **Results.** Findings suggest that extortion is highly concentrated, and that the predictors of repeated extortion  differ from those that predict the likelihood of becoming a victim of extortion. While area-level variables showed a modest association with the likelihood of extortion victimization, they were not significant predictors of repeat incidents. Similarly, most business-level variables significantly associated with victimization risk showed insignificant (and sometimes contrary) associations with victimization concentration. Overall, unexplained differences in extortion concentration at the business-level were unaffected by predictors of extortion prevalence. &lt;br&gt; **Conclusions.** The inconsistent associations of predictors across the hurdle components suggest that extortion prevalence   and concentration are fueled by two distinct processes, an interpretation congruent  with theoretical expectations regarding extortion that considers that repeats are likely fueled by a process of event dependence.
+">
+
+  
+  <link rel="alternate" hreflang="en" href="/publication/estevez-soto-2018-b/">
+  
+  <link rel="alternate" hreflang="es" href="/es/publication/estevez-soto-2018-b/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.min.865920f909e6383a23ab6ab7f304a48b.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164014957-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-164014957-1', { 'anonymize_ip': true });
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/es/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/es/publication/estevez-soto-2018-b/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@prestevez">
+  <meta property="twitter:creator" content="@prestevez">
+  
+  <meta property="og:site_name" content="Patricio R Estévez-Soto">
+  <meta property="og:url" content="/es/publication/estevez-soto-2018-b/">
+  <meta property="og:title" content="Are repeatedly extorted businesses different? A multilevel hurdle model of extortion victimization | Patricio R Estévez-Soto">
+  <meta property="og:description" content="**Objectives.** Research consistently shows that crime concentrates on a few repeatedly victimized places and targets. In this paper we examine whether the same is true for extortion against businesses. We then test whether the factors that explain the likelihood of becoming a victim of extortion also explain the number of incidents suffered by victimized businesses. The alternative is that extortion concentration is a function of event dependence. &lt;br&gt; **Methods.** Drawing on Mexico’s commercial victimization survey, we determine whether repeat victimization occurs by chance by comparing the observed distribution to that expected under a Poisson process. Next, we utilize a multilevel negative binomial-logit hurdle model to examine whether area- and business-level predictors of victimization are also associated with the number of repeat extortions suffered by businesses. &lt;br&gt; **Results.** Findings suggest that extortion is highly concentrated, and that the predictors of repeated extortion  differ from those that predict the likelihood of becoming a victim of extortion. While area-level variables showed a modest association with the likelihood of extortion victimization, they were not significant predictors of repeat incidents. Similarly, most business-level variables significantly associated with victimization risk showed insignificant (and sometimes contrary) associations with victimization concentration. Overall, unexplained differences in extortion concentration at the business-level were unaffected by predictors of extortion prevalence. &lt;br&gt; **Conclusions.** The inconsistent associations of predictors across the hurdle components suggest that extortion prevalence   and concentration are fueled by two distinct processes, an interpretation congruent  with theoretical expectations regarding extortion that considers that repeats are likely fueled by a process of event dependence.
+"><meta property="og:image" content="/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="es">
+  
+    
+      <meta property="article:published_time" content="2020-10-10T22:25:37&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-10-10T23:25:37&#43;01:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/es/publication/estevez-soto-2018-b/"
+  },
+  "headline": "Are repeatedly extorted businesses different? A multilevel hurdle model of extortion victimization",
+  
+  "datePublished": "2020-10-10T22:25:37Z",
+  "dateModified": "2020-10-10T23:25:37+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Patricio R Estévez-Soto"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Patricio R Estévez-Soto",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "**Objectives.** Research consistently shows that crime concentrates on a few repeatedly victimized places and targets. In this paper we examine whether the same is true for extortion against businesses. We then test whether the factors that explain the likelihood of becoming a victim of extortion also explain the number of incidents suffered by victimized businesses. The alternative is that extortion concentration is a function of event dependence. \u003cbr\u003e **Methods.** Drawing on Mexico’s commercial victimization survey, we determine whether repeat victimization occurs by chance by comparing the observed distribution to that expected under a Poisson process. Next, we utilize a multilevel negative binomial-logit hurdle model to examine whether area- and business-level predictors of victimization are also associated with the number of repeat extortions suffered by businesses. \u003cbr\u003e **Results.** Findings suggest that extortion is highly concentrated, and that the predictors of repeated extortion  differ from those that predict the likelihood of becoming a victim of extortion. While area-level variables showed a modest association with the likelihood of extortion victimization, they were not significant predictors of repeat incidents. Similarly, most business-level variables significantly associated with victimization risk showed insignificant (and sometimes contrary) associations with victimization concentration. Overall, unexplained differences in extortion concentration at the business-level were unaffected by predictors of extortion prevalence. \u003cbr\u003e **Conclusions.** The inconsistent associations of predictors across the hurdle components suggest that extortion prevalence   and concentration are fueled by two distinct processes, an interpretation congruent  with theoretical expectations regarding extortion that considers that repeats are likely fueled by a process of event dependence.\n"
+}
+</script>
+
+  
+
+  
+
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#2962ff",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#2962ff"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "Este sitio web utiliza cookies para garantizarle una mejor experiencia.",
+        "dismiss": "Entendido!",
+        "link": "Más información",
+        "href": "https://www.cookiesandyou.com"
+      }
+    })});
+  </script>
+
+
+
+  
+
+
+
+
+
+  <title>Are repeatedly extorted businesses different? A multilevel hurdle model of extortion victimization | Patricio R Estévez-Soto</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/es">Patricio R Estévez-Soto</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/es">Patricio R Estévez-Soto</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#about"><span>Inicio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#publications"><span>Publicaciones</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#talks"><span>Presentaciones</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link " data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item dropdown-item-active">
+            <span>Español</span>
+          </div>
+          
+          <a class="dropdown-item" href="/publication/estevez-soto-2018-b/">
+            <span>English</span>
+          </a>
+          
+        </div>
+      </li>
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Are repeatedly extorted businesses different? A multilevel hurdle model of extortion victimization</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/es/author/patricio-r-estevez-soto/">Patricio R Estévez-Soto</a></span>, <span ><a href="/es/author/shane-d-johnson/">Shane D Johnson</a></span>, <span ><a href="/es/author/nick-tilley/">Nick Tilley</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    October 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="https://link.springer.com/content/pdf/10.1007/s10940-020-09480-8.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
+        data-filename="/es/publication/estevez-soto-2018-b/cite.bib">
+  Citar
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1" href="https://doi.org/10.1007/s10940-020-09480-8" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    
+    <h3>Resumen</h3>
+    <p class="pub-abstract"><strong>Objectives.</strong> Research consistently shows that crime concentrates on a few repeatedly victimized places and targets. In this paper we examine whether the same is true for extortion against businesses. We then test whether the factors that explain the likelihood of becoming a victim of extortion also explain the number of incidents suffered by victimized businesses. The alternative is that extortion concentration is a function of event dependence. <br> <strong>Methods.</strong> Drawing on Mexico’s commercial victimization survey, we determine whether repeat victimization occurs by chance by comparing the observed distribution to that expected under a Poisson process. Next, we utilize a multilevel negative binomial-logit hurdle model to examine whether area- and business-level predictors of victimization are also associated with the number of repeat extortions suffered by businesses. <br> <strong>Results.</strong> Findings suggest that extortion is highly concentrated, and that the predictors of repeated extortion  differ from those that predict the likelihood of becoming a victim of extortion. While area-level variables showed a modest association with the likelihood of extortion victimization, they were not significant predictors of repeat incidents. Similarly, most business-level variables significantly associated with victimization risk showed insignificant (and sometimes contrary) associations with victimization concentration. Overall, unexplained differences in extortion concentration at the business-level were unaffected by predictors of extortion prevalence. <br> <strong>Conclusions.</strong> The inconsistent associations of predictors across the hurdle components suggest that extortion prevalence   and concentration are fueled by two distinct processes, an interpretation congruent  with theoretical expectations regarding extortion that considers that repeats are likely fueled by a process of event dependence.</p>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Tipo</div>
+          <div class="col-12 col-md-9">
+            
+            
+            <a href="/es/publication/#2">
+              Artículo de revista
+            </a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publicación</div>
+          <div class="col-12 col-md-9"><em>Journal of Quantitative Criminology</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/es/tag/crimes-against-businesses/">&#34;Crimes against businesses&#34;</a>
+  
+  <a class="badge badge-light" href="/es/tag/crimes/">crimes</a>
+  
+  <a class="badge badge-light" href="/es/tag/extortion/">&#34;extortion&#34;</a>
+  
+  <a class="badge badge-light" href="/es/tag/hurdle-model/">&#34;hurdle model&#34;</a>
+  
+  <a class="badge badge-light" href="/es/tag/organized-crime/">&#34;organized crime&#34;</a>
+  
+  <a class="badge badge-light" href="/es/tag/repeat-victimization/">&#34;repeat victimization&#34;</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/es/publication/estevez-soto-2018-b/&amp;text=Are%20repeatedly%20extorted%20businesses%20different?%20A%20multilevel%20hurdle%20model%20of%20extortion%20victimization" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/es/publication/estevez-soto-2018-b/&amp;t=Are%20repeatedly%20extorted%20businesses%20different?%20A%20multilevel%20hurdle%20model%20of%20extortion%20victimization" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Are%20repeatedly%20extorted%20businesses%20different?%20A%20multilevel%20hurdle%20model%20of%20extortion%20victimization&amp;body=/es/publication/estevez-soto-2018-b/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/es/publication/estevez-soto-2018-b/&amp;title=Are%20repeatedly%20extorted%20businesses%20different?%20A%20multilevel%20hurdle%20model%20of%20extortion%20victimization" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Are%20repeatedly%20extorted%20businesses%20different?%20A%20multilevel%20hurdle%20model%20of%20extortion%20victimization%20/es/publication/estevez-soto-2018-b/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/es/publication/estevez-soto-2018-b/&amp;title=Are%20repeatedly%20extorted%20businesses%20different?%20A%20multilevel%20hurdle%20model%20of%20extortion%20victimization" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionado</h3>
+    <ul>
+      
+      <li><a href="/es/publication/estevez-soto-2021/">Determinants of extortion compliance: Empirical evidence from a victimisation survey</a></li>
+      
+      <li><a href="/es/talk/gsj-2021/">Mejorando la medición de la extorsión en México</a></li>
+      
+      <li><a href="/es/talk/extorsion-gi/">¿Por qué algunas empresas pagan extorsión y otras no?</a></li>
+      
+      <li><a href="/es/publication/estevez-soto-2022-pjx/">An evaluation of a hot spot policing programme in four Argentinian cities</a></li>
+      
+      <li><a href="/es/publication/estevez-soto-2021-crime-science/">Crime and COVID-19: Effect of changes in routine activities in Mexico City</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/es/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No se encontraron resultados","placeholder":"Buscar...","results":"resultados encontrados"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Charlas",
+        'slides' : "Diapositivas"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/wowchemy.min.4c2bca31150ce93c5a5e43b8a50f22fd.js"></script>
+
+    
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0" rel="noopener noreferrer" target="_blank">CC BY 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by/4.0" rel="noopener noreferrer" target="_blank">
+      <img src="https://search.creativecommons.org/static/img/cc_icon.svg" alt="CC icon">
+      <img src="https://search.creativecommons.org/static/img/cc-by_icon.svg" alt="CC by icon">
+      
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

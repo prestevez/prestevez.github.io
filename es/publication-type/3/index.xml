@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3 | Patricio R Estévez-Soto</title>
+    <link>/es/publication-type/3/</link>
+      <atom:link href="/es/publication-type/3/index.xml" rel="self" type="application/rss+xml" />
+    <description>3</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Tue, 27 Oct 2020 16:15:03 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>3</title>
+      <link>/es/publication-type/3/</link>
+    </image>
+    
+    <item>
+      <title>Crime and COVID-19: Effect of changes in routine activities in Mexico City</title>
+      <link>/es/publication/estevez-soto-2020-covid/</link>
+      <pubDate>Tue, 27 Oct 2020 16:15:03 +0000</pubDate>
+      <guid>/es/publication/estevez-soto-2020-covid/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>policing | Patricio R Estévez-Soto</title>
+    <link>/tag/policing/</link>
+      <atom:link href="/tag/policing/index.xml" rel="self" type="application/rss+xml" />
+    <description>policing</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 26 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>policing</title>
+      <link>/tag/policing/</link>
+    </image>
+    
+    <item>
+      <title>An evaluation of a hot spot policing programme in four Argentinian cities</title>
+      <link>/publication/estevez-soto-2022-pjx/</link>
+      <pubDate>Sat, 26 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>/publication/estevez-soto-2022-pjx/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

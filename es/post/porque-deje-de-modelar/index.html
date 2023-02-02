@@ -1,0 +1,1453 @@
+<!DOCTYPE html><html lang="es" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 4.8.0 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Patricio R Estévez-Soto">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Desde hace más o menos 20 días he estado dando seguimiento a los datos de la pandemia de covid-19 en México, publicando en twitter gráficas con los números de casos confirmados por la secretaría de salud, así como una línea de tendencia del ritmo de crecimiento promedio observado a la fecha.">
+
+  
+  <link rel="alternate" hreflang="es" href="/es/post/porque-deje-de-modelar/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.min.865920f909e6383a23ab6ab7f304a48b.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164014957-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-164014957-1', { 'anonymize_ip': true });
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/es/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/es/post/porque-deje-de-modelar/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@prestevez">
+  <meta property="twitter:creator" content="@prestevez">
+  
+  <meta property="og:site_name" content="Patricio R Estévez-Soto">
+  <meta property="og:url" content="/es/post/porque-deje-de-modelar/">
+  <meta property="og:title" content="Por qué dejé de modelar los datos de COVID-19 | Patricio R Estévez-Soto">
+  <meta property="og:description" content="Desde hace más o menos 20 días he estado dando seguimiento a los datos de la pandemia de covid-19 en México, publicando en twitter gráficas con los números de casos confirmados por la secretaría de salud, así como una línea de tendencia del ritmo de crecimiento promedio observado a la fecha."><meta property="og:image" content="/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="es">
+  
+    
+      <meta property="article:published_time" content="2020-04-04T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-10-12T11:52:16&#43;01:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/es/post/porque-deje-de-modelar/"
+  },
+  "headline": "Por qué dejé de modelar los datos de COVID-19",
+  
+  "datePublished": "2020-04-04T00:00:00Z",
+  "dateModified": "2020-10-12T11:52:16+01:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Patricio R Estévez-Soto"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Patricio R Estévez-Soto",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Desde hace más o menos 20 días he estado dando seguimiento a los datos de la pandemia de covid-19 en México, publicando en twitter gráficas con los números de casos confirmados por la secretaría de salud, así como una línea de tendencia del ritmo de crecimiento promedio observado a la fecha."
+}
+</script>
+
+  
+
+  
+
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#2962ff",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#2962ff"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "Este sitio web utiliza cookies para garantizarle una mejor experiencia.",
+        "dismiss": "Entendido!",
+        "link": "Más información",
+        "href": "https://www.cookiesandyou.com"
+      }
+    })});
+  </script>
+
+
+
+  
+
+
+
+
+
+  <title>Por qué dejé de modelar los datos de COVID-19 | Patricio R Estévez-Soto</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/es">Patricio R Estévez-Soto</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/es">Patricio R Estévez-Soto</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#about"><span>Inicio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#publications"><span>Publicaciones</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/es/#talks"><span>Presentaciones</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Por qué dejé de modelar los datos de COVID-19</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/es/author/patricio-r-estevez-soto/">Patricio R Estévez-Soto</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última actualización el
+      
+    
+    Oct 12, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min de lectura
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/es/category/noticias/">Noticias</a>, <a href="/es/category/mexico/">Mexico</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/es/project/crime-and-covid-19/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Desde hace más o menos 20 días he estado dando seguimiento a los datos de la <a href="https://es.wikipedia.org/wiki/COVID-19" target="_blank" rel="noopener">pandemia de covid-19</a> en México, <a href="https://twitter.com/prestevez/status/1239898438160068616?s=20" target="_blank" rel="noopener">publicando en twitter</a> gráficas con los números de casos confirmados por la <a href="https://www.gob.mx/salud" target="_blank" rel="noopener">secretaría de salud</a>, así como una línea de tendencia del ritmo de crecimiento promedio observado a la fecha. Extrapolando la línea de tendencia, las gráficas también dan una vaga idea de cuántos casos confirmados de covid-19 se podrían esperar al día siguiente.</p>
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">El total de casos de covid-19 en 🇲🇽 subió a 1688, debajo del límite inferior del rango esperado según la tendencia de ayer.<br><br>Si la tendencia a la fecha se mantiene, mañana se esperan entre 1892 y 2300 (95% IC) casos totales. <a href="https://t.co/yyKHifiHz5">pic.twitter.com/yyKHifiHz5</a></p>&mdash; Patricio R. Estevez-Soto, PhD (@prestevez) <a href="https://twitter.com/prestevez/status/1246385176793530368?ref_src=twsrc%5Etfw">April 4, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Sin embargo, hoy decidí dejar de hacerlo. En esta entrada explico por qué.</p>
+<h2 id="por-qué-empecé">¿Por qué empecé?</h2>
+<p>A principios de marzo Mexico (y el mundo) era otro. Había cerca de 5 casos de covid-19 confirmados en el país, y el <a href="https://www.eluniversal.com.mx/nacion/del-hay-que-abrazarse-no-pasa-nada-como-anillo-al-dedo-las-frases-de-amlo-sobre-el-covid-19" target="_blank" rel="noopener">presidente continuaba minimizando la amenaza</a>, asegurando México estaba perfectamente preparado para la epidemia.</p>
+<p>Aún cuando la Organización Mundial de la Salud <a href="https://www.bbc.com/mundo/noticias-internacional-51842708" target="_blank" rel="noopener">clasificó al covid-19 como pandemia el 11 de marzo</a>, López Obrador continuó con sus giras y mítines, <a href="https://www.bbc.com/mundo/noticias-america-latina-51921323" target="_blank" rel="noopener">haciendo caso omiso a las recomendaciones públicas de minimizar el contacto físico</a>.</p>
+<p>Tras seguir con detenimiento la evolución de la pandemia en otros países, y ver lo rápido que se podían <a href="https://www.theguardian.com/world/2020/mar/09/italian-hospitals-short-beds-coronavirus-death-toll-jumps" target="_blank" rel="noopener">colapsar los sistemas de salud de países muy bien preparados</a>, me preocupó mucho el daño que el covid-19 podría causar en México. En mi opinión había dos problemas. Por un lado, no se consideraba que nuestra capacidad hospitalaria es mucho más limitada que la de otros países, y no se estaba considerando lo rápido que la epidemia podría salirse de control dado el <a href="https://bit.ly/2x5vdfQ" target="_blank" rel="noopener">ritmo de crecimiento exponencial que presentan los contagios al inicio de la epidemia.</a>.</p>
+<h3 id="capacidad-hospitalaria">Capacidad hospitalaria</h3>
+<p>México es el país con el menor número de camas de hospital per cápita de la OECD. En otros contextos diríamos que no es una comparación justa, pues la mayoría de los países de la OECD son mucho más ricos que México. Pero en el caso de la pandemia, la comparación es importante si se considera que países ricos como Italia y España&mdash;que tienen el más o menos el doble de camas por habitante que México&mdash;se vieron rápidamente superados por el crecimiento de la epidemia.</p>
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Esta gráfica debería de preocuparnos mucho. El número de camas hospitalarias per cápita no es un indicador perfecto, pero permite ver más o menos cual es la capacidad del sistema de salud mexicano. Somos el país con la menor capacidad de la OECD. <a href="https://t.co/WXk9zrtzBh">pic.twitter.com/WXk9zrtzBh</a></p>&mdash; Patricio R. Estevez-Soto, PhD (@prestevez) <a href="https://twitter.com/prestevez/status/1238125579301421059?ref_src=twsrc%5Etfw">March 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Dado que nuestro sistema de salud tiene menos capacidad, yo era de la opinión de que México debía actuar cuanto antes. Sin embargo, como a principios de marzo teníamos muy pocos casos confirmados de covid-19, muchos en México opinaban que era muy pronto para actuar (pues ello impondría costos excesivos). El problema es que esa visión no consideraba la velocidad exponencial de los contagios.</p>
+<h3 id="entender-el-crecimiento-exponencial">Entender el crecimiento exponencial</h3>
+<blockquote>
+<p>La mayor deficiencia de la raza humana es nuestra incapacidad para comprender la función exponencial.</p>
+<p>&ndash;<a href="https://en.wikipedia.org/wiki/Albert_Allen_Bartlett" target="_blank" rel="noopener">Albert Bartlett</a></p>
+</blockquote>
+<p>Si bien las epidemias tienden a seguir una curva sigmoidal, al inicio de las mismas (especialmente una de un patógeno altamente contagioso, como el <a href="https://es.wikipedia.org/wiki/SARS-CoV-2" target="_blank" rel="noopener">SARS-CoV-2</a>), el crecimiento de la curva se <a href="https://www.sciencedirect.com/science/article/pii/S2468042719300491" target="_blank" rel="noopener">aproxima al de una función exponencial</a>.</p>
+<p><img src="sigmoid.png" alt="Ejemplo hipotético de una curva sigmoidal.">
+<em>Ejemplo hipotético de una curva sigmoidal.</em></p>
+<p>La función exponencial es difícil de comprender para nuestros cerebros, pues estos están acostumbrados a percibir el mundo de forma lineal. Esto significa que cuando una amenaza crece de forma exponencial, <a href="https://www.washingtonpost.com/opinions/2020/03/10/coronavirus-what-matters-isnt-what-you-can-see-what-you-cant/" target="_blank" rel="noopener">todo parece que está bien hasta que nos explota en la cara</a>, aún y cuando el patrón era bastante predecible.</p>
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Los crecimientos lineales son aditivos, es decir, por cada período de tiempo los casos aumentan de forma constante. Los crecimientos exponenciales son distintos pues el ritmo de crecimiento no es constante, sino parece que &quot;de repente&quot; el número explota. <a href="https://t.co/Exbr18HpZU">pic.twitter.com/Exbr18HpZU</a></p>&mdash; Patricio R. Estevez-Soto, PhD (@prestevez) <a href="https://twitter.com/prestevez/status/1238460508300337152?ref_src=twsrc%5Etfw">March 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="es" dir="ltr">Como muestra esta gráfica de una simulación de este proceso exponencial, todo parece que está bien, hasta que de pronto estalla y el sistema se colapsa. <a href="https://t.co/HdPDJou9T0">pic.twitter.com/HdPDJou9T0</a></p>&mdash; Patricio R. Estevez-Soto, PhD (@prestevez) <a href="https://twitter.com/prestevez/status/1238468548361621505?ref_src=twsrc%5Etfw">March 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Por tanto, para poder observar el crecimiento de la epidemia, comencé a dar seguimiento al número de casos confirmados en México.</p>
+<h2 id="en-qué-consistía-el-seguimiento">¿En qué consistía el seguimiento?</h2>
+<p>Parte del ejercicio de seguimiento nació de la frustración. Uno esperaría que los datos de un problema tan importante para la vida nacional se publicaran en formato abierto y accesible, por ejemplo en el portal de <a href="https://datos.gob.mx/" target="_blank" rel="noopener">datos abiertos</a> del gobierno federal.</p>
+<p>La primer tarea, entonces, fue recopilar el conteo de casos confirmados (y posteriormente muertes) en un archivo csv. Una vez con los datos en un formato accesible, comencé a modelar una simple línea de tendencia asumiendo un modelo exponencial para visualizar el ritmo promedio de crecimiento de los casos confirmados, y hacer una extrapolación sencilla al día siguente..</p>
+<p>Las gráficas y modelos las generé utilizando R, y todo el código y datos han estado disponibles en un <a href="https://github.com/prestevez/covid-19-mx" target="_blank" rel="noopener">repositorio en Github</a>. El proceso es más o menos automatizado. Cada día se agrega (manualmente) una línea al archivo csv con la fecha y los acumulados de casos confirmados y muertes dados a conocer en la conferencia de prensa vespertina del gobierno federal mexicano. Luego corro el código para actualizar las gráficas, calcular un modelo de tendencia nuevo, y generar una predicción para el día de mañana.</p>
+<p>El modelo utilizado es extremadamente sencillo. No incorpora <a href="https://twitter.com/danitte/status/1240330754460008448?s=20" target="_blank" rel="noopener">supuestos epidemiológicos</a>, por lo que no es un modelo &ldquo;correcto&rdquo;.</p>
+<blockquote>
+<p>En esencia, todos los modelos están equivocados, pero algunos son útiles.</p>
+<p>&ndash;<a href="https://es.wikipedia.org/wiki/George_Edward_Pelham_Box" target="_blank" rel="noopener">George Box</a></p>
+</blockquote>
+<p>Modelar correctamente una epidemia es un asunto complejo. En el modelo más simple, conocido como <a href="https://es.wikipedia.org/wiki/Modelo_SIR" target="_blank" rel="noopener">SIR</a>, se modelan tres poblaciones en el tiempo: <em>Susceptibles</em>,  <em>Infectados</em>, y <em>Recuperados</em>, utilizando una serie de ecuaciones diferenciales.</p>
+<p>Este tipo de modelos se le llama modelo mecanicista, pues trata de capturar el mecanismo subyacente que alimenta la epidemia, dado los parámetros específicos de la población y el patógeno en cuestión.</p>
+<p>El modelo que yo utilicé es lo opuesto. Ignora cualquier supuesto de las características de la enfermedad y la población, y asume que el crecimiento promedio observado a la fecha se va a mantener en el futuro. Formalmente, el modelo para el acumulado de casos confirmados, $y_t$, para un día $t$ es:</p>
+<p>$$
+E[y_t | t] = e^{\beta_0 + \beta_1 \times t}
+$$</p>
+<p>Es absurdo asumir que un modelo tan ingenuo como este podría capturar la dinámica real de la epidemia. Por un lado, el modelo predice el crecimiento infinito de la epidemia, y por otro los intervalos de confianza están equivocados dada la fuerte correlación serial entre observaciones, entre otros motivos.</p>
+<p>Sin embargo, a pesar de ser un modelo equivocado, decidí usarlo pues era útil para mis&mdash;muy modestas&mdash;intenciones. Como he dicho antes, mi intención era comunicar que la tasa de crecimiento en la primera fase de la epidemia de covid-19 en México se mueve a un ritmo exponencial para crear conciencia sobre la velocidad de la amenaza.</p>
+<p>Siempre fui claro sobre las <a href="https://twitter.com/prestevez/status/1244551339960668161?s=20" target="_blank" rel="noopener">limitaciones del modelo</a>, y enfaticé que las predicciones solo eran válidas (aún y con gran incertidumbre) para el día siguiente, pese a que muchas personas me pidieron que extrapolara la epidemia a meses al futuro. También siempre tuve claro que el modelo dejaría de ser útil, tanto por cambios en la dinámica de la epidemia o por nuestra capacidad para medirla, y sabía que ese día dejaría de darle seguimiento.</p>
+<h2 id="qué-tan-buenos-eran-los-modelos">¿Qué tan buenos eran los modelos?</h2>
+<p>Una de las razones que me orillaron a dejar de actualizar estos modelos es que estos han perdido su utilidad para predecir con precisión como se desarrollará la epidemia en el futuro. La gráfica a continuación presenta cómo ha evolucionado la tasa de crecimiento promedio. Como se observa, los datos observados hasta el 17 de marzo sugerían una tasa de crecimiento promedio de 37% por día. Sin embargo, cada modelo posterior sugirió una tasa de crecimiento igual o inferior a la del día anterior, llegando a un mínimo de 15% por día el 4 de abril.</p>
+<p><img src="covid-19-mx-growth-plot.png" alt="Tasas de crecimiento promedio estimadas por el modelo exponencial.">
+<em>Tasas de crecimiento promedio estimadas por el modelo exponencial.</em></p>
+<p>Si bien algunas de las predicciones hechas para el día siguiente estuvieron dentro del intervalo de confianza al 95% estimado utilizando un remuestreo jackknife, las predicciones de largo aliento con estos modelos hubieran estado enormemente equivocadas. Si hubiese hecho extrapolaciones de más largo plazo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, como muchos me pidieron en twitter, los modelos hubieran predicho que para principio de abril tendríamos decenas de miles de casos.</p>
+<p><img src="covid-19-mx-prediction-models.png" alt="Predicciones al 4 de abril utilizando las tasa de crecimiento identificadas por los modelos entre el 17 de marzo y el 4 de abril.">
+<em>Predicciones al 4 de abril utilizando las tasa de crecimiento identificadas por los modelos entre el 17 de marzo y el 4 de abril.</em></p>
+<p>Por ejemplo, si la tendencia observada el 17 de marzo de 37% por día se hubiese mantenido a la fecha, el 4 de abril hubiéramos alcanzado alrededor de 27 mil casos confirmados de covid-19 en México. En realidad, el 4 de abril se han confirmado solamente 1,890 casos.</p>
+<p>Varios me han preguntado qué significa que la tasa de crecimiento promedio haya disminuido constantemente desde mediados de marzo. Se han propuesto dos explicaciones. La primera es que las medidas de distanciamiento social implementadas por la sociedad civil, gobiernos locales y (posteriormente) el gobierno federal han contribuido a frenar la epidemia en el país. La segunda, por otro lado, es que dado el pequeñísimo número de pruebas de covid-19 que se realizan en el país, no estamos detectando la verdadera dinámica de la epidemia.</p>
+<p>No creo que haya pasado suficiente tiempo para que las medidas de distanciamiento social hayan tenido un efecto considerable en la dinámica de la epidemia, aunque esa es una observación de alguien que no es un experto en la materia.</p>
+<p>Por otro lado, me parece más plausible que la desaceleración en el crecimiento de los casos confirmados de covid-19 en el país tenga que ver con la cantidad de pruebas que realizamos. El número de casos de covid-19 que se detectan está fuertemente determinado por el <a href="https://fivethirtyeight.com/features/coronavirus-case-counts-are-meaningless/" target="_blank" rel="noopener">régimen y la cantidad de pruebas</a> que se realizan. En la mayoría de los países la cantidad de casos confirmados es solo una muestra del total de casos de la epidemia. Dada la cantidad de pruebas por persona realizadas en México, existen razones para suponer que la <a href="https://www.washingtonpost.com/es/tablet/2020/04/01/por-que-mexico-tiene-tan-pocos-casos-de-coronavirus-en-comparacion-con-estados-unidos/" target="_blank" rel="noopener">&ldquo;cifra negra&rdquo; del covid-19 en el país</a> es particularmente extensa.</p>
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Desde el 26 de marzo se han reportado 135 casos x día en promedio.<br><br>Parece que estamos llegando a un límite de nuestra capacidad (o voluntad) de detección de casos de covid-19, por lo que las predicciones de modelos exponenciales van a estar equivocadas.</p>&mdash; Patricio R. Estevez-Soto, PhD (@prestevez) <a href="https://twitter.com/prestevez/status/1246385183659565058?ref_src=twsrc%5Etfw">April 4, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>El hecho de que los casos nuevos reportados por día desde el 26 de marzo parecen haberse estabilizado al rededor de 135 casos por día sugeriría que el crecimiento ha dejado de ser exponencial y ahora se comporta de manera lineal. Ello sería consistente con las <a href="http://puntodecimal.mx/ciencia/dejemos-de-utilizar-el-numero-de-casos-confirmados-de-coronavirus" target="_blank" rel="noopener">simulaciones realizadas</a> por mi colega, <a href="https://twitter.com/rafaelprietoc" target="_blank" rel="noopener">Rafael Prieto Curiel</a>, que sugieren un crecimiento lineal de los casos confirmados cuando se alcance el máximo de pruebas que podemos realizar por día dada nuestra capacidad limitada.</p>
+<p>Sin embargo, también hay otras explicaciones que podrían considerarse, entre ellas que el ritmo de crecimiento observado a mediados de marzo no correspondía al ritmo de contagio local en el país, sino a grupos de casos de personas que se contagiaron en el extranjero y fueron detectados &ldquo;de golpe&rdquo; al regresar al país.</p>
+<p>Independientemente de la razón, el punto es que los modelos que estaba utilizando ya no son útiles para darle seguimiento a los casos confirmados.</p>
+<h2 id="qué-mas-cambió">¿Qué mas cambió?</h2>
+<p>Además del fin de la utilidad de los modelos, he notado otros cambios importantes que me motivaron a dejar de lado este ejercicio.</p>
+<p>Por un lado el gobierno de México formalmente declaró una emergencia sanitaria y ha comenzado a imponer medidas más estrictas para reducir el impacto de la epidemia. Por otro lado, veo entre mis conocidos de twitter y otras redes sociales que la opinión pública hacia la epidemia ha cambiado.</p>
+<p>Si bien no creo que estos modelos hayan sido determinantes para cambiar la opinión pública, creo que pudieron haber contribuido de manera positiva a generar conciencia de la amenaza. Mis tuits sobre los modelos y las predicciones de covid-19 en México fueron vistos más de 2.5 millones de veces, según los reportes de <em>analytics</em> de twitter. Muchas personas me escribieron para comentarme que les parecían muy útiles y que les ayudaron a dimensionar el fenómeno al que se enfrenta el país.</p>
+<p>Otros cambios positivos que noté es que de no haber casi nada de datos y análisis del covid-19 en México a principios de Marzo, han surgido excelentes proyectos de seguimiento de la epidemia en el país. Entre los que he notado, recomiendo:</p>
+<ul>
+<li><a href="http://covidatos.mx/" target="_blank" rel="noopener">Covidatos.mx</a></li>
+<li><a href="https://mexicovid19.github.io/Mexico/" target="_blank" rel="noopener">Mexicovid19</a></li>
+<li><a href="https://covid19enmexico.com/" target="_blank" rel="noopener">covid19enmexico.com</a></li>
+<li><a href="https://twitter.com/segasi" target="_blank" rel="noopener">Twitter de Sebastián Garrido</a></li>
+</ul>
+<h2 id="qué-sigue">¿Qué sigue?</h2>
+<p>Por estas razones he decidido dejar de dar seguimiento a los casos confirmados de covid-19 en el país. Le agradezco a todas las personas que me hicieron comentarios para mejorar los modelos.</p>
+<p>Si bien no daré mas seguimiento a los casos confirmados de covid-19 en el país, en los próximos meses estaré realizando una investigación sobre los efectos de la epidemia en la incidencia delictiva en la Ciudad de México. Puedes saber más de ese <a href="https://osf.io/3gf67/" target="_blank" rel="noopener">proyecto en OSF</a> o en mi cuenta de <a href="https://twitter.com/prestevez" target="_blank" rel="noopener">twitter</a>.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Los primeros días que presenté estos modelos en twitter pesentaba extrapolaciones de tres días, sin embargo al reconocer el gran potencial de errar en la predicción <a href="https://twitter.com/prestevez/status/1240452086380331009?s=20" target="_blank" rel="noopener">reduje las extrapolaciones a solo un día</a>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/es/tag/covid-19/">COVID-19</a>
+  
+  <a class="badge badge-light" href="/es/tag/statistics/">statistics</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/es/post/porque-deje-de-modelar/&amp;text=Por%20qu%c3%a9%20dej%c3%a9%20de%20modelar%20los%20datos%20de%20COVID-19" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/es/post/porque-deje-de-modelar/&amp;t=Por%20qu%c3%a9%20dej%c3%a9%20de%20modelar%20los%20datos%20de%20COVID-19" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Por%20qu%c3%a9%20dej%c3%a9%20de%20modelar%20los%20datos%20de%20COVID-19&amp;body=/es/post/porque-deje-de-modelar/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/es/post/porque-deje-de-modelar/&amp;title=Por%20qu%c3%a9%20dej%c3%a9%20de%20modelar%20los%20datos%20de%20COVID-19" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Por%20qu%c3%a9%20dej%c3%a9%20de%20modelar%20los%20datos%20de%20COVID-19%20/es/post/porque-deje-de-modelar/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/es/post/porque-deje-de-modelar/&amp;title=Por%20qu%c3%a9%20dej%c3%a9%20de%20modelar%20los%20datos%20de%20COVID-19" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="/"><img class="avatar mr-3 avatar-square" src="/es/author/patricio-r-estevez-soto/avatar_hu784f350f49fc4998540b7c65d32a506f_213436_270x270_fill_q90_lanczos_center.jpg" alt="Patricio R Estévez-Soto"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Patricio R Estévez-Soto</a></h5>
+      <h6 class="card-subtitle">Profesor-investigador en Ciencias de la Seguridad y el Delito</h6>
+      <p class="card-text">Mi investigación se enfoca en el fenómeno delictivo en América Latina y el Caribe, específicamente en temas como la delincuencia organizada, la victimización repetida, la prevención del delito, la criminología cuantitativa, y el nexo entre política pública y el delito.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:patricio.estevez@ucl.ac.uk" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://outlook.office365.com/owa/calendar/PatricioEstvezSotosOfficeHours@ucl.ac.uk/bookings/" target="_blank" rel="noopener">
+        <i class="fas fa-calendar-alt"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/prestevez" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=SZtlfFUAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0001-7513-6904" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/prestevez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://theconversation.com/profiles/patricio-r-estevez-soto-376595/articles" target="_blank" rel="noopener">
+        <i class="ai ai-conversation"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://osf.io/f9bcr/" target="_blank" rel="noopener">
+        <i class="ai ai-osf"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionado</h3>
+    <ul>
+      
+      <li><a href="/es/project/crime-and-covid-19/">Crimen y Covid-19</a></li>
+      
+      <li><a href="/es/talk/foro-rno-2021/">¿Cómo pueden los análisis cuantitativos ayudar a prevenir el delito?</a></li>
+      
+      <li><a href="/es/talk/gsj-2021/">Mejorando la medición de la extorsión en México</a></li>
+      
+      <li><a href="/es/talk/ucl-mex-alumni-2021/">Crime and COVID-19: Effect of changes in routine activities in Mexico City</a></li>
+      
+      <li><a href="/es/post/explicando-cambios-en-homicidios/">Explicando los cambios en homicidios en la CDMX</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/es/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No se encontraron resultados","placeholder":"Buscar...","results":"resultados encontrados"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Charlas",
+        'slides' : "Diapositivas"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/wowchemy.min.4c2bca31150ce93c5a5e43b8a50f22fd.js"></script>
+
+    
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0" rel="noopener noreferrer" target="_blank">CC BY 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by/4.0" rel="noopener noreferrer" target="_blank">
+      <img src="https://search.creativecommons.org/static/img/cc_icon.svg" alt="CC icon">
+      <img src="https://search.creativecommons.org/static/img/cc-by_icon.svg" alt="CC by icon">
+      
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

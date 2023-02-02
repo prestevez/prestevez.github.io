@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>open science | Patricio R Estévez-Soto</title>
+    <link>/tag/open-science/</link>
+      <atom:link href="/tag/open-science/index.xml" rel="self" type="application/rss+xml" />
+    <description>open science</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>open science</title>
+      <link>/tag/open-science/</link>
+    </image>
+    
+    <item>
+      <title>Your first R package: A tutorial</title>
+      <link>/post/r-package-tutorial/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/post/r-package-tutorial/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#what-are-packages&#34;&gt;What are packages?&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#why-should-you-develop-packages&#34;&gt;Why should you develop packages?&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#1-develop-new-research-methods-and-tools&#34;&gt;1. Develop new research methods and tools&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#2-to-share-reproducible-research&#34;&gt;2. To share reproducible research&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#3-to-make-your-life-easier&#34;&gt;3. To make your life easier&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#before-we-start&#34;&gt;Before we start&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#software&#34;&gt;Software&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#r-packages&#34;&gt;R packages&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#git-and-github&#34;&gt;Git and Github&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#tutorial&#34;&gt;Tutorial&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#set-up&#34;&gt;Set up&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#write-a-function&#34;&gt;Write a function&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#check-everything-works&#34;&gt;Check everything works&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#description-file&#34;&gt;DESCRIPTION file&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#documentation&#34;&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#a-minimally-working-package&#34;&gt;A minimally working package&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#tests&#34;&gt;Tests&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#importing-functions-from-another-package&#34;&gt;Importing functions from another package&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#use-github&#34;&gt;Use Github&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;p&gt;This is a tutorial on how to create a bare-bones R package. The tutorial was developed for a &lt;a href=&#34;https://jdiopen.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;JDI Open&lt;/a&gt; seminar.&lt;/p&gt;
+&lt;div style=&#34;position:relative;padding-bottom:56%;padding-top:20px;height:0;&#34;&gt;&lt;iframe src=&#34;https://mediacentral.ucl.ac.uk/player?autostart=n&amp;videoId=9egBgj67&amp;captions=y&amp;chapterId=0&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;position:absolute;top:0;left:0;width:100%;height:100%;&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;p&gt;The tutorial draws heavily from the &amp;ldquo;The whole game&amp;rdquo; chapter in the &lt;a href=&#34;https://r-pkgs.org/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R Packages&lt;/a&gt; book by &lt;a href=&#34;http://hadley.nz/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hadley Wickham&lt;/a&gt; and &lt;a href=&#34;http://jennybryan.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jenny Bryan&lt;/a&gt;. Please consult that book for further details and to learn more about package development with R.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-packages&#34;&gt;What are packages?&lt;/h2&gt;
+&lt;p&gt;Packages allow distributing custom code that extend the basic capabilities and functionalities of programming languages. The use of packages (or modules) is part of a software design philosophy called &amp;ldquo;modular programming&amp;rdquo;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Modular programming is a software design technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality.
+&amp;ndash;&lt;a href=&#34;https://en.wikipedia.org/wiki/Modular_programming&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Packages are a core element of a researchers toolbox as they implement many specific functions and analysis techniques not available in default installations of R or python, for example.&lt;/p&gt;
+&lt;h2 id=&#34;why-should-you-develop-packages&#34;&gt;Why should you develop packages?&lt;/h2&gt;
+&lt;p&gt;While package development may sound like something only software developers do, there are at least three good reasons why researchers and scientists may want to develop packages.&lt;/p&gt;
+&lt;h3 id=&#34;1-develop-new-research-methods-and-tools&#34;&gt;1. Develop new research methods and tools&lt;/h3&gt;
+&lt;p&gt;Computers are a fundamental part of modern science and research, so it makes sense for many research projects to involve developing research software. If you develop a new algorithm, modelling technique, or a tool that facilitates research, it makes sense to distribute your code as a package so that other scientists and researchers can use your tools in their research.&lt;/p&gt;
+&lt;h3 id=&#34;2-to-share-reproducible-research&#34;&gt;2. To share reproducible research&lt;/h3&gt;
+&lt;p&gt;Though packages are often used to distribute code that other researchers can use in their projects, they are an ideal solution to share what &lt;a href=&#34;https://doi.org/10.1080/00031305.2017.1375986&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Marwick et al. (2018)&lt;/a&gt; call &lt;em&gt;research compendia&lt;/em&gt; that wrap your articles&#39; data, materials and reproducibility scripts.&lt;/p&gt;
+&lt;p&gt;In addition to adhering to open science principles, research projects with open data and materials get more citations and tend to lead to more publications.&lt;/p&gt;
+&lt;h3 id=&#34;3-to-make-your-life-easier&#34;&gt;3. To make your life easier&lt;/h3&gt;
+&lt;p&gt;Bundling your functions into a package can make your life easier, even if you don&amp;rsquo;t plan to share your code with anyone else but yourself. The more you use R (or another similar language), it&amp;rsquo;s likely you&amp;rsquo;ll start using custom functions to make repetitive tasks easier.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&amp;quot;I wish I&amp;#39;d left this code across scattered .R files instead of combining it into a package&amp;quot; said no one ever &lt;a href=&#34;https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#rstats&lt;/a&gt; &lt;a href=&#34;http://t.co/udeNH4T67H&#34;&gt;http://t.co/udeNH4T67H&lt;/a&gt;&lt;/p&gt;&amp;mdash; David Robinson (@drob) &lt;a href=&#34;https://twitter.com/drob/status/611885584584441856?ref_src=twsrc%5Etfw&#34;&gt;June 19, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Rather than copying these into every new project folder, or having scattered files across multiple computers, writing a package offers a convenient way to ensure your custom functions are available system-wide.&lt;/p&gt;
+&lt;p&gt;If you work on several computers or rely on servers to run some of your analysis, using packages makes sharing your functions across your even more seamless, and reduces the chances of making a mistake (e.g. by using an outdated function).&lt;/p&gt;
+&lt;h2 id=&#34;before-we-start&#34;&gt;Before we start&lt;/h2&gt;
+&lt;p&gt;You don&amp;rsquo;t need to be an R expert to be able to follow the tutorial. But you do need to be at least little familiar with R (or a similar scripting language, such as Python). The bare minimum you need to know is &lt;a href=&#34;https://www.datacamp.com/community/tutorials/r-packages-guide&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;how to install R packages&lt;/a&gt;, and &lt;a href=&#34;https://r4ds.had.co.nz/functions.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;how to write a function&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;software&#34;&gt;Software&lt;/h3&gt;
+&lt;p&gt;You also need some software installed. First you need an installation of &lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R&lt;/a&gt; (obviously). While you do not &lt;em&gt;need&lt;/em&gt; Rstudio, it makes writing packages (and working with R in general) much easier. So install a recent version of &lt;a href=&#34;https://rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rstudio&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Because we will be building R packages from scratch (&lt;em&gt;compiling&lt;/em&gt; in computer parlance), you will need a &lt;em&gt;compiler&lt;/em&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On Windows you need to install &lt;a href=&#34;https://cran.r-project.org/bin/windows/Rtools/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rtools&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On macOS you need to install &lt;a href=&#34;https://developer.apple.com/xcode/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Xcode&lt;/a&gt; (though it is easier to install via the &lt;a href=&#34;https://apps.apple.com/us/app/xcode/id497799835?mt=12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mac App Store&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;On Linux, the compiler you need will depend on your system, for Ubuntu-based you can install the &lt;code&gt;r-base-dev&lt;/code&gt; package.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;r-packages&#34;&gt;R packages&lt;/h3&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-meme-of-c3po-saying-r-packages-making-r-packages-how-perverse&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-packages-making-r-packages-how-perverse.jpg&#34; data-caption=&#34;ALT: A meme of C3PO saying &amp;amp;lsquo;R packages making R packages, how perverse!&amp;amp;rsquo;&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-packages-making-r-packages-how-perverse.jpg&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A meme of C3PO saying &amp;lsquo;R packages making R packages, how perverse!&amp;rsquo;
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;On R, you will need the following packages to make packages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;devtools&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;roxygen2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;testthat&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;knitr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can install them with this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(c(&amp;quot;devtools&amp;quot;, &amp;quot;roxygen2&amp;quot;, &amp;quot;testthat&amp;quot;, &amp;quot;knitr&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To check if everything is installed correctly, open an R/Rstudio session and run the following command. You should get the message shown if everything was set up correctly.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;devtools::has_devel()
+#&amp;gt; Your system is ready to build packages!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(Console output blocks begin with &lt;code&gt;#&amp;gt;&lt;/code&gt; to distinguish from code.)&lt;/p&gt;
+&lt;h3 id=&#34;git-and-github&#34;&gt;Git and Github&lt;/h3&gt;
+&lt;p&gt;This is not required to create R packages, but it is highly recommended.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://git-scm.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Git&lt;/a&gt; is a version control software widely used to develop software. It is used by solo developers and major corporations alike.&lt;/p&gt;
+&lt;p&gt;Git should already be installed in macOS and Linux, but you need to install it if you are using Windows.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt; is a major online platform where you can store git repositories. It has free plans as well as free education plans with extra features. Github is great for developing projects collaboratively, and in the context of R package development, it can be used to share your package to anyone with an internet connection.&lt;/p&gt;
+&lt;h2 id=&#34;tutorial&#34;&gt;Tutorial&lt;/h2&gt;
+&lt;h3 id=&#34;set-up&#34;&gt;Set up&lt;/h3&gt;
+&lt;p&gt;Open a new Rstudio session and create a new project in a suitable directory (File&amp;gt;New Project). We will call our package &lt;code&gt;toypackage&lt;/code&gt; but you can choose any name you want.&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-rstudios-new-package-dialog&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-tutorial-new-package.png&#34; data-caption=&#34;ALT: A screenshot of Rstudio&amp;amp;rsquo;s &amp;amp;lsquo;New package&amp;amp;rsquo; dialog.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-tutorial-new-package.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of Rstudio&amp;rsquo;s &amp;lsquo;New package&amp;rsquo; dialog.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Now load the &lt;a href=&#34;https://devtools.r-lib.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;devtools&lt;/code&gt;&lt;/a&gt; package.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Load devtools and friends
+
+library(devtools)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next we use the &lt;code&gt;create_package&lt;/code&gt; function to create the basic file structure of the package. At their essence, R packages are nothing more than directories (folders) and text files structured according to some rules and conventions.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Create the file structure
+create_package(&amp;quot;~/projects/packages/toypackage&amp;quot;) ## write the path to your WD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the R console, you will be asked to overwrite the &lt;code&gt;toypackage.Rproj&lt;/code&gt; file, say yes. A new Rstudio instance will open. You can close your old session and work on the new one. You will need to re-load the &lt;code&gt;devtools&lt;/code&gt; package.&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-files-created&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-new-files.png&#34; data-caption=&#34;ALT: A screenshot of the files created.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-new-files.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the files created.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;After running &lt;code&gt;create_package&lt;/code&gt; you will note some new files and directories were created in your working directory. For now, don&amp;rsquo;t touch them, we will be working with them soon.&lt;/p&gt;
+&lt;p&gt;We are now going to initialise a git repository. You could do this directly in the terminal if you are more comfortable doing that, but we will use the &lt;code&gt;use_git&lt;/code&gt; command. You will be asked if you want to commit existing files, answer yes. You will be asked to restart Rstudio, say yes (and re-load the &lt;code&gt;devtools&lt;/code&gt; package).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_git()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;write-a-function&#34;&gt;Write a function&lt;/h3&gt;
+&lt;p&gt;We are now ready to start writing functions. Functions are the main component of your R package. In a way, you can think of an R package as a delivery system for functions. You can achieve many great things using R functions, but sometimes you need more powerful code written in another language (such as C or C#). This is known as compiled code, and I&amp;rsquo;m not going to cover this as it&amp;rsquo;s an area I have not explored yet.&lt;/p&gt;
+&lt;p&gt;The functions you write will live in an &lt;code&gt;Rscript&lt;/code&gt; file (a file that ends in &lt;code&gt;.R&lt;/code&gt;). Your function files will be stored in the &lt;code&gt;R/&lt;/code&gt; directory. Don&amp;rsquo;t place any other files there. While you can have more than one function per file, a common convention is to use only one function per file.&lt;/p&gt;
+&lt;p&gt;We let &lt;code&gt;devtools&lt;/code&gt; create the file for us with the &lt;code&gt;use_r&lt;/code&gt; fuction:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_r(&amp;quot;hello&amp;quot;) # Will create a file called R/hello.R
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;use_r&lt;/code&gt; code will create a new file inside &lt;code&gt;R/&lt;/code&gt; called &lt;code&gt;hello.R&lt;/code&gt;. Copy this code into the file and save.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; hello &amp;lt;- function(name){
+   message &amp;lt;- paste0(&amp;quot;Hello &amp;quot;, name, &amp;quot;!&amp;quot;)
+
+   return(message)
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a very simple function that prints Hello + &lt;code&gt;name&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To test your new function, you could source that file, but this would add it to your environment as an object. To better mimic how the function would work if you actually loaded a package, use the &lt;code&gt;load_all&lt;/code&gt; function. You can then run your function and you should get the following result.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;load_all()
+hello(&amp;quot;Patricio&amp;quot;)
+#&amp;gt; [1] &amp;quot;Hello Patricio!&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now commit your changes using the Git panel or the terminal (it is a good idea to commit your changes often).&lt;/p&gt;
+&lt;h3 id=&#34;check-everything-works&#34;&gt;Check everything works&lt;/h3&gt;
+&lt;p&gt;R has an integrated mechanism to check whether everything in your package is working correctly. We can run this using the &lt;code&gt;check&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;check()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You should get a lot of output in the console. At the end you will see the results of the check. You should get one warning regarding the license.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&amp;gt; ─── R CMD check results ─────────────────────── toypackage 0.0.0.9000 ────
+#&amp;gt; Duration: 7.1s
+#&amp;gt;
+#&amp;gt; &amp;gt; checking DESCRIPTION meta-information ... WARNING
+#&amp;gt;   Non-standard license specification:
+#&amp;gt;     `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+#&amp;gt;     license
+#&amp;gt;   Standardizable: FALSE
+#&amp;gt;
+#&amp;gt; 0 errors ✓ | 1 warning x | 0 notes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, before fixing the license warning, we will update the &lt;code&gt;DESCRIPTION&lt;/code&gt; file.&lt;/p&gt;
+&lt;h3 id=&#34;description-file&#34;&gt;DESCRIPTION file&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;DESCRIPTION&lt;/code&gt; file is one of the most important files in the R package, it is there to summarise the main information about the package and it is what tells R that this directory is a package.&lt;/p&gt;
+&lt;p&gt;When you open it, you will see a template with some information. Update the Title, Author and Description fields. (Don&amp;rsquo;t worry about the other fields you see, they will be updated automatically later.)&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-description-file&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-description.png&#34; data-caption=&#34;ALT: A screenshot of the DESCRIPTION file.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-description.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the DESCRIPTION file.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Next we add the license information using the &lt;code&gt;use_mit_license&lt;/code&gt; function. If you want to use another license run &lt;code&gt;?use_mit_license&lt;/code&gt; to see the available licenses.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_mit_license(&amp;quot;Patricio R Estévez-Soto&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;documentation&#34;&gt;Documentation&lt;/h3&gt;
+&lt;p&gt;Documentation is one of the most important aspects of a package. It is the information that is displayed when you run &lt;code&gt;help(x)&lt;/code&gt; or &lt;code&gt;?x&lt;/code&gt;. They tell others (and future you) what your function does and how to use it. You could write your documentation manually, but &amp;hellip;&lt;/p&gt;
+&lt;iframe src=&#34;https://giphy.com/embed/10PcMWwtZSYk2k&#34; width=&#34;480&#34; height=&#34;270&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;ALT: A meme of a woman saying &#39;Ain&#39;t nobody got time for that!&#39; &lt;a href=&#34;https://giphy.com/gifs/aint-nobody-got-time-for-that-gif-10PcMWwtZSYk2k&#34;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;So instead, we use the &lt;code&gt;roxygen2&lt;/code&gt; package to automatically create documentation for our functions.&lt;/p&gt;
+&lt;p&gt;To do this, open &lt;code&gt;hello.R&lt;/code&gt;, place the cursor inside the function, and click on Code&amp;gt;Insert Roxygen Skeleton. You will see new lines of code starting with &lt;code&gt;#&#39;&lt;/code&gt;. These lines are special comments that are &amp;lsquo;read&amp;rsquo; by the &lt;code&gt;document&lt;/code&gt; function to create the documentation files. Edit the information on the &lt;code&gt;hello.R&lt;/code&gt; file to something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; hello
+#&#39;
+#&#39; @param name A name
+#&#39;
+#&#39; @return A message
+#&#39; @export
+#&#39;
+#&#39; @examples hello(&amp;quot;Alice&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Save the file and run the &lt;code&gt;document&lt;/code&gt; function. If you then run &lt;code&gt;?hello&lt;/code&gt;, you should get the function&amp;rsquo;s documentation in Rstudio&amp;rsquo;s Help viewer&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;document()
+?hello
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-help-pane-with-the-documentation-created&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-hello-help.png&#34; data-caption=&#34;ALT: A screenshot of the help pane with the documentation created.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-hello-help.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the help pane with the documentation created.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;You will also see that the &lt;code&gt;document&lt;/code&gt; function created the NAMESPACE file. This file is important because it tells R which functions will be available to the user. Don&amp;rsquo;t edit this by hand, as &lt;code&gt;document&lt;/code&gt; takes care of that. To make sure your function is available in the NAMESPACE, include the &lt;code&gt;@export&lt;/code&gt; parameter in the function. It makes sense to export most functions, though sometimes you want to &amp;lsquo;hide&amp;rsquo; functions that are only used within other functions.&lt;/p&gt;
+&lt;p&gt;We now re-run the &lt;code&gt;check&lt;/code&gt; command to make sure everything is working correctly. You should get not errors, warnings or notes.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;check()
+#&amp;gt; ── R CMD check results ─── toypackage 0.0.0.9000 ────
+#&amp;gt; Duration: 9s
+#&amp;gt;
+#&amp;gt; 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+#&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;a-minimally-working-package&#34;&gt;A minimally working package&lt;/h3&gt;
+&lt;p&gt;Your package can now be installed. You install your package with the &lt;code&gt;install&lt;/code&gt; function (duh). This will make your functions available to your system. You can test if it worked by opening a new R session in another window and loading the package and running the &lt;code&gt;hello&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install()
+
+#&amp;gt; ✓  checking for file ‘/home/prestevez/projects/packages/toypackage/DESCRIPTION’ ...
+#&amp;gt; ─  preparing ‘toypackage’:
+#&amp;gt; ✓  checking DESCRIPTION meta-information ...
+#&amp;gt; ─  checking for LF line-endings in source and make files and shell scripts
+#&amp;gt; ─  checking for empty or unneeded directories
+#&amp;gt; ─  building ‘toypackage_0.0.0.9000.tar.gz’
+#&amp;gt;
+#&amp;gt; Running /usr/lib/R/bin/R CMD INSTALL /tmp/RtmpONCeyy/toypackage_0.0.0.9000.tar.gz --install-tests
+#&amp;gt; * installing to library ‘/home/prestevez/R/x86_64-pc-linux-gnu-library/4.0’
+#&amp;gt; * installing *source* package ‘toypackage’ ...
+#&amp;gt; ** using staged installation
+#&amp;gt; ** R
+#&amp;gt; ** byte-compile and prepare package for lazy loading
+#&amp;gt; ** help
+#&amp;gt; *** installing help indices
+#&amp;gt; ** building package indices
+#&amp;gt; ** testing if installed package can be loaded from temporary location
+#&amp;gt; ** testing if installed package can be loaded from final location
+#&amp;gt; ** testing if installed package keeps a record of temporary installation path
+#&amp;gt; * DONE (toypackage)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;tests&#34;&gt;Tests&lt;/h3&gt;
+&lt;p&gt;This section is about writing tests to verify that your functions work correctly. Tests are not strictly necessary, but it is very good practice to test your functions.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;testthat&lt;/code&gt; package makes it very easy to add built-in tests to your package. By calling the &lt;code&gt;use_testthat&lt;/code&gt; function we add &lt;code&gt;testthat&lt;/code&gt; to the package dependencies (more on that later), as well as create the directories and files for our tests.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_testthat()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It is up to you to write meaningful tests for your functions. Here we will write a simple test for the hello function. We create the test file for &lt;code&gt;hello&lt;/code&gt; using the &lt;code&gt;use_test&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_test(&amp;quot;hello&amp;quot;) # creates tests/testthat/test-hello.R
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then edit the new file and write the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;test_that(&amp;quot;hello works&amp;quot;, {
+  test_name &amp;lt;- &amp;quot;Alice&amp;quot;
+  test_message &amp;lt;- paste0(&amp;quot;Hello &amp;quot;, test_name, &amp;quot;!&amp;quot;)
+
+  expect_identical(test_message, hello(test_name))
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now run the &lt;code&gt;test&lt;/code&gt; function and see if your functions pass your tests.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;test()
+
+#&amp;gt; Testing toypackage
+#&amp;gt; ✓ |  OK F W S | Context
+#&amp;gt; ✓ |   1       | hello [0.1s]
+#&amp;gt;
+#&amp;gt; ══ Results ════════════════════════════
+#&amp;gt; Duration: 0.1 s
+#&amp;gt;
+#&amp;gt; [ FAIL 0 | WARN 0 | SKIP 0 | PASS 1 ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;importing-functions-from-another-package&#34;&gt;Importing functions from another package&lt;/h3&gt;
+&lt;p&gt;Just because you can write functions it doesn&amp;rsquo;t mean you always should. If a function from another package suits your needs, it makes more sense to use that instead of developing your own function.&lt;/p&gt;
+&lt;p&gt;There are two steps to using functions from another package in your packaged functions.&lt;/p&gt;
+&lt;p&gt;First, you must add the package to your dependencies so that when a user installs your package it also installs the package your package depends on (if it&amp;rsquo;s not installed already). You do this using the &lt;code&gt;use_package&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;In this example, we&amp;rsquo;ll be using a function from the &lt;code&gt;stringr&lt;/code&gt; package.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_package(&amp;quot;stringr&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, to use a function from &lt;code&gt;stringr&lt;/code&gt; in your function, you call it in your code using this syntax &lt;code&gt;stringr::the_function()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We create a new function file with &lt;code&gt;use_r&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_r(&amp;quot;greetings&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And write the following code in the file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#&#39; greeting
+#&#39;
+#&#39; @param many_names Several names
+#&#39;
+#&#39; @return A greeting
+#&#39; @export
+#&#39;
+#&#39; @examples greetings(c(&amp;quot;Alice&amp;quot;, &amp;quot;Bob&amp;quot;))
+greetings &amp;lt;- function(many_names){
+  the_greetings &amp;lt;- stringr::str_c(&amp;quot;Greetings &amp;quot;, many_names, &amp;quot;.&amp;quot;)
+
+  return(the_greetings)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now &lt;code&gt;document&lt;/code&gt; your function and run &lt;code&gt;load_all&lt;/code&gt; to test it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;document()
+
+greetings(c(&amp;quot;Alice&amp;quot;, &amp;quot;Bob&amp;quot;))
+#&amp;gt; [1] &amp;quot;Greetings Alice.&amp;quot;  &amp;quot;Greetings Bob.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;use-github&#34;&gt;Use Github&lt;/h3&gt;
+&lt;p&gt;By now you could install your &lt;code&gt;toypackage&lt;/code&gt; in your system and call it day. But we will now see how to publish our package on Github. This is not necessary to make your package work, but it is a great tool if you ever want anyone else to use your package (or even to install it in a different computer).&lt;/p&gt;
+&lt;p&gt;We can automatically create a Github repository from R using the &lt;code&gt;use_github&lt;/code&gt; function. (Make sure you have committed all the changes in the repo.)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Use this command if you have SSH keys associated with Github
+use_github(protocol = &amp;quot;ssh&amp;quot;)
+
+# Use this command if you don&#39;t
+use_github()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You will be asked if it&amp;rsquo;s OK to commit the &lt;code&gt;DESCRIPTION&lt;/code&gt; file, go ahead and say yes. Once the changes are pushed to Github, a browser window will open with your package.&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-the-github-repo&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-github.png&#34; data-caption=&#34;ALT: A screenshot of the the Github repo.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-github.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the the Github repo.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;We are almost done, I promise.&lt;/p&gt;
+&lt;p&gt;Next we will create a &lt;code&gt;README&lt;/code&gt; file so that visitors to your Github repo know what your package is about. Github &lt;code&gt;README&lt;/code&gt; files are written using &lt;a href=&#34;https://guides.github.com/features/mastering-markdown/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown&lt;/a&gt;, and while you could write it yourself, you can use the &lt;code&gt;use_readme_rmd&lt;/code&gt; to make it easier.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;use_readme_rmd()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since we are working with R, the &lt;code&gt;use_readme_rmd&lt;/code&gt; function creates an &lt;a href=&#34;https://rmarkdown.rstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;Rmarkdown&lt;/code&gt;&lt;/a&gt; file which combines regular text with R code that can be compiled automatically into a document.&lt;/p&gt;
+&lt;p&gt;Edit the readme Rmarkdown file so that it looks like this:&lt;/p&gt;
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-alt-a-screenshot-of-the-rmarkdown-file&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;/media/r-package-Rmd.png&#34; data-caption=&#34;ALT: A screenshot of the Rmarkdown file.&#34;&gt;
+
+
+  &lt;img src=&#34;/media/r-package-Rmd.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    ALT: A screenshot of the Rmarkdown file.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Now build the &amp;lsquo;regular&amp;rsquo; markdown README.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;build_readme()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Commit and push the changes you made and visit your Github repository, it should look like this: &lt;a href=&#34;https://github.com/prestevez/toypackage&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;prestevez/toypackage&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This package can now be installed from anywhere in the world using this command:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(devtools)
+
+install_github(&amp;quot;prestevez/toypackage&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Congratulations!&lt;/p&gt;
+&lt;p&gt;You have just made and published your first R package.&lt;/p&gt;
+&lt;p&gt;What will you build next?&lt;/p&gt;
+&lt;iframe src=&#34;https://giphy.com/embed/U2BASTIsaw8WQ&#34; width=&#34;480&#34; height=&#34;217&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;ALT: A scene from Toy Story, Buzz and Woody flying (i.e. falling with style), while Woody yells: &#34;To infinity and beyond!&#34; &lt;a href=&#34;https://giphy.com/gifs/elevator-berlin-lift-U2BASTIsaw8WQ&#34;&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

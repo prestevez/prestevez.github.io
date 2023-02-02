@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>research | Patricio R Estévez-Soto</title>
+    <link>/es/tag/research/</link>
+      <atom:link href="/es/tag/research/index.xml" rel="self" type="application/rss+xml" />
+    <description>research</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sun, 11 Oct 2020 22:53:22 +0100</lastBuildDate>
+    <image>
+      <url>/images/icon_hu9373bddfa54fa95f4d0bb7fc98cc7983_14930_512x512_fill_lanczos_center_2.png</url>
+      <title>research</title>
+      <link>/es/tag/research/</link>
+    </image>
+    
+    <item>
+      <title>Crimen y Covid-19</title>
+      <link>/es/project/crime-and-covid-19/</link>
+      <pubDate>Sun, 11 Oct 2020 22:53:22 +0100</pubDate>
+      <guid>/es/project/crime-and-covid-19/</guid>
+      <description>&lt;p&gt;Este proyecto de investigación tiene el objetivo de analizar los efectos de los cambios en las rutinas cotidianas relacionados al COVID-19 en los patrones delictivos de la Ciudad de México.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
