@@ -30,11 +30,9 @@ projects: []
 #url_pdf: 
 ---
 
-## Special issue with in-person (or hybrid) symposium in London, June 2023. Budget for travel and accommodation, thanks to funding awarded by the Economic and Social Research Council under its Transnational Organised Crime call.
-
-
 **Guest editors: Dr Ella Cockbain (UCL), Dr Patricio Estevez-Soto (UCL) and Prof Felia Allum (University of Bath)**
 
+Special issue with in-person (or hybrid) symposium in London, June 2023. Budget for travel and accommodation, thanks to funding awarded by the Economic and Social Research Council under its Transnational Organised Crime call.
 
 ## Summary of the proposed special issue
 
